@@ -1,0 +1,44 @@
+# Dependencies and generated builds
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.py[cod]
+build/
+build-*/
+dist/
+dist-*/
+*.exe
+*.dll
+*.zip
+
+# Personal state must never be committed, even in nested profile directories.
+config.json
+persona.txt
+secrets.json
+provider-usage.json
+ledger.json
+world-index.json
+*.dat
+*.Dat
+*.DAT
+*.gguf
+*.safetensors
+*.log
+*.db
+*.sqlite*
+.env
+.env.*
+*.pem
+*.key
+backups/
+output/
+shots/
+logs/
+profiles/
+artifacts/
+corpus/quarantine/
+
+# Only the explicitly generated synthetic binary belongs in the source tree.
+*.bin
+!tests/fixtures/starplayer-plain.bin

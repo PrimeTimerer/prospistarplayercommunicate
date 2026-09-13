@@ -1,0 +1,729 @@
+{
+  "pack_id": "core-ko",
+  "version": "1.0.0",
+  "locale": "ko-KR",
+  "license_class": "authored",
+  "attribution": "StarModeFeed original authored Korean templates (2026-09-02)",
+  "templates": [
+    {
+      "id": "ko.praise.teammate.veteran.001",
+      "responds_to": ["praise"],
+      "target": ["teammate"],
+      "visibility": ["private", "clubhouse"],
+      "persona": "veteran_teammate",
+      "domain": "SP.RELATION",
+      "thread_type": "teammate_mentorship",
+      "emotion_range": [-0.2, 1.0],
+      "variants": [
+        {"weight": 3, "text": "칭찬은 고맙게 받을게. 근데 그 수비는 네 공이 땅볼을 만들어 줘서 가능했던 거야. 서로 공을 돌리기 시작하면 끝이 없으니까 오늘은 여기까지."},
+        {"weight": 2, "text": "네가 그렇게 말해 주니까 오늘 밤은 다리 안 아프겠다. 내일도 같은 자리에서 기다릴게. 공만 낮게 던져."},
+        {"weight": 1, "text": "그런 말은 기자들 앞에서 해. 나도 한 번쯤은 이름이 나가야지. 농담이다. 고맙다."}
+      ],
+      "effects": {"proposed_choices": ["praise_publicly", "team_dinner", "wait_one_day"], "proposed_events": ["SP.RELATION.TRUST_GAIN"]},
+      "signature": {"opening": "acknowledge", "closing": "joke", "metaphor": null}
+    },
+    {
+      "id": "ko.praise.teammate.catcher.001",
+      "responds_to": ["praise"],
+      "target": ["teammate"],
+      "visibility": ["private", "clubhouse"],
+      "persona": "catcher",
+      "domain": "SP.RELATION",
+      "thread_type": "teammate_mentorship",
+      "emotion_range": [-0.2, 1.0],
+      "variants": [
+        {"weight": 3, "text": "리드가 좋았다고? 네가 사인대로 던져 줬으니까 그렇게 보이는 거야. 7회 그 볼카운트에서 고개 안 저은 거, 그게 오늘의 전부다."},
+        {"weight": 2, "text": "포수는 칭찬받으면 어색해. 대신 다음 경기 첫 타자 초구 사인, 내가 내는 대로 가 줘. 그게 나한테는 칭찬보다 낫다."},
+        {"weight": 1, "text": "오늘 네 공이 워낙 좋아서 내가 할 일이 별로 없었어. 그래도 그렇게 말해 주니 다음 배터리 미팅이 기대된다."}
+      ],
+      "effects": {"proposed_choices": ["praise_publicly", "study_video_together", "wait_one_day"], "proposed_events": ["SP.RELATION.TRUST_GAIN"]},
+      "signature": {"opening": "question", "closing": "instruction", "metaphor": null}
+    },
+    {
+      "id": "ko.praise.rookie.rookie.001",
+      "responds_to": ["praise"],
+      "target": ["rookie"],
+      "visibility": ["private", "clubhouse"],
+      "persona": "rookie_teammate",
+      "domain": "SP.RELATION",
+      "thread_type": "teammate_mentorship",
+      "emotion_range": [-0.2, 1.0],
+      "variants": [
+        {"weight": 3, "text": "선배한테 칭찬받으니까 오늘 경기 다시 뛰고 싶어요. 그 타구는 솔직히 운이 좋았는데, 선배가 그렇게 말씀해 주시니 실력이라고 믿어 볼게요."},
+        {"weight": 2, "text": "감사합니다. 근데 선배, 그거 한 번 더 말해 주시면 안 돼요? 부모님께 그대로 전하고 싶어서요."}
+      ],
+      "effects": {"proposed_choices": ["praise_publicly", "extra_work_together", "team_dinner"], "proposed_events": ["SP.RELATION.ENCOURAGEMENT"]},
+      "signature": {"opening": "acknowledge", "closing": "question", "metaphor": null}
+    },
+    {
+      "id": "ko.praise.manager.manager.001",
+      "responds_to": ["praise"],
+      "target": ["manager", "coach"],
+      "visibility": ["private", "clubhouse"],
+      "persona": "manager",
+      "domain": "SP.RELATION",
+      "thread_type": "manager_trust",
+      "emotion_range": [-0.2, 1.0],
+      "variants": [
+        {"weight": 3, "text": "감독을 칭찬하는 선수는 처음 본다. 그 교체가 맞았다고 생각한다면 다음에 내가 널 뺄 때도 같은 표정이길 바란다. 농담이 아니다."},
+        {"weight": 2, "text": "고맙다. 그런데 그 말은 팀이 이겼기 때문에 나오는 말이다. 졌으면 같은 결정이 비판을 받았겠지. 나는 그 둘을 같은 결정으로 본다. 너도 그렇게 봐 줬으면 한다."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "praise_publicly", "wait_one_day"], "proposed_events": ["SP.RELATION.TRUST_GAIN"]},
+      "signature": {"opening": "fact", "closing": "fact", "metaphor": null}
+    },
+    {
+      "id": "ko.praise.rival.opponent.001",
+      "responds_to": ["praise"],
+      "target": ["rival"],
+      "visibility": ["private", "clubhouse", "national"],
+      "persona": "opposing_star",
+      "domain": "SP.RELATION",
+      "thread_type": "rivalry",
+      "emotion_range": [-0.2, 1.0],
+      "variants": [
+        {"weight": 3, "text": "칭찬은 받겠는데, 그 공 다음에 던진 게 더 무서웠다. 서로 인정하는 건 좋은데 다음 맞대결에서 봐주는 건 없기로 하자."},
+        {"weight": 2, "text": "네가 그렇게 말하면 우리 팀 팬들이 나를 의심한다. 고맙다는 말은 여기까지. 그라운드에서는 다시 적이다."}
+      ],
+      "effects": {"proposed_choices": ["praise_publicly", "keep_private", "declare_goal"], "proposed_events": ["SP.RELATION.OPPONENT_EXCHANGE"]},
+      "signature": {"opening": "acknowledge", "closing": "challenge", "metaphor": null}
+    },
+    {
+      "id": "ko.praise.rival.narrator.public",
+      "responds_to": ["praise"],
+      "target": ["rival"],
+      "visibility": ["national", "international"],
+      "persona": "narrator",
+      "domain": "SP.MEDIA",
+      "thread_type": "rivalry",
+      "emotion_range": [-0.2, 1.0],
+      "variants": [
+        {"weight": 3, "text": "{player}은(는) 경기 뒤 상대 선수의 강점을 공개적으로 인정했다. 홈 팬 일부는 의아해했고, 원정 응원석은 잠시 조용해졌다. 라이벌 관계는 그 침묵 속에서 한 단계 성숙했다."},
+        {"weight": 2, "text": "상대를 칭찬하는 선수는 약해 보인다는 통념이 있다. {player}의 발언은 그 통념을 시험했다. 다음 맞대결 표가 이틀 만에 매진됐다는 사실이 답의 일부였다."}
+      ],
+      "effects": {"proposed_choices": ["declare_goal", "hold_position", "wait_one_day"], "proposed_events": ["SP.MEDIA.PRAISE_OPPONENT"]},
+      "signature": {"opening": "scene", "closing": "fact", "metaphor": null}
+    },
+    {
+      "id": "ko.praise.fans.supporter.001",
+      "responds_to": ["praise"],
+      "target": ["fans"],
+      "visibility": ["local", "national", "international"],
+      "persona": "home_supporter",
+      "domain": "SP.PUBLIC",
+      "thread_type": "public_reputation",
+      "emotion_range": [-0.2, 1.0],
+      "variants": [
+        {"weight": 3, "text": "우리를 칭찬해 주다니, 이건 반칙이죠. 응원가 하나 더 만들어야겠어요. 가사에 오늘 그 말 넣을 겁니다."},
+        {"weight": 2, "text": "9회 응원 소리가 힘이 됐다고요? 그럼 다음 홈경기는 목이 쉴 각오로 갑니다. 선수가 그렇게 말해 주면 팬은 그렇게 됩니다."}
+      ],
+      "effects": {"proposed_choices": ["fan_message_later", "signing_session", "wait_one_day"], "proposed_events": ["SP.PUBLIC.CHANT"]},
+      "signature": {"opening": "joke", "closing": "promise", "metaphor": null}
+    },
+    {
+      "id": "ko.praise.reporter.beat.001",
+      "responds_to": ["praise"],
+      "target": ["reporter"],
+      "visibility": ["national", "international"],
+      "persona": "beat_reporter",
+      "domain": "SP.MEDIA",
+      "thread_type": "public_reputation",
+      "emotion_range": [-0.2, 1.0],
+      "variants": [
+        {"weight": 3, "text": "인터뷰에서 {player}이(가) 동료를 칭찬하는 데 답변 시간의 대부분을 썼다. 기자단 노트에는 본인 이야기가 두 줄, 동료 이야기가 열 줄 남았다. 다음 날 지면은 그 비율을 따라갔다."},
+        {"weight": 2, "text": "‘오늘의 주인공은 내가 아니다’로 시작한 인터뷰였다. 뻔한 겸손으로 들릴 수도 있었지만, 구체적인 장면을 짚어 가며 말하니 달랐다. 몇몇 기자는 칭찬받은 선수의 라커로 발길을 돌렸다."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "follow_up_private", "wait_one_day"], "proposed_events": ["SP.MEDIA.PRAISE_TEAMMATE"]},
+      "signature": {"opening": "fact", "closing": "fact", "metaphor": null}
+    },
+    {
+      "id": "ko.praise.family.family.001",
+      "responds_to": ["praise"],
+      "target": ["family", "partner"],
+      "visibility": ["private"],
+      "persona": "family_parent",
+      "domain": "SP.PRIVATE",
+      "thread_type": "private_life",
+      "emotion_range": [-0.2, 1.0],
+      "variants": [
+        {"weight": 3, "text": "우리가 뭘 했다고. 네가 다 한 거지. 그래도 그 말 들으니까 오늘 저녁은 반찬 하나 더 해야겠다."},
+        {"weight": 2, "text": "고맙다는 말은 이기고 나서 하는 게 아니라 아무 때나 하는 거야. 오늘 잘 배웠네. 밥 먹고 자."}
+      ],
+      "effects": {"proposed_choices": ["call_family", "visit_family", "wait_one_day"], "proposed_events": ["SP.PRIVATE.FAMILY_CALL"]},
+      "signature": {"opening": "acknowledge", "closing": "instruction", "metaphor": null}
+    },
+    {
+      "id": "ko.praise.coach.coach.001",
+      "responds_to": ["praise"],
+      "target": ["coach"],
+      "visibility": ["private", "clubhouse"],
+      "persona": "pitching_coach",
+      "domain": "SP.TRAINING",
+      "thread_type": "performance_pursuit",
+      "emotion_range": [-0.2, 1.0],
+      "variants": [
+        {"weight": 3, "text": "코치가 칭찬받는 날은 선수가 잘 던진 날이다. 그러니 그 말은 네 몫이야. 대신 오늘 좋았던 릴리스 포인트는 내일 영상으로 같이 확인하자. 좋은 날의 폼을 남겨 둬야 나쁜 날에 돌아올 수 있다."},
+        {"weight": 2, "text": "됐다, 낯간지럽다. 내가 한 건 네 어깨 각도 얘기 한 번뿐이야. 그걸 바로 몸에 붙인 건 너다."}
+      ],
+      "effects": {"proposed_choices": ["study_video_together", "extra_work", "wait_one_day"], "proposed_events": ["SP.TRAINING.MENTOR_LESSON"]},
+      "signature": {"opening": "fact", "closing": "instruction", "metaphor": null}
+    },
+    {
+      "id": "ko.praise.generic.inner.001",
+      "responds_to": ["praise"],
+      "target": ["*"],
+      "visibility": ["*"],
+      "persona": "inner_voice",
+      "domain": "SP.RELATION",
+      "thread_type": "teammate_mentorship",
+      "emotion_range": [-0.2, 1.0],
+      "variants": [
+        {"weight": 3, "text": "칭찬은 구체적일수록 힘이 있다. ‘잘했다’보다 ‘7회 그 송구’가 낫다. 무엇을 봤는지 한 장면만 정해서 말하자."},
+        {"weight": 2, "text": "누군가를 칭찬하는 건 그 사람의 하루를 바꾸는 가장 싼 방법이다. 공개적으로 할지 둘만 있을 때 할지만 정하면 된다. 상대 성격을 떠올려 보자."},
+        {"weight": 1, "text": "칭찬받는 쪽보다 하는 쪽이 더 기억한다. 오늘 이 말을 남기는 이유다."}
+      ],
+      "effects": {"proposed_choices": ["praise_publicly", "follow_up_private", "wait_one_day"], "proposed_events": ["SP.USER.PRAISE"]},
+      "signature": {"opening": "fact", "closing": "instruction", "metaphor": null}
+    },
+    {
+      "id": "ko.praise.generic.narrator.clubhouse",
+      "responds_to": ["praise"],
+      "target": ["*"],
+      "visibility": ["clubhouse"],
+      "persona": "narrator",
+      "domain": "SP.RELATION",
+      "thread_type": "teammate_mentorship",
+      "emotion_range": [-0.2, 1.0],
+      "variants": [
+        {"weight": 3, "text": "라커룸에서 {player}이(가) {target_label}을(를) 향해 한 말은 짧았다. 오늘 경기의 한 장면을 정확히 짚었고, 그래서 듣는 쪽이 부끄러워할 틈이 없었다. 주변 선수 몇이 박수를 쳤고, 곧 평소의 소음이 돌아왔다."},
+        {"weight": 2, "text": "{player}은(는) 팀 미팅이 끝난 뒤 {target_label}에게 다가가 어깨를 잡았다. 무슨 말이 오갔는지는 두 사람만 안다. 다만 그날 이후 두 사람이 워밍업을 같이 시작했다는 사실은 모두가 안다."}
+      ],
+      "effects": {"proposed_choices": ["team_dinner", "follow_up_private", "wait_one_day"], "proposed_events": ["SP.USER.PRAISE"]},
+      "signature": {"opening": "scene", "closing": "fact", "metaphor": null}
+    },
+    {
+      "id": "ko.criticize_self.reporter.beat.001",
+      "responds_to": ["criticize_self"],
+      "target": ["reporter"],
+      "visibility": ["national", "international"],
+      "persona": "beat_reporter",
+      "domain": "SP.MEDIA",
+      "thread_type": "public_reputation",
+      "emotion_range": [-1.0, 0.3],
+      "variants": [
+        {"weight": 3, "text": "패배의 책임을 스스로 짊어진 인터뷰였다. 기자단은 그 말을 그대로 옮길지, 맥락을 붙일지 고민했다. 결국 대부분은 두 가지를 함께 썼다. 선수의 자책과, 그날 경기가 한 사람의 잘못으로 설명되지 않는다는 사실을."},
+        {"weight": 2, "text": "‘제 잘못입니다’로 시작한 답변은 이어지는 질문의 방향을 바꿨다. 기자들은 원인을 묻는 대신 다음을 물었다. 자책은 취재를 짧게 끝내는 가장 빠른 길이기도 했다."},
+        {"weight": 1, "text": "자책하는 선수 앞에서 기자단은 잠시 조용해진다. 오늘도 그랬다. 다만 한 기자는 나중에 이렇게 적었다. ‘그 자책이 사실인지는 다음 등판이 말해 줄 것이다.’"}
+      ],
+      "effects": {"proposed_choices": ["extra_work", "hold_position", "follow_up_private"], "proposed_events": ["SP.MEDIA.SELF_CRITICISM"]},
+      "signature": {"opening": "fact", "closing": "fact", "metaphor": null}
+    },
+    {
+      "id": "ko.criticize_self.reporter.national.001",
+      "responds_to": ["criticize_self"],
+      "target": ["reporter"],
+      "visibility": ["national", "international"],
+      "persona": "national_desk",
+      "domain": "SP.MEDIA",
+      "thread_type": "public_reputation",
+      "requires": ["tier_index >= 2"],
+      "emotion_range": [-1.0, 0.3],
+      "variants": [
+        {"weight": 3, "text": "전국 단위로 보면 이 자책은 개인의 반성 이상이었다. 리그에서 가장 주목받는 선수가 스스로를 먼저 비판하면 그 팀의 다른 선수들은 변명할 자리를 잃는다. 클럽하우스의 기준이 그렇게 정해졌다."},
+        {"weight": 2, "text": "자책의 내용보다 태도가 헤드라인이 됐다. 데스크는 ‘책임’이라는 단어를 제목에 넣을지 오래 논의했고, 결국 넣지 않았다. 선수가 이미 다 말했기 때문이다."}
+      ],
+      "effects": {"proposed_choices": ["extra_work", "hold_position", "wait_one_day"], "proposed_events": ["SP.MEDIA.SELF_CRITICISM"]},
+      "signature": {"opening": "fact", "closing": "fact", "metaphor": null}
+    },
+    {
+      "id": "ko.criticize_self.reporter.former_pitcher.001",
+      "responds_to": ["criticize_self"],
+      "target": ["reporter"],
+      "visibility": ["national", "international"],
+      "persona": "former_pitcher",
+      "domain": "SP.MEDIA",
+      "thread_type": "performance_pursuit",
+      "emotion_range": [-1.0, 0.3],
+      "variants": [
+        {"weight": 3, "text": "투수가 스스로를 비판할 때는 두 종류가 있다. 진짜 원인을 아는 자책과, 원인을 몰라서 하는 자책. 오늘 발언은 앞의 것에 가까웠다. 어떤 구종, 어떤 카운트를 말했는지 들어 보면 안다."},
+        {"weight": 2, "text": "해설석에서 보기에 오늘 경기는 한 사람 탓이 아니었다. 그런데 본인이 먼저 그렇게 말하면 팀은 편해진다. 베테랑이 하는 일이다. 나이는 어려도 그렇게 하고 있다."}
+      ],
+      "effects": {"proposed_choices": ["study_video", "extra_work", "hold_position"], "proposed_events": ["SP.MEDIA.SELF_CRITICISM"]},
+      "signature": {"opening": "fact", "closing": "fact", "metaphor": null}
+    },
+    {
+      "id": "ko.criticize_self.teammate.veteran.001",
+      "responds_to": ["criticize_self"],
+      "target": ["teammate", "rookie"],
+      "visibility": ["private", "clubhouse"],
+      "persona": "veteran_teammate",
+      "domain": "SP.RELATION",
+      "thread_type": "teammate_mentorship",
+      "emotion_range": [-1.0, 0.3],
+      "variants": [
+        {"weight": 3, "text": "네 잘못이라고? 그럼 8회에 병살 못 만든 나는 뭐가 되냐. 자책은 혼자 하는 거 아니야. 나눠서 하자. 그래야 내일 가볍다."},
+        {"weight": 2, "text": "그렇게 말하니까 애들이 더 미안해하잖아. 반성은 마음속에서 하고 라커룸에서는 ‘다음에 잡자’까지만 해. 그게 팀에 좋아."}
+      ],
+      "effects": {"proposed_choices": ["team_dinner", "extra_work", "wait_one_day"], "proposed_events": ["SP.RELATION.ADVICE"]},
+      "signature": {"opening": "question", "closing": "instruction", "metaphor": null}
+    },
+    {
+      "id": "ko.criticize_self.manager.manager.001",
+      "responds_to": ["criticize_self"],
+      "target": ["manager", "coach"],
+      "visibility": ["private", "clubhouse"],
+      "persona": "manager",
+      "domain": "SP.RELATION",
+      "thread_type": "manager_trust",
+      "emotion_range": [-1.0, 0.3],
+      "variants": [
+        {"weight": 3, "text": "책임은 감독이 진다. 그게 이 자리의 규칙이다. 네가 스스로를 비판하는 건 말리지 않겠지만, 내 앞에서는 한 번이면 된다. 두 번째부터는 핑계처럼 들린다."},
+        {"weight": 2, "text": "그 말을 하러 감독실까지 온 건 좋다. 앉아라. 오늘 무엇이 잘못됐는지 네 입으로 정리해 봐라. 그 정리가 맞으면 내일 훈련 계획을 바꾸겠다."}
+      ],
+      "effects": {"proposed_choices": ["extra_work", "study_video", "hold_position"], "proposed_events": ["SP.RELATION.PRIVATE_MEETING"]},
+      "signature": {"opening": "fact", "closing": "instruction", "metaphor": null}
+    },
+    {
+      "id": "ko.criticize_self.self.inner.001",
+      "responds_to": ["criticize_self"],
+      "target": ["self", "*"],
+      "visibility": ["private"],
+      "persona": "inner_voice",
+      "domain": "SP.PRIVATE",
+      "thread_type": "performance_pursuit",
+      "emotion_range": [-1.0, 0.3],
+      "variants": [
+        {"weight": 3, "text": "내 잘못이라고 말하는 건 쉽다. 어느 공이, 어느 판단이 잘못이었는지 짚는 건 어렵다. 어려운 쪽을 하자. 그래야 내일 고칠 게 생긴다."},
+        {"weight": 2, "text": "자책과 반성은 다르다. 자책은 오늘을 붙들고 반성은 내일을 향한다. 지금 하고 있는 게 어느 쪽인지 솔직해지자."},
+        {"weight": 1, "text": "다 내 탓이라는 말은 사실 팀을 보호하는 말이기도 하다. 그 말을 공개적으로 할지, 여기 남길지만 정하면 된다."}
+      ],
+      "effects": {"proposed_choices": ["study_video", "give_public_quote", "write_diary"], "proposed_events": []},
+      "signature": {"opening": "fact", "closing": "instruction", "metaphor": null}
+    },
+    {
+      "id": "ko.criticize_self.fans.skeptic.001",
+      "responds_to": ["criticize_self"],
+      "target": ["fans", "reporter"],
+      "visibility": ["national", "international", "local"],
+      "persona": "skeptical_fan",
+      "domain": "SP.PUBLIC",
+      "thread_type": "public_reputation",
+      "emotion_range": [-1.0, 0.3],
+      "variants": [
+        {"weight": 3, "text": "자책하는 건 좋은데, 그 말 듣고 팬이 위로해 줘야 하는 분위기는 싫어요. 반성은 다음 경기 내용으로 보여 주면 됩니다. 말은 이제 충분해요."},
+        {"weight": 2, "text": "솔직히 저는 이런 인터뷰 별로예요. 선수가 자기 탓이라고 하면 감독은 편해지고 팬은 할 말이 없어지죠. 그래도 진심인 건 알겠어요. 다음 경기 봅니다."}
+      ],
+      "effects": {"proposed_choices": ["extra_work", "hold_position", "wait_one_day"], "proposed_events": []},
+      "signature": {"opening": "acknowledge", "closing": "warning", "metaphor": null}
+    },
+    {
+      "id": "ko.criticize_self.narrator.clubhouse",
+      "responds_to": ["criticize_self"],
+      "target": ["*"],
+      "visibility": ["clubhouse"],
+      "persona": "narrator",
+      "domain": "SP.RELATION",
+      "thread_type": "teammate_mentorship",
+      "emotion_range": [-1.0, 0.3],
+      "variants": [
+        {"weight": 3, "text": "팀 미팅에서 {player}이(가) 먼저 손을 들었다. 오늘 패배의 원인을 자신에게서 찾는 발언이었다. 감독은 말을 끊지 않았고, 다 들은 뒤 한마디만 했다. ‘알았다. 내일 보자.’ 그 짧은 대답이 오히려 방 안을 가볍게 했다."},
+        {"weight": 2, "text": "라커룸에 붙은 다음 날 훈련 일정표에는 {player}의 이름 옆에 추가 훈련 시간이 적혀 있었다. 누가 적었는지 아무도 묻지 않았다. 본인이 적었다는 것을 모두 알았다."}
+      ],
+      "effects": {"proposed_choices": ["extra_work", "study_video", "team_dinner"], "proposed_events": ["SP.MEDIA.SELF_CRITICISM"]},
+      "signature": {"opening": "scene", "closing": "fact", "metaphor": null}
+    },
+    {
+      "id": "ko.declare.reporter.beat.001",
+      "responds_to": ["declare"],
+      "target": ["reporter", "fans"],
+      "visibility": ["national", "international", "local"],
+      "persona": "beat_reporter",
+      "domain": "SP.MEDIA",
+      "thread_type": "milestone_chase",
+      "emotion_range": [-0.3, 1.0],
+      "variants": [
+        {"weight": 3, "text": "{player}이(가) 다음 등판의 목표를 공개적으로 밝혔다. 기자단 사이에서는 ‘부담을 스스로 얹었다’는 시선과 ‘이미 감당하고 있는 부담을 말로 옮겼을 뿐’이라는 시선이 갈렸다. 어느 쪽이든 다음 등판일의 취재 인원은 늘어날 것이다."},
+        {"weight": 2, "text": "선언은 짧았고 질문은 길었다. ‘실패하면 어떻게 할 것인가’라는 질문에 {player}은(는) ‘실패도 기록으로 남는다’고 답했다. 그 문장이 다음 날 제목이 됐다."},
+        {"weight": 1, "text": "공개 선언은 구단 홍보팀도 몰랐던 모양이다. 인터뷰 뒤 담당자가 급히 메모를 꺼냈다. 선수의 말이 구단의 일정표보다 빨랐다."}
+      ],
+      "effects": {"proposed_choices": ["extra_work", "study_video", "hold_position"], "proposed_events": ["SP.USER.DECLARATION"]},
+      "signature": {"opening": "fact", "closing": "fact", "metaphor": null}
+    },
+    {
+      "id": "ko.declare.reporter.national.001",
+      "responds_to": ["declare"],
+      "target": ["reporter", "fans"],
+      "visibility": ["national", "international"],
+      "persona": "national_desk",
+      "domain": "SP.MEDIA",
+      "thread_type": "milestone_chase",
+      "requires": ["tier_index >= 2"],
+      "emotion_range": [-0.3, 1.0],
+      "variants": [
+        {"weight": 3, "text": "리그 전체가 이미 주시하던 선수의 선언이라 파장은 지역을 넘었다. 상대 구단의 전력분석 인력이 늘어난다는 이야기가 하루 만에 나왔고, 다음 등판일의 중계 편성이 바뀌었다."},
+        {"weight": 2, "text": "선언 자체보다 선언이 나온 시점이 화제였다. 시즌 기록표의 어느 줄까지 바뀔지가 이미 논쟁이던 때에, 선수가 스스로 목표를 못 박았다. 데스크는 이를 ‘압박의 방향을 바꾼 발언’으로 정리했다."}
+      ],
+      "effects": {"proposed_choices": ["extra_work", "hold_position", "wait_one_day"], "proposed_events": ["SP.USER.DECLARATION"]},
+      "signature": {"opening": "fact", "closing": "fact", "metaphor": null}
+    },
+    {
+      "id": "ko.declare.reporter.former_pitcher.001",
+      "responds_to": ["declare"],
+      "target": ["reporter", "fans"],
+      "visibility": ["national", "international"],
+      "persona": "former_pitcher",
+      "domain": "SP.MEDIA",
+      "thread_type": "milestone_chase",
+      "emotion_range": [-0.3, 1.0],
+      "variants": [
+        {"weight": 3, "text": "현역 때 나도 한 번 선언을 해 봤다. 결과는 실패였고, 그 실패가 나를 키웠다. 선언은 상대에게 정보를 주는 게 아니라 자신에게 퇴로를 없애는 일이다. 이 선수는 그걸 알고 하는 것 같다."},
+        {"weight": 2, "text": "기록을 노린다고 말하는 순간 상대 타자들은 초구부터 달라진다. 그걸 감당할 구위가 있느냐가 관건이다. 최근 등판 내용을 보면 감당할 만하다고 본다. 다만 볼넷 하나가 선언을 무겁게 만들 수 있다."}
+      ],
+      "effects": {"proposed_choices": ["study_video", "extra_work", "hold_position"], "proposed_events": ["SP.USER.DECLARATION"]},
+      "signature": {"opening": "memory", "closing": "warning", "metaphor": null}
+    },
+    {
+      "id": "ko.declare.manager.manager.001",
+      "responds_to": ["declare"],
+      "target": ["manager", "coach"],
+      "visibility": ["private", "clubhouse"],
+      "persona": "manager",
+      "domain": "SP.ROLE",
+      "thread_type": "role_competition",
+      "emotion_range": [-0.3, 1.0],
+      "variants": [
+        {"weight": 3, "text": "목표를 나한테 먼저 말한 건 잘했다. 기자들한테 먼저 말했으면 나는 신문 보고 알았을 테니까. 좋다. 대신 그 목표 때문에 투구 수를 무리하겠다는 뜻이면 지금 접어라. 그건 내가 정한다."},
+        {"weight": 2, "text": "선언은 자유다. 결과도 네 것이다. 다만 팀 안에서는 한 가지만 지켜라. 네 목표가 다른 선수의 자리를 흔드는 말로 들리지 않게 해라."}
+      ],
+      "effects": {"proposed_choices": ["give_public_quote", "hold_position", "extra_work"], "proposed_events": ["SP.ROLE.ROLE_REQUEST"]},
+      "signature": {"opening": "acknowledge", "closing": "warning", "metaphor": null}
+    },
+    {
+      "id": "ko.declare.teammate.catcher.001",
+      "responds_to": ["declare"],
+      "target": ["teammate", "rookie"],
+      "visibility": ["private", "clubhouse"],
+      "persona": "catcher",
+      "domain": "SP.RELATION",
+      "thread_type": "milestone_chase",
+      "emotion_range": [-0.3, 1.0],
+      "variants": [
+        {"weight": 3, "text": "기록 노리겠다고? 좋아. 그럼 다음 등판 사인은 내가 더 공격적으로 낼게. 대신 한 가지 약속해. 8회에 팔이 무거우면 나한테 먼저 말한다. 기록보다 다음 등판이 먼저다."},
+        {"weight": 2, "text": "네 입으로 말했으니 이제 내 일이 됐다. 상대 타선 첫 타석 성향 정리해서 내일 아침에 줄게. 선언은 혼자 하는 게 아니야."}
+      ],
+      "effects": {"proposed_choices": ["study_video_together", "extra_work", "give_public_quote"], "proposed_events": ["SP.RELATION.TRUST_GAIN"]},
+      "signature": {"opening": "question", "closing": "promise", "metaphor": null}
+    },
+    {
+      "id": "ko.declare.rival.opponent.001",
+      "responds_to": ["declare"],
+      "target": ["rival"],
+      "visibility": ["national", "international", "clubhouse"],
+      "persona": "opposing_star",
+      "domain": "SP.MEDIA",
+      "thread_type": "rivalry",
+      "emotion_range": [-0.3, 1.0],
+      "variants": [
+        {"weight": 3, "text": "나를 지목했다고 들었다. 고맙다. 덕분에 다음 경기 준비할 이유가 하나 늘었다. 그쪽이 선언했으니 나는 조용히 하겠다. 결과로 답하는 쪽이 더 무섭다는 걸 보여 주겠다."},
+        {"weight": 2, "text": "선언은 자유지만 우리 더그아웃도 그 말을 들었다. 첫 타석부터 다르게 갈 것이다. 그 정도 각오는 하고 말한 거겠지."}
+      ],
+      "effects": {"proposed_choices": ["study_video", "hold_position", "extra_work"], "proposed_events": ["SP.GAME.PRE.RIVALRY"]},
+      "signature": {"opening": "fact", "closing": "challenge", "metaphor": null}
+    },
+    {
+      "id": "ko.declare.fans.supporter.001",
+      "responds_to": ["declare"],
+      "target": ["fans", "reporter"],
+      "visibility": ["local", "national", "international"],
+      "persona": "home_supporter",
+      "domain": "SP.PUBLIC",
+      "thread_type": "public_reputation",
+      "emotion_range": [-0.3, 1.0],
+      "variants": [
+        {"weight": 3, "text": "선언했으니 우리는 표부터 삽니다. 실패해도 야유는 없어요. 말한 사람보다 말 안 하고 도망가는 사람이 더 밉거든요."},
+        {"weight": 2, "text": "그 말 듣고 응원단 단톡방이 밤새 울렸어요. 다음 등판일 피켓 문구 정하는 중입니다. 부담 갖지 말라고는 안 할게요. 우리도 같이 부담 갖겠습니다."}
+      ],
+      "effects": {"proposed_choices": ["fan_message_later", "hold_position", "extra_work"], "proposed_events": ["SP.PUBLIC.CHANT"]},
+      "signature": {"opening": "acknowledge", "closing": "promise", "metaphor": null}
+    },
+    {
+      "id": "ko.declare.fans.skeptic.001",
+      "responds_to": ["declare"],
+      "target": ["fans", "reporter"],
+      "visibility": ["local", "national", "international"],
+      "persona": "skeptical_fan",
+      "domain": "SP.PUBLIC",
+      "thread_type": "public_reputation",
+      "emotion_range": [-0.3, 1.0],
+      "variants": [
+        {"weight": 3, "text": "선언은 결과 나오고 나서 해도 늦지 않은데요. 실패하면 이 말이 시즌 내내 따라다닐 텐데, 본인이 감당하겠다니 지켜보겠습니다."},
+        {"weight": 2, "text": "저는 말보다 등판 간격이 궁금해요. 목표를 말했으니 투구 수 관리는 더 엄격해져야죠. 감독이 그걸 허락했는지가 진짜 뉴스입니다."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "extra_work", "wait_one_day"], "proposed_events": []},
+      "signature": {"opening": "warning", "closing": "question", "metaphor": null}
+    },
+    {
+      "id": "ko.declare.agent.agent.001",
+      "responds_to": ["declare"],
+      "target": ["agent", "front_office"],
+      "visibility": ["private"],
+      "persona": "agent",
+      "domain": "SP.CONTRACT",
+      "thread_type": "contract_negotiation",
+      "emotion_range": [-0.3, 1.0],
+      "variants": [
+        {"weight": 3, "text": "공개 선언은 협상에서 양날의 칼이야. 성공하면 우리 카드가 되고, 실패하면 구단 카드가 된다. 그래도 네가 하겠다면 말리진 않겠다. 대신 문장은 내가 한 번 다듬자."},
+        {"weight": 2, "text": "선언하기 전에 하나만 확인하자. 그 목표가 계약 조항의 어떤 인센티브와 겹치는지. 겹친다면 구단은 네 선언을 협상 자료로 읽을 거다."}
+      ],
+      "effects": {"proposed_choices": ["ask_agent", "give_public_quote", "hold_position"], "proposed_events": ["SP.CONTRACT.AGENT_MEETING"]},
+      "signature": {"opening": "fact", "closing": "instruction", "metaphor": "blade"}
+    },
+    {
+      "id": "ko.declare.self.inner.001",
+      "responds_to": ["declare"],
+      "target": ["self", "*"],
+      "visibility": ["private"],
+      "persona": "inner_voice",
+      "domain": "SP.PRIVATE",
+      "thread_type": "milestone_chase",
+      "emotion_range": [-0.3, 1.0],
+      "variants": [
+        {"weight": 3, "text": "선언은 두 번 한다. 한 번은 여기, 한 번은 밖에서. 먼저 여기서 해 보자. 무엇을, 언제까지, 어떤 조건에서. 이 세 가지가 채워지면 밖에서 말해도 흔들리지 않는다."},
+        {"weight": 2, "text": "목표를 말로 옮기면 퇴로가 사라진다. 그게 무섭다면 아직 때가 아니고, 그게 오히려 편하다면 지금이 때다. 지금 어느 쪽인지 솔직하게 답하자."},
+        {"weight": 1, "text": "선언은 상대가 아니라 나에게 하는 약속이다. 상대는 어차피 내 공만 본다."}
+      ],
+      "effects": {"proposed_choices": ["give_public_quote", "keep_private", "extra_work"], "proposed_events": ["SP.USER.DECLARATION"]},
+      "signature": {"opening": "instruction", "closing": "question", "metaphor": "road"}
+    },
+    {
+      "id": "ko.declare.narrator.public",
+      "responds_to": ["declare"],
+      "target": ["*"],
+      "visibility": ["national", "international", "local"],
+      "persona": "narrator",
+      "domain": "SP.MEDIA",
+      "thread_type": "milestone_chase",
+      "emotion_range": [-0.3, 1.0],
+      "variants": [
+        {"weight": 3, "text": "{player}은(는) 카메라 앞에서 다음 목표를 말했다. 목소리는 낮았고 문장은 짧았다. 기자들의 손이 동시에 움직였고, 뒤에 서 있던 구단 직원은 작게 한숨을 쉬었다. 그 한숨은 걱정이 아니라 준비의 시작이었다."},
+        {"weight": 2, "text": "선언이 끝나자 기자실 공기가 바뀌었다. 질문은 ‘왜’에서 ‘어떻게’로 옮겨 갔다. {player}은(는) 그 질문에 답하지 않았다. ‘등판일에 보시면 됩니다.’ 그것이 전부였다."}
+      ],
+      "effects": {"proposed_choices": ["extra_work", "study_video", "hold_position"], "proposed_events": ["SP.USER.DECLARATION"]},
+      "signature": {"opening": "scene", "closing": "quiet", "metaphor": null}
+    },
+    {
+      "id": "ko.quote.reporter.beat.001",
+      "responds_to": ["give_public_quote"],
+      "target": ["reporter"],
+      "visibility": ["national", "international", "local"],
+      "persona": "beat_reporter",
+      "domain": "SP.MEDIA",
+      "thread_type": "public_reputation",
+      "emotion_range": [-1.0, 1.0],
+      "variants": [
+        {"weight": 3, "text": "경기 뒤 {player}의 발언은 한 문장으로 요약됐다. ‘{user_text}’ 기자단은 이 문장을 두고 지지와 경계, 압박이라는 세 갈래로 해석했다. 같은 말이 세 개의 제목이 되는 날이었다."},
+        {"weight": 2, "text": "{player}은(는) 질문을 끝까지 듣고 답했다. ‘{user_text}’ 짧았지만 방향은 분명했다. 다음 인터뷰에서 되물을 질문이 그 자리에서 이미 만들어졌다."},
+        {"weight": 1, "text": "‘{user_text}’ 이 한마디를 두고 기자실에서는 즉석 토론이 벌어졌다. 결론은 없었다. 결론은 다음 경기가 낸다."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "follow_up_private", "wait_one_day"], "proposed_events": ["SP.MEDIA.QUOTE"]},
+      "signature": {"opening": "fact", "closing": "fact", "metaphor": null}
+    },
+    {
+      "id": "ko.quote.reporter.beat.002",
+      "responds_to": ["give_public_quote"],
+      "target": ["reporter"],
+      "visibility": ["national", "international", "local"],
+      "persona": "beat_reporter",
+      "domain": "SP.MEDIA",
+      "thread_type": "public_reputation",
+      "emotion_range": [-1.0, 1.0],
+      "tones": ["fiery", "cold"],
+      "variants": [
+        {"weight": 3, "text": "평소보다 강한 어조였다. {player}은(는) 돌려 말하지 않았다. 몇몇 기자는 그 직설을 반겼고, 몇몇은 구단의 표정을 살폈다. 구단 홍보팀은 아무 말도 하지 않았다. 그것이 답이었다."},
+        {"weight": 2, "text": "‘강하게 말하겠다’는 예고는 없었지만 말은 강했다. 기자들은 문장을 그대로 옮길지 순화할지 고민했고, 대부분 그대로 옮겼다. 선수가 책임지겠다고 한 말이었기 때문이다."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "follow_up_private", "wait_one_day"], "proposed_events": ["SP.MEDIA.QUOTE"]},
+      "signature": {"opening": "fact", "closing": "fact", "metaphor": null}
+    },
+    {
+      "id": "ko.quote.reporter.beat.calm",
+      "responds_to": ["give_public_quote"],
+      "target": ["reporter"],
+      "visibility": ["national", "international", "local"],
+      "persona": "beat_reporter",
+      "domain": "SP.MEDIA",
+      "thread_type": "public_reputation",
+      "emotion_range": [-1.0, 1.0],
+      "tones": ["calm", "warm", "honest"],
+      "variants": [
+        {"weight": 3, "text": "차분한 인터뷰였다. {player}은(는) 감정을 드러내지 않았고, 대신 팀 이야기를 오래 했다. 기자단은 헤드라인이 될 문장을 찾느라 애를 먹었다. 좋은 인터뷰가 늘 좋은 제목을 주는 것은 아니다."},
+        {"weight": 2, "text": "질문이 날카로울수록 답은 부드러웠다. 기자들은 그 온도차를 기사에 담았다. ‘{user_text}’ 이 문장은 여러 매체에서 각기 다른 위치에 실렸지만 뜻은 같았다."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "follow_up_private", "wait_one_day"], "proposed_events": ["SP.MEDIA.QUOTE"]},
+      "signature": {"opening": "fact", "closing": "fact", "metaphor": "temperature"}
+    },
+    {
+      "id": "ko.quote.reporter.national.001",
+      "responds_to": ["give_public_quote"],
+      "target": ["reporter"],
+      "visibility": ["national", "international"],
+      "persona": "national_desk",
+      "domain": "SP.MEDIA",
+      "thread_type": "public_reputation",
+      "requires": ["tier_index >= 2"],
+      "emotion_range": [-1.0, 1.0],
+      "variants": [
+        {"weight": 3, "text": "발언의 파장은 지역지에서 끝나지 않았다. 전국 데스크는 이 말을 순위 경쟁과 수상 경쟁의 맥락에 놓았고, 상대 구단 반응을 따로 취재했다. 한 선수의 한마디가 하루의 편집 회의를 바꿨다."},
+        {"weight": 2, "text": "전국 단위에서 이 발언은 개인의 의견이 아니라 리그의 사건으로 다뤄졌다. 해설위원들은 저녁 방송에서 그 문장을 다시 읽었고, 각자 다른 결론을 냈다."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "wait_one_day", "follow_up_private"], "proposed_events": ["SP.MEDIA.QUOTE"]},
+      "signature": {"opening": "fact", "closing": "fact", "metaphor": null}
+    },
+    {
+      "id": "ko.quote.reporter.tv.001",
+      "responds_to": ["give_public_quote"],
+      "target": ["reporter"],
+      "visibility": ["national", "international"],
+      "persona": "tv_analyst",
+      "domain": "SP.MEDIA",
+      "thread_type": "public_reputation",
+      "emotion_range": [-1.0, 1.0],
+      "variants": [
+        {"weight": 3, "text": "중계석에서 그 발언을 들었을 때 저는 두 가지를 봤습니다. 말의 내용과, 말할 때의 표정. 내용은 강했고 표정은 담담했어요. 그 조합은 준비된 말이라는 뜻입니다."},
+        {"weight": 2, "text": "선수 인터뷰가 방송 편성을 바꾸는 경우는 드문데, 오늘이 그랬습니다. 저녁 하이라이트에 인터뷰가 먼저 나갔죠. 경기보다 말이 먼저 나간 날입니다."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "wait_one_day", "give_public_quote"], "proposed_events": ["SP.MEDIA.QUOTE"]},
+      "signature": {"opening": "fact", "closing": "fact", "metaphor": null}
+    },
+    {
+      "id": "ko.quote.reporter.rival_fan.001",
+      "responds_to": ["give_public_quote"],
+      "target": ["reporter", "rival"],
+      "visibility": ["national", "international"],
+      "persona": "rival_fan",
+      "domain": "SP.PUBLIC",
+      "thread_type": "rivalry",
+      "emotion_range": [-1.0, 1.0],
+      "variants": [
+        {"weight": 3, "text": "말은 잘하네요. 우리 팀 상대로도 그렇게 던질 수 있는지 봅시다. 다음 3연전 원정석 예매 끝났습니다."},
+        {"weight": 2, "text": "저 인터뷰 보고 우리 팬 커뮤니티가 뒤집혔어요. 인정할 건 인정합니다. 근데 인정하는 게 제일 짜증나요."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "declare_goal", "wait_one_day"], "proposed_events": []},
+      "signature": {"opening": "joke", "closing": "challenge", "metaphor": null}
+    },
+    {
+      "id": "ko.quote.reporter.supporter.001",
+      "responds_to": ["give_public_quote"],
+      "target": ["reporter", "fans"],
+      "visibility": ["national", "international", "local"],
+      "persona": "home_supporter",
+      "domain": "SP.PUBLIC",
+      "thread_type": "public_reputation",
+      "emotion_range": [-1.0, 1.0],
+      "variants": [
+        {"weight": 3, "text": "그 인터뷰 세 번 돌려 봤어요. 우리가 하고 싶던 말을 선수가 대신 해 줬네요. 이제 다음 홈경기는 목이 쉴 준비 하고 갑니다."},
+        {"weight": 2, "text": "말을 저렇게 하면 부담이 될 텐데, 그래도 좋습니다. 부담을 나눠 지는 게 팬이 할 일이죠. 이번 주말 응원석 채웁니다."}
+      ],
+      "effects": {"proposed_choices": ["fan_message_later", "hold_position", "wait_one_day"], "proposed_events": ["SP.PUBLIC.CHANT"]},
+      "signature": {"opening": "acknowledge", "closing": "promise", "metaphor": null}
+    },
+    {
+      "id": "ko.quote.reporter.pr.001",
+      "responds_to": ["give_public_quote"],
+      "target": ["reporter"],
+      "visibility": ["national", "international", "local"],
+      "persona": "club_pr",
+      "domain": "SP.MEDIA",
+      "thread_type": "public_reputation",
+      "emotion_range": [-1.0, 1.0],
+      "variants": [
+        {"weight": 3, "text": "발언 내용은 선수 개인의 의견이며 구단은 별도 입장이 없습니다. 다만 다음 인터뷰 일정은 저희가 조정하겠습니다. 오늘 하신 말씀은 충분히 전달됐습니다."},
+        {"weight": 2, "text": "저희와 사전에 조율된 발언은 아니었습니다. 그래도 문제 삼을 내용은 없다고 봅니다. 내일 아침 기사 반응은 저희가 정리해서 드리겠습니다."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "wait_one_day", "ask_club_pr"], "proposed_events": ["SP.MEDIA.QUOTE"]},
+      "signature": {"opening": "fact", "closing": "promise", "metaphor": null}
+    },
+    {
+      "id": "ko.quote.manager.manager.001",
+      "responds_to": ["give_public_quote"],
+      "target": ["reporter", "manager"],
+      "visibility": ["clubhouse", "national"],
+      "persona": "manager",
+      "domain": "SP.RELATION",
+      "thread_type": "manager_trust",
+      "emotion_range": [-1.0, 1.0],
+      "variants": [
+        {"weight": 3, "text": "인터뷰 봤다. 팀을 감싼 건 고맙다. 다만 다음부터 그 정도 발언은 나한테 먼저 말해라. 내가 대신 맞을 수 있는 화살은 내가 맞는다."},
+        {"weight": 2, "text": "네 말이 틀린 건 없었다. 다만 내일 기사 제목은 네가 통제할 수 없다. 그건 내가 감당하마. 너는 다음 경기만 준비해라."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "request_private_meeting", "wait_one_day"], "proposed_events": ["SP.RELATION.TRUST_GAIN"]},
+      "signature": {"opening": "acknowledge", "closing": "instruction", "metaphor": null}
+    },
+    {
+      "id": "ko.quote.teammate.veteran.001",
+      "responds_to": ["give_public_quote"],
+      "target": ["reporter", "teammate"],
+      "visibility": ["clubhouse", "national"],
+      "persona": "veteran_teammate",
+      "domain": "SP.RELATION",
+      "thread_type": "teammate_mentorship",
+      "emotion_range": [-1.0, 1.0],
+      "variants": [
+        {"weight": 3, "text": "기자들 앞에서 그 말 한 거 봤다. 잘했어. 근데 이제 그 말대로 해야 돼. 우리가 옆에서 같이 하겠지만, 말은 네가 했으니까 앞은 네가 서."},
+        {"weight": 2, "text": "인터뷰가 라커룸까지 들렸다. 애들이 조용히 듣고 있더라. 그런 말은 한 번이면 충분해. 두 번 하면 연설이 된다."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "team_dinner", "extra_work"], "proposed_events": ["SP.RELATION.TRUST_GAIN"]},
+      "signature": {"opening": "acknowledge", "closing": "warning", "metaphor": null}
+    },
+    {
+      "id": "ko.quote.self.inner.001",
+      "responds_to": ["give_public_quote"],
+      "target": ["*"],
+      "visibility": ["private"],
+      "persona": "inner_voice",
+      "domain": "SP.MEDIA",
+      "thread_type": "public_reputation",
+      "emotion_range": [-1.0, 1.0],
+      "variants": [
+        {"weight": 3, "text": "공개 발언은 세 사람이 듣는다. 기자, 팀, 그리고 내일의 나. 셋 다 견딜 수 있는 문장인지 한 번만 더 읽어 보자. 견딜 수 있으면 그대로 말한다."},
+        {"weight": 2, "text": "강하게 말하고 싶은 날일수록 문장은 짧아야 한다. 긴 문장은 잘려서 인용되고, 짧은 문장은 통째로 인용된다. 하고 싶은 말을 한 문장으로 줄여 보자."},
+        {"weight": 1, "text": "감정을 담아 말할지 결과만 말할지 정하자. 둘 다 담으면 둘 다 흐려진다."}
+      ],
+      "effects": {"proposed_choices": ["give_public_quote", "hold_position", "wait_one_day"], "proposed_events": ["SP.MEDIA.QUOTE"]},
+      "signature": {"opening": "fact", "closing": "instruction", "metaphor": null}
+    },
+    {
+      "id": "ko.quote.narrator.public",
+      "responds_to": ["give_public_quote"],
+      "target": ["*"],
+      "visibility": ["national", "international", "local"],
+      "persona": "narrator",
+      "domain": "SP.MEDIA",
+      "thread_type": "public_reputation",
+      "emotion_range": [-1.0, 1.0],
+      "variants": [
+        {"weight": 3, "text": "믹스트존은 평소보다 붐볐다. {player}은(는) 마이크가 모이길 기다렸다가 말했다. ‘{user_text}’ 녹음기 몇 개가 동시에 꺼졌다 켜졌다. 필요한 문장은 그것 하나였다."},
+        {"weight": 2, "text": "{player}은(는) 준비된 답변을 읽지 않았다. 질문을 듣고, 잠시 생각하고, 말했다. ‘{user_text}’ 기자들은 그 잠시의 침묵까지 기사에 넣었다."},
+        {"weight": 1, "text": "인터뷰는 이 분을 넘기지 않았다. {player}의 마지막 문장은 ‘{user_text}’였다. 질문이 더 나왔지만 이미 자리를 떠난 뒤였다."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "follow_up_private", "wait_one_day"], "proposed_events": ["SP.MEDIA.QUOTE"]},
+      "signature": {"opening": "scene", "closing": "quiet", "metaphor": null}
+    },
+    {
+      "id": "ko.quote.narrator.public.no_text",
+      "responds_to": ["give_public_quote"],
+      "target": ["*"],
+      "visibility": ["national", "international", "local"],
+      "persona": "narrator",
+      "domain": "SP.MEDIA",
+      "thread_type": "public_reputation",
+      "requires": ["slots.user_text missing"],
+      "emotion_range": [-1.0, 1.0],
+      "variants": [
+        {"weight": 3, "text": "{player}은(는) 경기 뒤 인터뷰에 응했다. 팀 이야기가 먼저였고 본인 이야기는 짧았다. 기자들은 원하는 문장을 얻지 못했지만, 얻지 못한 것 자체가 기사가 됐다."},
+        {"weight": 2, "text": "짧은 인터뷰였다. {player}은(는) 세 개의 질문에 답했고 네 번째 질문에는 웃기만 했다. 그 웃음의 의미를 두고 다음 날 아침까지 해석이 이어졌다."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "follow_up_private", "wait_one_day"], "proposed_events": ["SP.MEDIA.QUOTE"]},
+      "signature": {"opening": "scene", "closing": "fact", "metaphor": null}
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "game": "Professional Baseball Spirits 2026 (Korean UI)",
+  "language": "ko",
+  "notes": "Anchors are OCR tokens of the Korean game UI. Field extraction logic lives in attachments.py; this file versions the anchors and labels so a layout change becomes a new profile version instead of a silent behaviour change.",
+  "profiles": [
+    {
+      "profile_id": "prospi-game-result-ko-v1",
+      "screen_type": "game_result",
+      "label": "경기 결과",
+      "required_any": ["경기 결과"],
+      "supporting": ["승리 투수", "패전 투수", "관중", "VISITOR", "HOME", "홈런", "세이브", "회전"],
+      "fields": ["game.date", "game.attendance", "game.stadium", "game.home_team", "game.visitor_team", "game.series_game", "game.head_to_head", "game.linescore.visitor", "game.linescore.home", "game.runs", "game.hits", "game.errors", "game.result", "game.winning_pitcher", "game.losing_pitcher", "game.save_pitcher", "game.home_runs", "game.protagonist_home_runs"]
+    },
+    {
+      "profile_id": "prospi-batting-log-ko-v1",
+      "screen_type": "batting_log",
+      "label": "타격 기록",
+      "required_any": ["타격 기록(홈)", "타격 기록(원정)", "타격 기록"],
+      "supporting": ["출전 수비", "평가", "안타", "플라이", "땅볼", "HR"],
+      "fields": ["game.linescore.visitor", "game.linescore.home", "game.runs", "game.hits", "game.errors", "batting.plate_appearances", "batting.hits", "batting.home_runs", "batting.at_bats"]
+    },
+    {
+      "profile_id": "prospi-batting-stats-ko-v1",
+      "screen_type": "batting_stats",
+      "label": "야수 성적",
+      "required_any": ["야수 성적(홈)", "야수 성적(원정)", "야수 성적"],
+      "supporting": ["BATTING", "AB", "안타", "홈런", "타점", "득점", "삼진", "타율"],
+      "fields": ["batting.line", "batting.average"]
+    }
+  ],
+  "plate_appearance_tokens": {
+    "positions": ["P", "C", "1B", "2B", "3B", "SS", "LF", "CF", "RF"],
+    "hits": ["안타", "2루타", "3루타", "HR", "내야안타"],
+    "outs": ["플라이", "땅볼", "병살타", "직선타", "삼진", "희생플라이", "희생번트"],
+    "no_at_bat": ["볼넷", "사구", "희생플라이", "희생번트"]
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "pack_id": "baseball-ja",
+  "version": "1.0.0",
+  "locale": "ja",
+  "license_class": "authored",
+  "attribution": "StarModeFeed original authored Japanese reaction templates with Korean translations (2026-09-02). Fictional voices; no real publication, account, or person.",
+  "templates": [
+    {"id": "ja.fan.pitch.001", "kind": "reaction", "responds_to": ["SP.GAME.PITCH", "SP.GAME.POST"], "persona": "ja_local_fan", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "あの九回の三振で、球場の空気が完全に変わった。", "translation_ko": "9회의 그 삼진 하나로 구장 분위기가 완전히 바뀌었다."},
+      {"weight": 2, "text": "今日は帰りの電車でも、誰もスマホを見ていなかった。みんな試合の話をしていた。", "translation_ko": "오늘은 돌아가는 전철에서도 아무도 휴대전화를 보지 않았다. 모두 경기 이야기를 하고 있었다."}
+    ]},
+    {"id": "ja.fan.pitch.002", "kind": "reaction", "responds_to": ["SP.GAME.PITCH", "SP.GAME.POST"], "persona": "ja_local_fan", "stance": "support", "role": "reply", "variants": [
+      {"weight": 3, "text": "上の人の言う通り。外野席から見ていたけど、七回あたりから声を出すのも忘れていた。", "translation_ko": "윗분 말대로다. 외야석에서 봤는데 7회쯤부터는 소리 지르는 것도 잊고 있었다."},
+      {"weight": 2, "text": "私もその場面で立ち上がった。隣の知らない人と握手した。", "translation_ko": "나도 그 장면에서 일어섰다. 옆의 모르는 사람과 악수했다."}
+    ]},
+    {"id": "ja.fan.bat.001", "kind": "reaction", "responds_to": ["SP.GAME.BAT", "SP.GAME.POST"], "persona": "ja_local_fan", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "打った瞬間、みんなが同じ方向を見た。打球より先に、あの人の顔を見た。", "translation_ko": "친 순간 모두가 같은 방향을 봤다. 타구보다 먼저 그 사람의 얼굴을 봤다."},
+      {"weight": 2, "text": "今日のあの一打、明日も語られると思う。", "translation_ko": "오늘의 그 한 방, 내일도 이야기될 것 같다."}
+    ]},
+    {"id": "ja.fan.quiet.001", "kind": "reaction", "responds_to": ["*"], "persona": "ja_local_fan", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "盛り上がるのはわかるけど、シーズンは長い。次のカードを見てから騒ごう。", "translation_ko": "흥분하는 건 이해하지만 시즌은 길다. 다음 시리즈를 보고 나서 떠들자."},
+      {"weight": 2, "text": "一試合で全部を決めつけるのは早い。それでも今日は良かった。", "translation_ko": "한 경기로 전부를 단정하기는 이르다. 그래도 오늘은 좋았다."}
+    ]},
+    {"id": "ja.fan.ask.001", "kind": "reaction", "responds_to": ["*"], "persona": "ja_local_fan", "stance": "ask", "role": "reply", "variants": [
+      {"weight": 3, "text": "上で言っている場面って何回のこと？録画を見返したい。", "translation_ko": "위에서 말하는 장면이 몇 회예요? 녹화 다시 보고 싶어요."},
+      {"weight": 2, "text": "次の登板はいつ？チケット取りに行く。", "translation_ko": "다음 등판이 언제죠? 표 사러 갈게요."}
+    ]},
+    {"id": "ja.fan.joke.001", "kind": "reaction", "responds_to": ["*"], "persona": "ja_local_fan", "stance": "joke", "role": "reply", "variants": [
+      {"weight": 3, "text": "上の人、三十年ファンって言うけど私は三十一年。だから私の方が正しい。今日は本物だった。", "translation_ko": "윗분, 30년 팬이라는데 저는 31년입니다. 그러니 제 말이 맞아요. 오늘은 진짜였습니다."},
+      {"weight": 2, "text": "うちの犬もあの場面で吠えた。犬にもわかる。", "translation_ko": "우리 집 개도 그 장면에서 짖었다. 개도 안다."}
+    ]},
+    {"id": "ja.fan.roster.001", "kind": "reaction", "responds_to": ["SP.ROSTER"], "persona": "ja_local_fan", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "一軍登録の知らせを見て、今日は早めに球場へ向かった。名前がスタメン表にあるだけで嬉しい。", "translation_ko": "1군 등록 소식을 보고 오늘은 일찍 구장으로 향했다. 선발 명단에 이름이 있는 것만으로 기쁘다."},
+      {"weight": 2, "text": "二軍で見ていた頃から応援していた。やっとこの日が来た。", "translation_ko": "2군에서 볼 때부터 응원했다. 드디어 이날이 왔다."}
+    ]},
+    {"id": "ja.fan.roster.002", "kind": "reaction", "responds_to": ["SP.ROSTER"], "persona": "ja_local_fan", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "登録は嬉しいけど、大事なのはここから。まずは一試合、しっかり見せてほしい。", "translation_ko": "등록은 기쁘지만 중요한 건 지금부터다. 우선 한 경기, 제대로 보여 줬으면 한다."},
+      {"weight": 2, "text": "抹消された選手のことも忘れないでほしい。野球はそういうものだ。", "translation_ko": "말소된 선수도 잊지 말았으면 한다. 야구란 그런 것이다."}
+    ]},
+    {"id": "ja.fan.media.001", "kind": "reaction", "responds_to": ["SP.MEDIA", "SP.USER"], "persona": "ja_local_fan", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "あのコメント、三回読み返した。言葉を選んでいるのが伝わってくる。", "translation_ko": "그 코멘트를 세 번 다시 읽었다. 말을 고르고 있다는 게 전해진다."},
+      {"weight": 2, "text": "インタビューで自分の話より仲間の話をする選手は信用できる。", "translation_ko": "인터뷰에서 자기 이야기보다 동료 이야기를 하는 선수는 믿을 수 있다."}
+    ]},
+    {"id": "ja.fan.media.002", "kind": "reaction", "responds_to": ["SP.MEDIA", "SP.USER"], "persona": "ja_local_fan", "stance": "oppose", "role": "reply", "variants": [
+      {"weight": 3, "text": "言葉は立派だけど、次の登板で結果を出してからだと思う。私はそういう性格。", "translation_ko": "말은 훌륭한데, 다음 등판에서 결과를 내고 나서라고 본다. 나는 그런 성격이다."},
+      {"weight": 2, "text": "宣言は好きじゃない。黙って投げる方がかっこいい。でも今回は許す。", "translation_ko": "선언은 좋아하지 않는다. 말없이 던지는 쪽이 멋있다. 그래도 이번엔 봐준다."}
+    ]},
+    {"id": "ja.fan.milestone.001", "kind": "reaction", "responds_to": ["SP.MILESTONE"], "persona": "ja_local_fan", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "電光掲示板が先に気づいて、球場が後から気づいた。そういう記録だった。", "translation_ko": "전광판이 먼저 알아채고 구장이 나중에 알아챘다. 그런 기록이었다."},
+      {"weight": 2, "text": "記録の瞬間に立ち会えた。孫に話せる。", "translation_ko": "기록의 순간에 함께 있었다. 손주에게 이야기할 수 있다."}
+    ]},
+    {"id": "ja.fan.relation.001", "kind": "reaction", "responds_to": ["SP.RELATION"], "persona": "ja_local_fan", "stance": "redirect", "role": "opener", "requires": ["visibility in clubhouse,club,local,national,international"], "variants": [
+      {"weight": 3, "text": "チームの中のことは中で決めればいい。外から見えるのは、次の日のキャッチボールの相手が変わったことだけ。", "translation_ko": "팀 안의 일은 안에서 정하면 된다. 밖에서 보이는 건 다음 날 캐치볼 상대가 바뀌었다는 것뿐이다."},
+      {"weight": 2, "text": "こういう話は詮索しない。試合で答えが出る。", "translation_ko": "이런 이야기는 캐묻지 않는다. 경기에서 답이 나온다."}
+    ]},
+    {"id": "ja.beat.pitch.001", "kind": "reaction", "responds_to": ["SP.GAME.PITCH", "SP.GAME.POST"], "persona": "ja_beat_reporter", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "試合後のクラブハウスは、勝った夜にしては静かだった。その静けさが今日の重さを語っていた。", "translation_ko": "경기 뒤 클럽하우스는 이긴 밤치고는 조용했다. 그 고요함이 오늘의 무게를 말해 주고 있었다."},
+      {"weight": 2, "text": "相手ベンチが七回から言葉を失った。取材ノートにはそれだけ書いた。", "translation_ko": "상대 벤치가 7회부터 말을 잃었다. 취재 노트에는 그것만 적었다."}
+    ]},
+    {"id": "ja.beat.pitch.002", "kind": "reaction", "responds_to": ["SP.GAME.PITCH", "SP.GAME.POST"], "persona": "ja_beat_reporter", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "上の書き込みの現場描写は正確。付け加えるなら、相手コーチ陣が通路に長く立っていた。何かを計算し直す顔だった。", "translation_ko": "위 글의 현장 묘사는 정확하다. 덧붙이자면 상대 코치진이 통로에 오래 서 있었다. 무언가를 다시 계산하는 얼굴이었다."},
+      {"weight": 2, "text": "球数を考えると、次の登板前に一日多く休ませるのが筋だろう。首脳陣の判断を待つ。", "translation_ko": "투구 수를 생각하면 다음 등판 전에 하루 더 쉬게 하는 게 순리일 것이다. 코칭스태프의 판단을 기다린다."}
+    ]},
+    {"id": "ja.beat.bat.001", "kind": "reaction", "responds_to": ["SP.GAME.BAT", "SP.GAME.POST"], "persona": "ja_beat_reporter", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "打席に入る前のルーティンがいつもより短かった。迷いがなかった、と本人は言わなかったが、そう見えた。", "translation_ko": "타석에 들어서기 전 루틴이 평소보다 짧았다. 망설임이 없었다고 본인은 말하지 않았지만 그렇게 보였다."},
+      {"weight": 2, "text": "ベンチの誰よりも先に、相手捕手がその打球を目で追うのをやめた。", "translation_ko": "벤치의 누구보다 먼저 상대 포수가 그 타구를 눈으로 좇는 것을 그만뒀다."}
+    ]},
+    {"id": "ja.beat.roster.001", "kind": "reaction", "responds_to": ["SP.ROSTER"], "persona": "ja_beat_reporter", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "登録の知らせは午後遅くに届いた。二軍の宿舎で荷物をまとめる時間は、通知よりさらに短かった。", "translation_ko": "등록 소식은 오후 늦게 전해졌다. 2군 숙소에서 짐을 싸는 시간은 통보보다 더 짧았다."},
+      {"weight": 2, "text": "球団は「調整」という言葉を使った。首脳陣は言葉を控えた。ロッカールームは驚きより納得に近かった。", "translation_ko": "구단은 ‘조정’이라는 말을 썼다. 코칭스태프는 말을 아꼈다. 라커룸은 놀라움보다 수긍에 가까웠다."}
+    ]},
+    {"id": "ja.beat.media.001", "kind": "reaction", "responds_to": ["SP.MEDIA", "SP.USER"], "persona": "ja_beat_reporter", "stance": "qualify", "role": "opener", "variants": [
+      {"weight": 3, "text": "短いコメントだった。だが記者団はそれを三通りに読んだ。支持、警戒、圧力。同じ言葉が三つの見出しになる日だった。", "translation_ko": "짧은 코멘트였다. 그러나 기자단은 그것을 세 가지로 읽었다. 지지, 경계, 압박. 같은 말이 세 개의 헤드라인이 되는 날이었다."},
+      {"weight": 2, "text": "準備した原稿はなかった。質問を聞き、少し考え、答えた。その沈黙まで記事に入れた。", "translation_ko": "준비한 원고는 없었다. 질문을 듣고, 잠시 생각하고, 답했다. 그 침묵까지 기사에 넣었다."}
+    ]},
+    {"id": "ja.beat.media.002", "kind": "reaction", "responds_to": ["SP.MEDIA", "SP.USER"], "persona": "ja_beat_reporter", "stance": "correct", "role": "reply", "variants": [
+      {"weight": 3, "text": "上の引用は正確ではない。本人はそこまで強い言い方はしていない。原文はもっと抑制されていた。", "translation_ko": "위의 인용은 정확하지 않다. 본인은 그렇게 강하게 말하지 않았다. 원문은 훨씬 절제돼 있었다."},
+      {"weight": 2, "text": "事実関係をひとつ。その発言は試合前ではなく試合後のものだ。順序が変わると意味も変わる。", "translation_ko": "사실관계 하나. 그 발언은 경기 전이 아니라 경기 뒤의 것이다. 순서가 바뀌면 의미도 바뀐다."}
+    ]},
+    {"id": "ja.beat.milestone.001", "kind": "reaction", "responds_to": ["SP.MILESTONE"], "persona": "ja_beat_reporter", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "記録達成の瞬間、ベンチ前に選手が並んだ。拍手は長くなかった。試合は続いた。それがこの記録への一番正確な礼儀だった。", "translation_ko": "기록 달성 순간 벤치 앞에 선수들이 늘어섰다. 박수는 길지 않았다. 경기는 계속됐다. 그것이 이 기록에 대한 가장 정확한 예의였다."},
+      {"weight": 2, "text": "本人はボールを手元に残した。誰に渡すかは決めていないと言った。決めていないという言葉は、もう決めているという意味でもある。", "translation_ko": "본인은 공을 챙겼다. 누구에게 줄지는 정하지 않았다고 했다. 정하지 않았다는 말은 이미 정했다는 뜻이기도 하다."}
+    ]},
+    {"id": "ja.beat.relation.001", "kind": "reaction", "responds_to": ["SP.RELATION"], "persona": "ja_beat_reporter", "stance": "redirect", "role": "opener", "requires": ["visibility in clubhouse,club,local,national,international"], "variants": [
+      {"weight": 3, "text": "クラブハウスの話はクラブハウスの中で片づいた。外から見えるのは、翌日のウォームアップの組み合わせが変わったことだけだ。", "translation_ko": "클럽하우스 이야기는 클럽하우스 안에서 정리됐다. 밖에서 보이는 것은 다음 날 워밍업 조합이 바뀌었다는 것뿐이다."},
+      {"weight": 2, "text": "詳細は知らないし、知ろうともしなかった。練習場の空気が変わったことだけを書き留める。", "translation_ko": "세부 내용은 모르고 알려고 하지도 않았다. 훈련장의 공기가 달라졌다는 것만 적어 둔다."}
+    ]},
+    {"id": "ja.beat.private.001", "kind": "reaction", "responds_to": ["*"], "persona": "ja_beat_reporter", "stance": "redirect", "role": "opener", "requires": ["visibility in private"], "variants": [
+      {"weight": 3, "text": "選手の私的な時間は取材の対象ではない。ただ、ここまでの成績が話題である以上、休みの日にも視線は続く。その視線の根拠は公開された記録だけだ。", "translation_ko": "선수의 사적인 시간은 취재 대상이 아니다. 다만 지금까지의 성적이 화제인 이상 쉬는 날에도 시선은 이어진다. 그 시선의 근거는 공개된 기록뿐이다."},
+      {"weight": 2, "text": "今日は試合がなかった。それでも話題が絶えないのは、昨日までの記録のせいだ。今日何をしていたかは誰も知らないし、知る必要もない。", "translation_ko": "오늘은 경기가 없었다. 그래도 화제가 끊이지 않는 것은 어제까지의 기록 때문이다. 오늘 무엇을 했는지는 아무도 모르고 알 필요도 없다."}
+    ]},
+    {"id": "ja.analyst.pitch.001", "kind": "reaction", "responds_to": ["SP.GAME.PITCH", "SP.GAME.POST"], "persona": "ja_analyst", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "球威より印象に残ったのは、カウントが苦しくなったときの選択だった。あれは教えてできるものではない。", "translation_ko": "구위보다 인상에 남은 것은 카운트가 몰렸을 때의 선택이었다. 그것은 가르쳐서 되는 게 아니다."},
+      {"weight": 2, "text": "解説席から見ると、こういう日は捕手のサインがほとんど変わらない。今日がそうだった。", "translation_ko": "해설석에서 보면 이런 날은 포수 사인이 거의 바뀌지 않는다. 오늘이 그랬다."}
+    ]},
+    {"id": "ja.analyst.pitch.002", "kind": "reaction", "responds_to": ["SP.GAME.PITCH", "SP.GAME.POST"], "persona": "ja_analyst", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "上の意見に同意しつつ、ひとつだけ。こういう日の次の登板が一番難しい。体ではなく頭が。それを越えれば本物だ。", "translation_ko": "위 의견에 동의하면서도 하나만. 이런 날 다음 등판이 가장 어렵다. 몸이 아니라 머리가. 그것을 넘기면 진짜다."},
+      {"weight": 2, "text": "記録の話は皆がしたので、私は負荷の話を。今日の球数を見れば、次の登板まで一日多く空けるのが妥当だ。", "translation_ko": "기록 이야기는 다들 했으니 나는 부하 이야기를. 오늘 투구 수를 보면 다음 등판까지 하루 더 비우는 것이 타당하다."}
+    ]},
+    {"id": "ja.analyst.bat.001", "kind": "reaction", "responds_to": ["SP.GAME.BAT", "SP.GAME.POST"], "persona": "ja_analyst", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "あの打席で見るべきは結果ではなく、二球目を見送った判断だ。あそこで手を出していたら、今日の話はなかった。", "translation_ko": "그 타석에서 봐야 할 것은 결과가 아니라 2구째를 지켜본 판단이다. 거기서 손을 댔다면 오늘 이야기는 없었다."},
+      {"weight": 2, "text": "スイングの軌道より、構えに入るまでの時間が短くなっている。状態がいいときの特徴だ。", "translation_ko": "스윙 궤도보다 자세를 잡기까지의 시간이 짧아졌다. 상태가 좋을 때의 특징이다."}
+    ]},
+    {"id": "ja.analyst.milestone.001", "kind": "reaction", "responds_to": ["SP.MILESTONE"], "persona": "ja_analyst", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "数字は数字として残る。ただ、比較の相手を選ぶときは時代の違いを忘れないでほしい。同じ物差しでは測れないものがある。", "translation_ko": "숫자는 숫자로 남는다. 다만 비교 상대를 고를 때는 시대의 차이를 잊지 않았으면 한다. 같은 잣대로 잴 수 없는 것이 있다."},
+      {"weight": 2, "text": "達成そのものより、達成までの過程で何を変えたかに興味がある。次の登板でそれが見えるはずだ。", "translation_ko": "달성 자체보다 달성까지의 과정에서 무엇을 바꿨는지에 관심이 있다. 다음 등판에서 그것이 보일 것이다."}
+    ]},
+    {"id": "ja.analyst.media.001", "kind": "reaction", "responds_to": ["SP.MEDIA", "SP.USER"], "persona": "ja_analyst", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "現役時代に一度だけ宣言をしたことがある。結果は失敗で、その失敗が私を育てた。宣言は相手に情報を与えることではなく、自分の退路を断つことだ。", "translation_ko": "현역 시절에 딱 한 번 선언을 한 적이 있다. 결과는 실패였고, 그 실패가 나를 키웠다. 선언은 상대에게 정보를 주는 게 아니라 자신의 퇴로를 끊는 일이다."},
+      {"weight": 2, "text": "言葉の内容より、言ったときの表情を見ていた。内容は強く、表情は淡々としていた。準備された言葉だという意味だ。", "translation_ko": "말의 내용보다 말할 때의 표정을 보고 있었다. 내용은 강했고 표정은 담담했다. 준비된 말이라는 뜻이다."}
+    ]},
+    {"id": "ja.analyst.roster.001", "kind": "reaction", "responds_to": ["SP.ROSTER"], "persona": "ja_analyst", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "昇格の理由は成績だけではない。首脳陣は起用の幅を見ている。一軍で何ができるかより、何を任せられるかだ。", "translation_ko": "승격의 이유는 성적만이 아니다. 코칭스태프는 기용의 폭을 본다. 1군에서 무엇을 할 수 있는지보다 무엇을 맡길 수 있는지다."},
+      {"weight": 2, "text": "降格は評価の終わりではなく、評価の途中経過だ。戻ってくる選手は戻り方でわかる。", "translation_ko": "강등은 평가의 끝이 아니라 평가의 중간 경과다. 돌아오는 선수는 돌아오는 방식으로 안다."}
+    ]},
+    {"id": "ja.rival.pitch.001", "kind": "reaction", "responds_to": ["SP.GAME.PITCH", "SP.GAME.BAT", "SP.GAME.POST"], "persona": "ja_rival_fan", "stance": "oppose", "role": "opener", "variants": [
+      {"weight": 3, "text": "相手ファンだけど書く。認めるのは悔しいが、今日のうちの打線が特別合わなかったのもある。次は違う。", "translation_ko": "상대 팀 팬이지만 쓴다. 인정하기는 분하지만, 오늘 우리 타선이 유독 안 맞은 것도 있다. 다음엔 다르다."},
+      {"weight": 2, "text": "正直、腹が立って書いている。うちにだけこうなのか。", "translation_ko": "솔직히 화가 나서 쓴다. 우리 상대로만 이러는 거냐."}
+    ]},
+    {"id": "ja.rival.pitch.002", "kind": "reaction", "responds_to": ["*"], "persona": "ja_rival_fan", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "……わかった。認める。でも次はうちが勝つ。", "translation_ko": "……알겠다. 인정한다. 그래도 다음엔 우리가 이긴다."},
+      {"weight": 2, "text": "上の訂正を読んで少し冷めた。とにかくよくやった。この言葉、言いたくなかった。", "translation_ko": "위의 정정을 읽고 조금 식었다. 어쨌든 잘했다. 이 말, 하고 싶지 않았다."}
+    ]},
+    {"id": "ja.rival.media.001", "kind": "reaction", "responds_to": ["SP.MEDIA", "SP.USER"], "persona": "ja_rival_fan", "stance": "oppose", "role": "reply", "variants": [
+      {"weight": 3, "text": "口は達者だな。うち相手にも同じように投げられるか見せてもらおう。次の三連戦、ビジター席は取った。", "translation_ko": "말은 잘하네. 우리 상대로도 그렇게 던질 수 있는지 보자. 다음 3연전 원정석은 잡아 놨다."},
+      {"weight": 2, "text": "あのインタビューでうちの掲示板がひっくり返った。認めるべきは認める。認めるのが一番腹立つ。", "translation_ko": "그 인터뷰로 우리 게시판이 뒤집혔다. 인정할 건 인정한다. 인정하는 게 제일 짜증난다."}
+    ]},
+    {"id": "ja.rival.milestone.001", "kind": "reaction", "responds_to": ["SP.MILESTONE"], "persona": "ja_rival_fan", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "記録は記録。相手チームでも拍手はする。そのあとで、次に打ち崩す方法を考える。", "translation_ko": "기록은 기록이다. 상대 팀이라도 박수는 친다. 그러고 나서 다음에 무너뜨릴 방법을 생각한다."},
+      {"weight": 2, "text": "うちの選手じゃないのが本当に悔しい。それだけ。", "translation_ko": "우리 팀 선수가 아닌 게 정말 분하다. 그것뿐이다."}
+    ]},
+    {"id": "ja.record.milestone.001", "kind": "reaction", "responds_to": ["SP.MILESTONE", "SP.GAME.PITCH", "SP.GAME.BAT"], "persona": "ja_record_desk", "stance": "qualify", "role": "opener", "variants": [
+      {"weight": 3, "text": "記録デスクより。今日の数値は保存された記録から直接読んだものだ。参考記録との比較はシーズン終了後に確定する。今日は日付だけを書き留める。", "translation_ko": "기록 데스크에서. 오늘의 수치는 저장된 기록에서 직접 읽은 것이다. 참고 기록과의 비교는 시즌 종료 뒤 확정한다. 오늘은 날짜만 적어 둔다."},
+      {"weight": 2, "text": "正確な日付がある記録は、そうでない記録より長く生きる。今日の日付を保存した。", "translation_ko": "정확한 날짜가 있는 기록은 그렇지 않은 기록보다 오래 산다. 오늘 날짜를 보관했다."}
+    ]},
+    {"id": "ja.record.correct.001", "kind": "reaction", "responds_to": ["*"], "persona": "ja_record_desk", "stance": "correct", "role": "reply", "variants": [
+      {"weight": 3, "text": "訂正をひとつ。上で言われている「初」は確認された事実ではない。保存された参考記録の範囲では「並んだ」または「近づいた」が正確な表現だ。", "translation_ko": "정정 하나. 위에서 말한 ‘최초’는 확인된 사실이 아니다. 보관된 참고 기록의 범위에서는 ‘동률’ 또는 ‘근접’이 정확한 표현이다."},
+      {"weight": 2, "text": "数字の整理。上の数値のひとつはシーズンではなく通算の値だ。混同しやすいので記しておく。", "translation_ko": "숫자 정리. 위 수치 중 하나는 시즌이 아니라 통산 값이다. 혼동하기 쉬워 적어 둔다."}
+    ]},
+    {"id": "ja.club.roster.001", "kind": "reaction", "responds_to": ["SP.ROSTER", "SP.ROLE"], "persona": "ja_club_staff", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "球団関係者として言えるのは、今回の決定が成績だけで下されたものではないということだけです。詳細は監督が判断します。", "translation_ko": "구단 관계자로서 말할 수 있는 것은 이번 결정이 성적만으로 내려진 것이 아니라는 것뿐입니다. 세부 사항은 감독이 판단합니다."},
+      {"weight": 2, "text": "本人には伝えるべきことを伝えました。あとは本人次第です。私たちは待ちます。", "translation_ko": "본인에게는 전해야 할 것을 전했습니다. 나머지는 본인에게 달렸습니다. 우리는 기다립니다."}
+    ]},
+    {"id": "ja.club.media.001", "kind": "reaction", "responds_to": ["SP.MEDIA", "SP.USER"], "persona": "ja_club_staff", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "発言は選手個人の考えであり、球団として別の見解はありません。次回の取材対応は調整させていただきます。", "translation_ko": "발언은 선수 개인의 생각이며 구단으로서 별도 견해는 없습니다. 다음 취재 대응은 조정하겠습니다."},
+      {"weight": 2, "text": "事前に相談のあった発言ではありません。問題視する内容もないと考えています。", "translation_ko": "사전에 상의가 있었던 발언은 아닙니다. 문제 삼을 내용도 없다고 봅니다."}
+    ]},
+    {"id": "ja.club.milestone.001", "kind": "reaction", "responds_to": ["SP.MILESTONE"], "persona": "ja_club_staff", "stance": "support", "role": "reply", "variants": [
+      {"weight": 3, "text": "記念のボールはすでに保管しました。セレモニーの有無は本人の意向を確認してから決めます。", "translation_ko": "기념 공은 이미 보관했습니다. 세리머니 여부는 본인 의향을 확인한 뒤 정하겠습니다."},
+      {"weight": 2, "text": "球団史の一行に、今日の日付が入ります。それ以上のことは、シーズンが終わってから。", "translation_ko": "구단사의 한 줄에 오늘 날짜가 들어갑니다. 그 이상의 일은 시즌이 끝난 뒤에."}
+    ]},
+    {"id": "ja.veteran.pitch.001", "kind": "reaction", "responds_to": ["SP.GAME.PITCH", "SP.GAME.POST", "SP.MILESTONE"], "persona": "ja_veteran", "stance": "support", "role": "reply", "variants": [
+      {"weight": 3, "text": "自分が投げていた頃なら、あの場面で逃げていた。逃げなかったことが、今日の全部だと思う。", "translation_ko": "내가 던지던 시절이라면 그 장면에서 도망쳤을 것이다. 도망치지 않았다는 것이 오늘의 전부라고 생각한다."},
+      {"weight": 2, "text": "こういう日は本人より周りが浮かれる。本人は明日の準備をしているはずだ。私もそうだった。", "translation_ko": "이런 날은 본인보다 주변이 들뜬다. 본인은 내일 준비를 하고 있을 것이다. 나도 그랬다."}
+    ]},
+    {"id": "ja.veteran.relation.001", "kind": "reaction", "responds_to": ["SP.RELATION", "SP.USER"], "persona": "ja_veteran", "stance": "support", "role": "reply", "requires": ["visibility in clubhouse,club,local,national,international"], "variants": [
+      {"weight": 3, "text": "ロッカールームで先に声をかける方が、いつも損をする。それでも声をかける選手がチームを作る。", "translation_ko": "라커룸에서 먼저 말을 거는 쪽이 늘 손해를 본다. 그래도 말을 거는 선수가 팀을 만든다."},
+      {"weight": 2, "text": "若い頃、先輩に同じことをしてもらった。何年経っても覚えている。今日のことも、誰かが何年も覚えているだろう。", "translation_ko": "젊은 시절 선배에게 같은 일을 받았다. 몇 년이 지나도 기억한다. 오늘 일도 누군가가 몇 년이고 기억할 것이다."}
+    ]},
+    {"id": "ja.veteran.media.001", "kind": "reaction", "responds_to": ["SP.MEDIA", "SP.USER"], "persona": "ja_veteran", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "私なら言わなかった。言わないことで守れるものがある。ただ、言うことで背負えるものもある。この選手は後者を選んだ。", "translation_ko": "나라면 말하지 않았을 것이다. 말하지 않음으로써 지킬 수 있는 것이 있다. 다만 말함으로써 짊어질 수 있는 것도 있다. 이 선수는 후자를 골랐다."},
+      {"weight": 2, "text": "記者の前で強く出るのは簡単だ。翌日のロッカールームで同じ顔をしていられるかが本当の試験だ。", "translation_ko": "기자들 앞에서 강하게 나가는 것은 쉽다. 다음 날 라커룸에서 같은 얼굴을 하고 있을 수 있느냐가 진짜 시험이다."}
+    ]},
+    {"id": "ja.fan.game_post.loss.001", "kind": "reaction", "responds_to": ["SP.GAME.POST"], "persona": "ja_local_fan", "stance": "support", "role": "opener", "requires": ["outcome == negative"], "variants": [
+      {"weight": 3, "text": "負けた日ほど、この選手の顔を見る。今日も最後まで下を向かなかった。それで十分。", "translation_ko": "진 날일수록 이 선수의 얼굴을 본다. 오늘도 끝까지 고개를 숙이지 않았다. 그걸로 충분하다."},
+      {"weight": 2, "text": "負け試合のあとに、野手のところへ先に行っていた。そういうところを見ている。", "translation_ko": "진 경기 뒤에 야수들에게 먼저 가 있었다. 그런 부분을 보고 있다."}
+    ]},
+    {"id": "ja.fan.game_post.loss.002", "kind": "reaction", "responds_to": ["SP.GAME.POST"], "persona": "ja_local_fan", "stance": "oppose", "role": "reply", "requires": ["outcome == negative"], "variants": [
+      {"weight": 3, "text": "顔がどうこうより結果だ。今日は打たれた。それを認めるところから始めてほしい。", "translation_ko": "얼굴이 어떻든 결과다. 오늘은 맞았다. 그것을 인정하는 데서 시작했으면 한다."},
+      {"weight": 2, "text": "擁護はいい。でも次も同じなら話は変わる。", "translation_ko": "옹호는 좋다. 하지만 다음에도 같으면 이야기가 달라진다."}
+    ]},
+    {"id": "ja.fan.hitless.001", "kind": "reaction", "responds_to": ["SP.GAME.BAT"], "persona": "ja_local_fan", "stance": "qualify", "role": "reply", "requires": ["batting_outcome == negative"], "variants": [
+      {"weight": 3, "text": "投げる方は文句なし。打つ方は今日は当たらなかった。それを一緒にして褒めるのは違うと思う。", "translation_ko": "던지는 쪽은 나무랄 데 없다. 치는 쪽은 오늘 안 맞았다. 그것을 한데 묶어 칭찬하는 건 아니라고 본다."},
+      {"weight": 2, "text": "無安打は無安打。ピッチングが良かったからといって打席まで良かったことにはならない。", "translation_ko": "무안타는 무안타다. 피칭이 좋았다고 타석까지 좋았던 것이 되지는 않는다."}
+    ]},
+    {"id": "ja.analyst.two_way.001", "kind": "reaction", "responds_to": ["SP.GAME.PITCH", "SP.GAME.BAT", "SP.GAME.POST"], "persona": "ja_analyst", "stance": "qualify", "role": "reply", "requires": ["role == two_way"], "variants": [
+      {"weight": 3, "text": "投打を同じ日に評価するなら、別々に採点してから合わせるべきだ。今日は投球が満点に近く、打撃は課題が残った。それを一つの点数にするのは乱暴だ。", "translation_ko": "투타를 같은 날 평가하려면 따로 채점한 뒤 합쳐야 한다. 오늘은 투구가 만점에 가까웠고 타격은 과제가 남았다. 그것을 하나의 점수로 만드는 것은 거칠다."},
+      {"weight": 2, "text": "二刀流の日は、良かった方だけが語られやすい。もう一方も記録に残っている。", "translation_ko": "이도류의 날은 좋았던 쪽만 이야기되기 쉽다. 다른 한쪽도 기록에 남아 있다."}
+    ]},
+    {"id": "ja.record.perfect.001", "kind": "reaction", "responds_to": ["SP.GAME.PITCH"], "persona": "ja_record_desk", "stance": "support", "role": "opener", "requires": ["dominant_event == SP.GAME.PITCH.PERFECT_GAME"], "variants": [
+      {"weight": 3, "text": "二十七人、二十七のアウト。記録デスクとして確認した事実はそれだけで十分だ。今日の日付を、他のどの日付とも違う場所に保存する。", "translation_ko": "27명, 27개의 아웃. 기록 데스크로서 확인한 사실은 그것만으로 충분하다. 오늘 날짜를 다른 어떤 날짜와도 다른 곳에 보관한다."},
+      {"weight": 2, "text": "完全試合は、記録より先に沈黙で伝わる。球場の沈黙を、私たちは数字に翻訳するだけだ。", "translation_ko": "퍼펙트게임은 기록보다 먼저 침묵으로 전해진다. 구장의 침묵을 우리는 숫자로 번역할 뿐이다."}
+    ]},
+    {"id": "ja.fan.perfect.001", "kind": "reaction", "responds_to": ["SP.GAME.PITCH"], "persona": "ja_local_fan", "stance": "support", "role": "reply", "requires": ["dominant_event == SP.GAME.PITCH.PERFECT_GAME"], "variants": [
+      {"weight": 3, "text": "九回二死から、誰も座っていなかった。最後のアウトの瞬間、隣の人と抱き合った。名前も知らない人と。", "translation_ko": "9회 2사부터 아무도 앉아 있지 않았다. 마지막 아웃 순간 옆사람과 껴안았다. 이름도 모르는 사람과."},
+      {"weight": 2, "text": "この日を球場で見た。それだけで、今年のチケット代は全部元が取れた。", "translation_ko": "이날을 구장에서 봤다. 그것만으로 올해 표값은 전부 본전을 뽑았다."}
+    ]},
+    {"id": "ja.beat.perfect.001", "kind": "reaction", "responds_to": ["SP.GAME.PITCH"], "persona": "ja_beat_reporter", "stance": "support", "role": "reply", "requires": ["dominant_event == SP.GAME.PITCH.PERFECT_GAME"], "variants": [
+      {"weight": 3, "text": "七回以降、ベンチで誰も本人に話しかけなかった。野球の古い礼儀だ。その沈黙が、記録の重さを先に伝えていた。", "translation_ko": "7회 이후 벤치에서 아무도 본인에게 말을 걸지 않았다. 야구의 오래된 예의다. 그 침묵이 기록의 무게를 먼저 전하고 있었다."},
+      {"weight": 2, "text": "打席では無安打だった。その事実も書く。だが今日の見出しは、二十七のアウト以外にありえない。", "translation_ko": "타석에서는 무안타였다. 그 사실도 쓴다. 하지만 오늘의 헤드라인은 27개의 아웃 외에는 있을 수 없다."}
+    ]},
+    {"id": "ja.rival.perfect.001", "kind": "reaction", "responds_to": ["SP.GAME.PITCH"], "persona": "ja_rival_fan", "stance": "qualify", "role": "reply", "requires": ["dominant_event == SP.GAME.PITCH.PERFECT_GAME"], "variants": [
+      {"weight": 3, "text": "やられた側だけど、最後は拍手した。悔しいけど、あれは拍手するしかない。", "translation_ko": "당한 쪽이지만 마지막에는 박수를 쳤다. 분하지만 그건 박수를 칠 수밖에 없다."},
+      {"weight": 2, "text": "うちの打線が二十七人並んで帰ってきた。忘れない。次は忘れさせる。", "translation_ko": "우리 타선 27명이 나란히 돌아왔다. 잊지 않는다. 다음엔 잊게 만든다."}
+    ]},
+    {"id": "ja.club.perfect.001", "kind": "reaction", "responds_to": ["SP.GAME.PITCH"], "persona": "ja_club_staff", "stance": "support", "role": "reply", "requires": ["dominant_event == SP.GAME.PITCH.PERFECT_GAME"], "variants": [
+      {"weight": 3, "text": "ボールとスコアボードの写真を保管しました。本人が望めば、明日にでも記念の場を設けます。望まなければ、それも尊重します。", "translation_ko": "공과 전광판 사진을 보관했습니다. 본인이 원하면 내일이라도 기념 자리를 마련합니다. 원하지 않으면 그것도 존중합니다."},
+      {"weight": 2, "text": "球団史の一行が、今日書き換わりました。それ以上の言葉は、シーズンの終わりまで取っておきます。", "translation_ko": "구단사의 한 줄이 오늘 다시 쓰였습니다. 그 이상의 말은 시즌 끝까지 아껴 두겠습니다."}
+    ]},
+    {"id": "ja.veteran.perfect.001", "kind": "reaction", "responds_to": ["SP.GAME.PITCH"], "persona": "ja_veteran", "stance": "support", "role": "reply", "requires": ["dominant_event == SP.GAME.PITCH.PERFECT_GAME"], "variants": [
+      {"weight": 3, "text": "現役時代、八回まで行ったことがある。九回の先頭に打たれた。だから今日の最後の一球の重さは、少しだけわかる。", "translation_ko": "현역 시절 8회까지 간 적이 있다. 9회 선두 타자에게 맞았다. 그래서 오늘 마지막 한 구의 무게는 조금은 안다."},
+      {"weight": 2, "text": "この日のことは、本人より周りが長く語る。本人は明日の準備をしていてほしい。", "translation_ko": "이날 일은 본인보다 주변이 오래 이야기한다. 본인은 내일 준비를 하고 있었으면 한다."}
+    ]},
+    {"id": "ja.fan.callup.reply.001", "kind": "reaction", "responds_to": ["SP.ROSTER"], "persona": "ja_local_fan", "stance": "ask", "role": "reply", "variants": [
+      {"weight": 3, "text": "初登板はいつになりそう？先発なら休みを取って行く。", "translation_ko": "첫 등판은 언제쯤 될 것 같아요? 선발이면 휴가 내고 갑니다."},
+      {"weight": 2, "text": "背番号は二軍のときのまま？グッズを買う前に知りたい。", "translation_ko": "등번호는 2군 때 그대로인가요? 굿즈 사기 전에 알고 싶어요."}
+    ]},
+    {"id": "ja.fan.contract.001", "kind": "reaction", "responds_to": ["SP.CONTRACT"], "persona": "ja_local_fan", "stance": "qualify", "role": "opener", "variants": [
+      {"weight": 3, "text": "契約の話が出ると、応援の仕方が少し難しくなる。数字は球団と本人の問題。私たちは試合を見るだけ。", "translation_ko": "계약 이야기가 나오면 응원하는 방식이 조금 어려워진다. 숫자는 구단과 본인의 문제다. 우리는 경기를 볼 뿐이다."},
+      {"weight": 2, "text": "残ってほしい。それ以外に言うことはない。", "translation_ko": "남아 줬으면 좋겠다. 그 외에 할 말은 없다."}
+    ]},
+    {"id": "ja.analyst.contract.001", "kind": "reaction", "responds_to": ["SP.CONTRACT"], "persona": "ja_analyst", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "交渉は結論を先延ばしにする技術でもある。今日結論が出なかったことは、悪い知らせではない。", "translation_ko": "협상은 결론을 미루는 기술이기도 하다. 오늘 결론이 나지 않았다는 것은 나쁜 소식이 아니다."},
+      {"weight": 2, "text": "成績が上がれば数字も上がる。それは当然だが、球団は来年以降も見ている。そこが選手との温度差になる。", "translation_ko": "성적이 오르면 숫자도 오른다. 그것은 당연하지만 구단은 내년 이후도 보고 있다. 거기서 선수와의 온도차가 생긴다."}
+    ]},
+    {"id": "ja.fan.health.001", "kind": "reaction", "responds_to": ["SP.HEALTH"], "persona": "ja_local_fan", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "休む勇気も実力だと思う。無理して秋にいないより、今休んで秋にいてほしい。", "translation_ko": "쉴 용기도 실력이라고 생각한다. 무리해서 가을에 없는 것보다 지금 쉬고 가을에 있어 줬으면 한다."},
+      {"weight": 2, "text": "詳しいことはわからない。ただ、大事にしてほしい。それだけ。", "translation_ko": "자세한 건 모른다. 다만 몸조심했으면 한다. 그것뿐이다."}
+    ]},
+    {"id": "ja.beat.health.001", "kind": "reaction", "responds_to": ["SP.HEALTH"], "persona": "ja_beat_reporter", "stance": "correct", "role": "reply", "variants": [
+      {"weight": 3, "text": "確認できているのは「調整」という球団の説明だけだ。故障という言葉は、誰も使っていない。憶測で書くべきではない。", "translation_ko": "확인된 것은 ‘조정’이라는 구단의 설명뿐이다. 부상이라는 말은 아무도 쓰지 않았다. 추측으로 써서는 안 된다."},
+      {"weight": 2, "text": "本人は練習場に姿を見せなかった。それ以上のことは、球団の発表を待つ。", "translation_ko": "본인은 훈련장에 모습을 보이지 않았다. 그 이상은 구단 발표를 기다린다."}
+    ]},
+    {"id": "ja.fan.award.001", "kind": "reaction", "responds_to": ["SP.AWARD"], "persona": "ja_local_fan", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "受賞のニュースを見て、シーズンの最初の試合を思い出した。あの日からここまで来た。", "translation_ko": "수상 소식을 보고 시즌 첫 경기를 떠올렸다. 그날부터 여기까지 왔다."},
+      {"weight": 2, "text": "賞は本人のものだけど、見ていた私たちにも少しだけ分けてほしい。", "translation_ko": "상은 본인의 것이지만, 지켜본 우리에게도 조금은 나눠 줬으면 한다."}
+    ]},
+    {"id": "ja.record.award.001", "kind": "reaction", "responds_to": ["SP.AWARD"], "persona": "ja_record_desk", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "受賞は記録表に一行加わることを意味する。ただし、その一行が何と並ぶかは、後の時代が決める。", "translation_ko": "수상은 기록표에 한 줄이 더해진다는 뜻이다. 다만 그 한 줄이 무엇과 나란히 놓일지는 이후 시대가 정한다."},
+      {"weight": 2, "text": "賞の重みは、同じ年に誰が候補だったかで決まる。今年の候補者名簿も一緒に保存する。", "translation_ko": "상의 무게는 같은 해에 누가 후보였는지로 정해진다. 올해의 후보 명단도 함께 보관한다."}
+    ]},
+    {"id": "ja.fan.standings.001", "kind": "reaction", "responds_to": ["SP.STANDINGS", "SP.CALENDAR"], "persona": "ja_local_fan", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "順位表を見る回数が増えた。去年は見なかった。今年は毎朝見ている。", "translation_ko": "순위표를 보는 횟수가 늘었다. 작년에는 보지 않았다. 올해는 매일 아침 보고 있다."},
+      {"weight": 2, "text": "残り試合を数え始めた。数え始めたら、もう戻れない。", "translation_ko": "남은 경기를 세기 시작했다. 세기 시작하면 이제 돌아갈 수 없다."}
+    ]},
+    {"id": "ja.analyst.standings.001", "kind": "reaction", "responds_to": ["SP.STANDINGS", "SP.CALENDAR"], "persona": "ja_analyst", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "順位争いは投手の登板間隔を変える。首脳陣がこの選手をどう使うかで、チームの覚悟が見える。", "translation_ko": "순위 싸움은 투수의 등판 간격을 바꾼다. 코칭스태프가 이 선수를 어떻게 쓰느냐로 팀의 각오가 보인다."},
+      {"weight": 2, "text": "残り試合数より、残りの直接対決の数を見るべきだ。そこに答えがある。", "translation_ko": "남은 경기 수보다 남은 직접 대결 수를 봐야 한다. 거기에 답이 있다."}
+    ]},
+    {"id": "ja.fan.training.001", "kind": "reaction", "responds_to": ["SP.TRAINING"], "persona": "ja_local_fan", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "練習後に一人で残っていたという話を聞いた。見ていないけど、信じられる。", "translation_ko": "훈련 뒤 혼자 남아 있었다는 이야기를 들었다. 보지는 못했지만 믿을 수 있다."},
+      {"weight": 2, "text": "結果はグラウンドで出る。その前の時間を、この選手は大事にしている気がする。", "translation_ko": "결과는 그라운드에서 나온다. 그 전의 시간을 이 선수는 소중히 하는 것 같다."}
+    ]},
+    {"id": "ja.fan.public.001", "kind": "reaction", "responds_to": ["SP.PUBLIC"], "persona": "ja_local_fan", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "サイン会で最後の一人まで残っていた。子どもの名前を聞いてから書いていた。そういうところ。", "translation_ko": "사인회에서 마지막 한 명까지 남아 있었다. 아이의 이름을 묻고 나서 써 줬다. 그런 부분."},
+      {"weight": 2, "text": "成績より、時間をくれる選手を覚えている。今日もそうだった。", "translation_ko": "성적보다 시간을 내 주는 선수를 기억한다. 오늘도 그랬다."}
+    ]},
+    {"id": "ja.club.public.001", "kind": "reaction", "responds_to": ["SP.PUBLIC"], "persona": "ja_club_staff", "stance": "support", "role": "reply", "variants": [
+      {"weight": 3, "text": "予定時間を過ぎましたが、本人の希望で続けました。球団としては、そういう選手を止める理由がありません。", "translation_ko": "예정 시간을 넘겼지만 본인의 희망으로 계속했습니다. 구단으로서는 그런 선수를 말릴 이유가 없습니다."},
+      {"weight": 2, "text": "グッズの問い合わせが増えています。数字は申し上げませんが、傾向は明らかです。", "translation_ko": "굿즈 문의가 늘고 있습니다. 숫자는 말씀드리지 않지만 경향은 분명합니다."}
+    ]},
+    {"id": "ja.fan.legacy.001", "kind": "reaction", "responds_to": ["SP.LEGACY", "SP.AGING"], "persona": "ja_local_fan", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "いつか終わる日が来ることは知っている。だから今日を見る。それだけ。", "translation_ko": "언젠가 끝나는 날이 온다는 것은 안다. 그래서 오늘을 본다. 그것뿐이다."},
+      {"weight": 2, "text": "球速が落ちたと言う人がいる。私は、投げ方が変わったと言いたい。", "translation_ko": "구속이 떨어졌다고 말하는 사람이 있다. 나는 던지는 방식이 바뀌었다고 말하고 싶다."}
+    ]},
+    {"id": "ja.veteran.legacy.001", "kind": "reaction", "responds_to": ["SP.LEGACY", "SP.AGING"], "persona": "ja_veteran", "stance": "support", "role": "reply", "variants": [
+      {"weight": 3, "text": "衰えを認めるのが一番難しい。認めた選手だけが、次の投げ方を見つける。この選手はもう見つけ始めている。", "translation_ko": "쇠퇴를 인정하는 것이 가장 어렵다. 인정한 선수만이 다음 던지는 법을 찾는다. 이 선수는 이미 찾기 시작했다."},
+      {"weight": 2, "text": "引退の話は、本人が最初に口にするまで誰もするべきではない。私はそう教わった。", "translation_ko": "은퇴 이야기는 본인이 먼저 입에 올릴 때까지 아무도 해서는 안 된다. 나는 그렇게 배웠다."}
+    ]},
+    {"id": "ja.fan.romance.001", "kind": "reaction", "responds_to": ["SP.ROMANCE", "SP.PRIVATE"], "persona": "ja_local_fan", "stance": "redirect", "role": "opener", "requires": ["visibility in local,national,international"], "variants": [
+      {"weight": 3, "text": "私生活の話は書かない。書いている人がいたら、それは応援ではない。", "translation_ko": "사생활 이야기는 쓰지 않는다. 쓰고 있는 사람이 있다면 그것은 응원이 아니다."},
+      {"weight": 2, "text": "グラウンドの外のことは、グラウンドの外に置いておこう。私たちは試合を見ている。", "translation_ko": "그라운드 밖의 일은 그라운드 밖에 두자. 우리는 경기를 보고 있다."}
+    ]},
+    {"id": "ja.fan.generic.support.001", "kind": "reaction", "responds_to": ["*"], "persona": "ja_local_fan", "stance": "support", "role": "reply", "variants": [
+      {"weight": 3, "text": "その通りだと思う。今日は本当に良かった。", "translation_ko": "그 말대로라고 생각한다. 오늘은 정말 좋았다."},
+      {"weight": 2, "text": "同じ場所で見ていた。あの瞬間、球場全体が同じ顔をしていた。", "translation_ko": "같은 곳에서 보고 있었다. 그 순간 구장 전체가 같은 얼굴을 하고 있었다."}
+    ]},
+    {"id": "ja.fan.generic.qualify.001", "kind": "reaction", "responds_to": ["*"], "persona": "ja_local_fan", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "気持ちはわかる。ただ、去年も同じような日があって、その後が続かなかった。今年は続いてほしい。", "translation_ko": "마음은 안다. 다만 작년에도 비슷한 날이 있었고 그 뒤가 이어지지 않았다. 올해는 이어졌으면 한다."},
+      {"weight": 2, "text": "良かったのは事実。でも一つの試合だけで全部を語るのは、この選手に失礼だと思う。", "translation_ko": "좋았던 것은 사실이다. 하지만 한 경기만으로 전부를 말하는 것은 이 선수에게 실례라고 생각한다."}
+    ]},
+    {"id": "ja.fan.generic.redirect.001", "kind": "reaction", "responds_to": ["*"], "persona": "ja_local_fan", "stance": "redirect", "role": "reply", "variants": [
+      {"weight": 3, "text": "今日の話も良いけど、本当に気になるのは次の登板間隔。このペースで秋まで行くには管理が必要。監督の考えが知りたい。", "translation_ko": "오늘 이야기도 좋지만 정말 궁금한 것은 다음 등판 간격이다. 이 페이스로 가을까지 가려면 관리가 필요하다. 감독의 생각이 궁금하다."},
+      {"weight": 2, "text": "褒める話は皆がしたので、別の話。相手チームが次の三連戦でどう対応するかの方が面白くない？", "translation_ko": "칭찬은 다들 했으니 다른 이야기. 상대 팀이 다음 3연전에서 어떻게 대응할지가 더 재밌지 않아?"}
+    ]},
+    {"id": "ja.beat.generic.support.001", "kind": "reaction", "responds_to": ["*"], "persona": "ja_beat_reporter", "stance": "support", "role": "reply", "variants": [
+      {"weight": 3, "text": "取材の立場から一言。今日クラブハウスでこの話を最初に口にしたのは本人ではなく、ベテランたちだった。", "translation_ko": "취재 입장에서 한마디. 오늘 클럽하우스에서 이 이야기를 먼저 꺼낸 것은 본인이 아니라 베테랑들이었다."},
+      {"weight": 2, "text": "上の書き込みの通り。監督が腕組みを解いた瞬間を、私も見た。", "translation_ko": "위 글 그대로다. 감독이 팔짱을 푼 순간을 나도 봤다."}
+    ]},
+    {"id": "ja.analyst.generic.qualify.001", "kind": "reaction", "responds_to": ["*"], "persona": "ja_analyst", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "上の分析にデータを一つ。今日の結果は球速より配球の変化が大きかったと見ている。詳しくは次の試合の資料が揃ってからだ。", "translation_ko": "위 분석에 데이터 하나. 오늘 결과는 구속보다 구종 배합의 변화가 컸다고 본다. 자세한 것은 다음 경기 자료가 모인 뒤다."},
+      {"weight": 2, "text": "同意するが慎重に。一試合の数値はノイズが大きい。傾向は五試合単位で見る。", "translation_ko": "동의하지만 신중하게. 한 경기 수치는 노이즈가 크다. 추세는 5경기 단위로 본다."}
+    ]},
+    {"id": "ja.record.generic.001", "kind": "reaction", "responds_to": ["*"], "persona": "ja_record_desk", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "感情の話は他の方に任せる。記録デスクは日付と数値だけを残す。今日の分は保存した。", "translation_ko": "감정 이야기는 다른 분들께 맡긴다. 기록 데스크는 날짜와 수치만 남긴다. 오늘 몫은 보관했다."},
+      {"weight": 2, "text": "比較の話が出ているが、比較対象の年代と規定を確認してからにしてほしい。", "translation_ko": "비교 이야기가 나오고 있지만, 비교 대상의 연대와 규정을 확인한 뒤에 했으면 한다."}
+    ]},
+    {"id": "ja.veteran.generic.001", "kind": "reaction", "responds_to": ["*"], "persona": "ja_veteran", "stance": "support", "role": "reply", "variants": [
+      {"weight": 3, "text": "現役の頃を思い出した。こういう日の翌朝は、体より頭が重い。それを知っているかどうかで、次が変わる。", "translation_ko": "현역 시절이 떠올랐다. 이런 날 다음 날 아침은 몸보다 머리가 무겁다. 그것을 아느냐 모르느냐로 다음이 달라진다."},
+      {"weight": 2, "text": "周りが騒ぐほど、本人は静かになる。それでいい。", "translation_ko": "주변이 떠들수록 본인은 조용해진다. 그걸로 됐다."}
+    ]},
+    {"id": "ja.rival.generic.001", "kind": "reaction", "responds_to": ["*"], "persona": "ja_rival_fan", "stance": "oppose", "role": "reply", "variants": [
+      {"weight": 3, "text": "上の書き込み、ちょっと盛りすぎ。うちも見ていたが、そこまでではない。良かったのは認めるが、歴史がどうこうは早い。", "translation_ko": "위 글은 조금 과하다. 우리도 봤지만 그 정도는 아니다. 좋았던 건 인정하지만 역사 운운은 이르다."},
+      {"weight": 2, "text": "その書き込みの人、同じチームのファンでしょ。認めるところは認めるけど、言い方が先走っている。", "translation_ko": "그 글 쓴 분, 같은 팀 팬이죠. 인정할 부분은 인정하지만 표현이 앞서간다."}
+    ]},
+    {"id": "ja.club.generic.001", "kind": "reaction", "responds_to": ["*"], "persona": "ja_club_staff", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "球団として申し上げられるのは、本人と首脳陣が明日の準備に入っているということだけです。", "translation_ko": "구단으로서 말씀드릴 수 있는 것은 본인과 코칭스태프가 내일 준비에 들어갔다는 것뿐입니다."},
+      {"weight": 2, "text": "お問い合わせが増えていますが、個別にはお答えできません。ご理解ください。", "translation_ko": "문의가 늘고 있지만 개별적으로는 답변드릴 수 없습니다. 양해 부탁드립니다."}
+    ]}
+  ]
+}

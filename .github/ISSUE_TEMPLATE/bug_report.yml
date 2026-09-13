@@ -1,0 +1,34 @@
+name: 오류 제보
+description: 개인정보 없는 재현 순서와 오류 요약
+body:
+  - type: markdown
+    attributes:
+      value: "API 키, 세이브, 원본 로그, 개인 대화, 스크린샷 원본을 첨부하지 마세요. 지원과 답변 시간이 보장되지 않는 커뮤니티 프리뷰입니다."
+  - type: input
+    id: version
+    attributes:
+      label: 앱 버전 및 Windows 버전
+    validations:
+      required: true
+  - type: dropdown
+    id: provider
+    attributes:
+      label: 사용 엔진
+      options: [내장 엔진, 로컬 LLM, Gemini, 해당 없음]
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 재현 순서와 기대 동작
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: 개인정보를 지운 오류 메시지
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 공개 자료 확인
+      options:
+        - label: API 키·세이브·개인 대화·사용자 경로를 포함하지 않았습니다.
+          required: true

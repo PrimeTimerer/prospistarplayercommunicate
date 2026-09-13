@@ -1,0 +1,1814 @@
+{
+  "pack_id": "core-ko",
+  "version": "1.0.0",
+  "locale": "ko-KR",
+  "license_class": "authored",
+  "attribution": "StarModeFeed original authored Korean templates (2026-09-02)",
+  "templates": [
+    {
+      "id": "ko.meeting.manager.manager.001",
+      "responds_to": [
+        "request_private_meeting"
+      ],
+      "target": [
+        "manager"
+      ],
+      "visibility": [
+        "private"
+      ],
+      "persona": "manager",
+      "domain": "SP.RELATION",
+      "thread_type": "manager_trust",
+      "emotion_range": [
+        -1.0,
+        0.8
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "들어와라. 문 닫고. 하고 싶은 말이 있으면 앉아서 해라. 오늘 결정은 네 공 때문이 아니라 다음 등판까지의 일정 때문이었다. 그래도 서운했다면 그건 내가 설명을 늦게 한 탓이다."
+        },
+        {
+          "weight": 2,
+          "text": "면담 요청은 받았다. 내일 훈련 전 삼십 분. 그 전에 한 가지만 생각해 와라. 네가 원하는 게 설명인지, 역할인지, 아니면 사과인지. 셋은 다른 대화다."
+        },
+        {
+          "weight": 1,
+          "text": "찾아온 건 잘했다. 나는 표정으로 말하는 선수보다 방으로 오는 선수를 믿는다. 앉아라. 오늘 무엇이 걸렸는지 처음부터 말해 봐라."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "hold_position",
+          "give_public_quote",
+          "wait_one_day"
+        ],
+        "proposed_events": [
+          "SP.RELATION.PRIVATE_MEETING"
+        ]
+      },
+      "signature": {
+        "opening": "instruction",
+        "closing": "question",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.meeting.manager.narrator.001",
+      "responds_to": [
+        "request_private_meeting"
+      ],
+      "target": [
+        "manager"
+      ],
+      "visibility": [
+        "private"
+      ],
+      "persona": "narrator",
+      "domain": "SP.RELATION",
+      "thread_type": "manager_trust",
+      "emotion_range": [
+        -1.0,
+        0.8
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "감독실 문은 반쯤 열려 있었다. {player}은(는) 노크를 하고 기다렸다. 안에서 ‘들어와’라는 짧은 말이 나왔다. 대화는 이십 분 정도였다. 나올 때 {player}의 표정은 들어갈 때보다 가벼웠고, 감독의 표정은 그대로였다."
+        },
+        {
+          "weight": 2,
+          "text": "면담은 훈련이 끝난 그라운드 한쪽에서 이뤄졌다. 감독은 앉지 않았고 {player}도 앉지 않았다. 서서 나눈 대화가 오히려 솔직했다. 코치들은 멀리서 그 장면을 봤고, 아무도 다가가지 않았다."
+        },
+        {
+          "weight": 1,
+          "text": "비공개 면담이라는 말이 무색하게 라커룸에는 이미 소문이 돌았다. 다만 내용은 아무도 몰랐다. {player}은(는) 라커로 돌아와 말없이 스파이크 끈을 묶었다. 그것이 그날의 유일한 발표였다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "hold_position",
+          "follow_up_private",
+          "wait_one_day"
+        ],
+        "proposed_events": [
+          "SP.RELATION.PRIVATE_MEETING"
+        ]
+      },
+      "signature": {
+        "opening": "scene",
+        "closing": "quiet",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.meeting.coach.coach.001",
+      "responds_to": [
+        "request_private_meeting"
+      ],
+      "target": [
+        "coach"
+      ],
+      "visibility": [
+        "private"
+      ],
+      "persona": "pitching_coach",
+      "domain": "SP.TRAINING",
+      "thread_type": "performance_pursuit",
+      "emotion_range": [
+        -1.0,
+        0.8
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "따로 보자고? 좋아. 영상실에서 보자. 말로 하는 것보다 화면 보면서 하는 게 빠르다. 네가 느끼는 문제와 내가 보는 문제가 같은지부터 확인하자."
+        },
+        {
+          "weight": 2,
+          "text": "감독 말고 나한테 먼저 온 건 현명하다. 감독한테 갈 말과 나한테 할 말은 다르니까. 오늘은 기술 얘기만 하자. 역할 얘기는 감독 몫이다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "study_video_together",
+          "extra_work",
+          "request_private_meeting"
+        ],
+        "proposed_events": [
+          "SP.RELATION.ADVICE"
+        ]
+      },
+      "signature": {
+        "opening": "question",
+        "closing": "instruction",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.meeting.agent.agent.001",
+      "responds_to": [
+        "request_private_meeting"
+      ],
+      "target": [
+        "agent"
+      ],
+      "visibility": [
+        "private"
+      ],
+      "persona": "agent",
+      "domain": "SP.CONTRACT",
+      "thread_type": "contract_negotiation",
+      "emotion_range": [
+        -1.0,
+        0.8
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "만나자. 구단 근처는 피하고 시내 쪽으로 오자. 자료는 내가 준비한다. 네가 준비할 건 하나야. 이번 시즌이 끝났을 때 네가 어디에 있고 싶은지."
+        },
+        {
+          "weight": 2,
+          "text": "먼저 연락한 건 잘했어. 요즘 구단 쪽에서 조용히 움직이는 게 있어서 어차피 보자고 하려던 참이었다. 내일 저녁, 길게 얘기하자."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "ask_agent",
+          "hold_position",
+          "wait_one_day"
+        ],
+        "proposed_events": [
+          "SP.CONTRACT.AGENT_MEETING"
+        ]
+      },
+      "signature": {
+        "opening": "acknowledge",
+        "closing": "instruction",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.meeting.front_office.fo.001",
+      "responds_to": [
+        "request_private_meeting"
+      ],
+      "target": [
+        "front_office"
+      ],
+      "visibility": [
+        "private"
+      ],
+      "persona": "front_office",
+      "domain": "SP.CONTRACT",
+      "thread_type": "contract_negotiation",
+      "emotion_range": [
+        -1.0,
+        0.8
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "선수가 직접 면담을 요청하는 경우는 드뭅니다. 일정은 잡겠습니다. 다만 계약 관련 논의라면 대리인 동석이 원칙이고, 역할이나 환경 문제라면 감독과 함께하는 자리가 맞습니다. 어느 쪽인지 알려 주십시오."
+        },
+        {
+          "weight": 2,
+          "text": "알겠습니다. 이번 주 안에 시간을 내겠습니다. 그 전에 하나만 부탁드립니다. 이 면담이 있었다는 사실이 언론에 나가지 않도록 양쪽 다 조심합시다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "ask_agent",
+          "hold_position",
+          "wait_one_day"
+        ],
+        "proposed_events": [
+          "SP.CONTRACT.NEGOTIATION"
+        ]
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "question",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.meeting.teammate.veteran.001",
+      "responds_to": [
+        "request_private_meeting"
+      ],
+      "target": [
+        "teammate",
+        "rookie"
+      ],
+      "visibility": [
+        "private"
+      ],
+      "persona": "veteran_teammate",
+      "domain": "SP.RELATION",
+      "thread_type": "teammate_mentorship",
+      "emotion_range": [
+        -1.0,
+        0.8
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "따로 얘기하자고? 심각한 거야? 알았다, 훈련 끝나고 주차장에서 보자. 차 안이 제일 조용해."
+        },
+        {
+          "weight": 2,
+          "text": "그래, 라커룸 말고 밖에서 보자. 네가 먼저 말 꺼낸 거니까 나는 듣기만 할게. 다 듣고 나서 내 얘기 할게."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "follow_up_private",
+          "team_dinner",
+          "wait_one_day"
+        ],
+        "proposed_events": [
+          "SP.RELATION.PRIVATE_MEETING"
+        ]
+      },
+      "signature": {
+        "opening": "question",
+        "closing": "promise",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.meeting.rival.opponent.001",
+      "responds_to": [
+        "request_private_meeting"
+      ],
+      "target": [
+        "rival"
+      ],
+      "visibility": [
+        "private"
+      ],
+      "persona": "opposing_star",
+      "domain": "SP.RELATION",
+      "thread_type": "rivalry",
+      "emotion_range": [
+        -1.0,
+        0.8
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "상대 팀 선수랑 따로 만나는 거, 우리 감독이 알면 좋아하진 않겠지. 그래도 경기 뒤 통로에서 잠깐이면 괜찮다. 오 분. 그 이상은 안 된다."
+        },
+        {
+          "weight": 2,
+          "text": "무슨 얘기인지 대충 짐작은 간다. 만나자. 대신 이건 우리 둘만 아는 걸로 하자. 그라운드 밖 얘기가 그라운드로 들어오면 서로 피곤해진다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "keep_private",
+          "follow_up_private",
+          "wait_one_day"
+        ],
+        "proposed_events": [
+          "SP.RELATION.OPPONENT_EXCHANGE"
+        ]
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "warning",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.meeting.medical.trainer.001",
+      "responds_to": [
+        "request_private_meeting"
+      ],
+      "target": [
+        "medical"
+      ],
+      "visibility": [
+        "private"
+      ],
+      "persona": "trainer",
+      "domain": "SP.HEALTH",
+      "thread_type": "injury_and_return",
+      "emotion_range": [
+        -1.0,
+        0.8
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "따로 보자는 말이 제일 반가운 말이야. 대부분은 아파도 안 오거든. 지금 바로 트레이닝실로 와. 어디가 어떻게 언제부터인지, 그 세 가지만 준비해."
+        },
+        {
+          "weight": 2,
+          "text": "알겠다. 감독한테는 내가 ‘정기 점검’이라고 말해 둘게. 네가 말하기 전까지는 아무한테도 안 간다. 그게 이 방의 규칙이다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "ask_trainer",
+          "recovery_day",
+          "hold_position"
+        ],
+        "proposed_events": [
+          "SP.HEALTH.MEDICAL_CHECK"
+        ]
+      },
+      "signature": {
+        "opening": "acknowledge",
+        "closing": "promise",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.meeting.family.family.001",
+      "responds_to": [
+        "request_private_meeting"
+      ],
+      "target": [
+        "family",
+        "partner"
+      ],
+      "visibility": [
+        "private"
+      ],
+      "persona": "family_parent",
+      "domain": "SP.PRIVATE",
+      "thread_type": "private_life",
+      "emotion_range": [
+        -1.0,
+        0.8
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "할 얘기가 있다고? 무슨 일이야. 아니다, 전화로 하지 말고 와서 해. 밥 먹으면서. 언제 올 수 있어?"
+        },
+        {
+          "weight": 2,
+          "text": "그래, 만나자. 네가 먼저 보자고 하는 건 처음이네. 무슨 얘기든 괜찮아. 우리는 다 들을 준비가 돼 있어."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "visit_family",
+          "call_family",
+          "wait_one_day"
+        ],
+        "proposed_events": [
+          "SP.PRIVATE.FAMILY_VISIT"
+        ]
+      },
+      "signature": {
+        "opening": "question",
+        "closing": "question",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.meeting.generic.inner.001",
+      "responds_to": [
+        "request_private_meeting"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "private"
+      ],
+      "persona": "inner_voice",
+      "domain": "SP.RELATION",
+      "thread_type": "manager_trust",
+      "emotion_range": [
+        -1.0,
+        0.8
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "면담은 요청하는 순간 절반이 끝난다. 나머지 절반은 첫 문장이다. 첫 문장을 지금 정하자. 불만으로 시작할지, 질문으로 시작할지, 감사로 시작할지."
+        },
+        {
+          "weight": 2,
+          "text": "따로 만나자는 말은 상대에게도 준비할 시간을 준다. 그래서 공정하다. 만나서 무엇을 얻고 싶은지 한 줄로 적어 두면 대화가 새지 않는다."
+        },
+        {
+          "weight": 1,
+          "text": "비공개 대화는 기록이 남지 않는 대신 기억에 남는다. 기억에 남을 말을 하자."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "request_private_meeting",
+          "wait_one_day",
+          "write_diary"
+        ],
+        "proposed_events": [
+          "SP.RELATION.PRIVATE_MEETING"
+        ]
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "instruction",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.ask.stats.pit_K.record",
+      "responds_to": [
+        "ask"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "record_desk",
+      "domain": "SP.MILESTONE",
+      "thread_type": "milestone_chase",
+      "facts": [
+        "stats.pit_K"
+      ],
+      "requires": [
+        "facts.stats.pit_K has"
+      ],
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "{date_text} 기준 시즌 탈삼진은 {stats.pit_K}개다. 이 수치는 저장된 기록에서 직접 읽은 값이고, 리그 순위나 상대 팀별 분포는 별도 확인이 필요하다."
+        },
+        {
+          "weight": 2,
+          "text": "탈삼진 {stats.pit_K}개. {date_text}까지의 시즌 누적이다. 다음 기준선까지 얼마나 남았는지는 기록실 카드에서 함께 볼 수 있다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "ask_next_milestone",
+          "declare_goal",
+          "write_diary"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "fact",
+        "metaphor": null
+      },
+      "answers": [
+        "stats.pit_K"
+      ]
+    },
+    {
+      "id": "ko.ask.stats.pit_W.record",
+      "responds_to": [
+        "ask"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "record_desk",
+      "domain": "SP.MILESTONE",
+      "thread_type": "milestone_chase",
+      "facts": [
+        "stats.pit_W"
+      ],
+      "requires": [
+        "facts.stats.pit_W has"
+      ],
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "{date_text} 기준 시즌 {stats.pit_W}승이다. 패전과 선발 등판 수는 저장 기록에 없어서 함께 말할 수 없다. 승수만 검증된 값이다."
+        },
+        {
+          "weight": 2,
+          "text": "승수는 {stats.pit_W}. 이 숫자 하나만 확정이고, 무패나 승률 같은 표현은 근거가 없어서 쓰지 않는다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "ask_next_milestone",
+          "declare_goal",
+          "write_diary"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "fact",
+        "metaphor": null
+      },
+      "answers": [
+        "stats.pit_W"
+      ]
+    },
+    {
+      "id": "ko.ask.stats.pit_IP.record",
+      "responds_to": [
+        "ask"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "record_desk",
+      "domain": "SP.MILESTONE",
+      "thread_type": "performance_pursuit",
+      "facts": [
+        "stats.pit_IP",
+        "stats.pit_H"
+      ],
+      "requires": [
+        "facts.stats.pit_IP has"
+      ],
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "{date_text}까지 {stats.pit_IP}이닝을 던졌고 피안타는 {stats.pit_H}개다. 볼넷과 자책점은 저장 기록에 없으니 방어율은 여기서 계산하지 않는다."
+        },
+        {
+          "weight": 2,
+          "text": "이닝 {stats.pit_IP}, 피안타 {stats.pit_H}. 두 숫자만으로도 상대 타자들이 얼마나 출루하지 못했는지는 짐작된다. 다만 짐작은 짐작이다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "ask_next_milestone",
+          "ask_trainer",
+          "write_diary"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "fact",
+        "metaphor": null
+      },
+      "answers": [
+        "stats.pit_IP",
+        "stats.pit_H"
+      ]
+    },
+    {
+      "id": "ko.ask.stats.bat_HR.record",
+      "responds_to": [
+        "ask"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "record_desk",
+      "domain": "SP.MILESTONE",
+      "thread_type": "milestone_chase",
+      "facts": [
+        "stats.bat_HR"
+      ],
+      "requires": [
+        "facts.stats.bat_HR has"
+      ],
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "{date_text} 기준 시즌 홈런은 {stats.bat_HR}개다. 저장 기록에서 읽은 검증 값이며, 구장별 분포나 상대 투수 정보는 포함돼 있지 않다."
+        },
+        {
+          "weight": 2,
+          "text": "홈런 {stats.bat_HR}개. 시즌 누적이다. 다음 기준선과 구단 기록과의 거리는 기록실에서 대조할 수 있다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "ask_next_milestone",
+          "declare_goal",
+          "write_diary"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "fact",
+        "metaphor": null
+      },
+      "answers": [
+        "stats.bat_HR"
+      ]
+    },
+    {
+      "id": "ko.ask.stats.bat_AVG.record",
+      "responds_to": [
+        "ask"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "record_desk",
+      "domain": "SP.MILESTONE",
+      "thread_type": "performance_pursuit",
+      "facts": [
+        "stats.bat_AVG",
+        "stats.bat_H",
+        "stats.bat_AB"
+      ],
+      "requires": [
+        "facts.stats.bat_AB has"
+      ],
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "{date_text} 기준 타율은 {stats.bat_AVG}, {stats.bat_AB}타수 {stats.bat_H}안타다. 출루율과 장타율은 볼넷·2루타 같은 입력이 없어서 여기서 계산하지 않는다."
+        },
+        {
+          "weight": 2,
+          "text": "타율 {stats.bat_AVG}. {stats.bat_AB}타수에서 {stats.bat_H}개를 쳤다. 이 세 숫자는 저장 기록 그대로다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "ask_next_milestone",
+          "declare_goal",
+          "write_diary"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "fact",
+        "metaphor": null
+      },
+      "answers": [
+        "stats.bat_AVG",
+        "stats.bat_H"
+      ]
+    },
+    {
+      "id": "ko.ask.stats.bat_RBI_SB.record",
+      "responds_to": [
+        "ask"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "record_desk",
+      "domain": "SP.MILESTONE",
+      "thread_type": "performance_pursuit",
+      "facts": [
+        "stats.bat_RBI",
+        "stats.bat_SB"
+      ],
+      "requires": [
+        "facts.stats.bat_RBI has"
+      ],
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "{date_text} 기준 타점 {stats.bat_RBI}, 도루 {stats.bat_SB}. 두 값 모두 시즌 누적 검증 값이다. 도루 실패 수는 저장 기록에 없다."
+        },
+        {
+          "weight": 2,
+          "text": "타점은 {stats.bat_RBI}개, 도루는 {stats.bat_SB}개다. 득점권 타율처럼 세부 분할은 여기서 만들지 않는다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "ask_next_milestone",
+          "declare_goal",
+          "write_diary"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "fact",
+        "metaphor": null
+      },
+      "answers": [
+        "stats.bat_RBI",
+        "stats.bat_SB"
+      ]
+    },
+    {
+      "id": "ko.ask.date.narrator",
+      "responds_to": [
+        "ask"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "narrator",
+      "domain": "SP.CALENDAR",
+      "thread_type": "performance_pursuit",
+      "facts": [
+        "date_text",
+        "career_year"
+      ],
+      "requires": [
+        "slots.date_text has"
+      ],
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "오늘은 {date_text}, 프로 {career_year}년차 시즌 중이다. 이 날짜는 마지막으로 검증된 저장 기록의 날짜이며, 대화가 이어져도 바뀌지 않는다."
+        },
+        {
+          "weight": 2,
+          "text": "{date_text}. {career_year}년차의 어느 하루다. 날짜를 넘기는 건 경기이지 대화가 아니다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "ask_stats",
+          "write_diary",
+          "wait_one_day"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "fact",
+        "metaphor": null
+      },
+      "answers": [
+        "snapshot.date"
+      ]
+    },
+    {
+      "id": "ko.ask.honors.record",
+      "responds_to": [
+        "ask"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "archive_desk",
+      "domain": "SP.AWARD",
+      "thread_type": "award_race",
+      "facts": [
+        "honors_text"
+      ],
+      "requires": [
+        "facts.honors_text has"
+      ],
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "보관된 수상 기록은 다음과 같다. {honors_text}. 사용자가 직접 확인해 입력한 항목과 저장 기록에서 읽은 항목이 구분돼 있으며, 여기서는 둘 다 사실로 다룬다."
+        },
+        {
+          "weight": 2,
+          "text": "수상 이력: {honors_text}. 이 목록에 없는 상은 아직 기록되지 않은 것이지 받지 않았다는 뜻은 아니다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "ask_records",
+          "write_diary",
+          "wait_one_day"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "fact",
+        "metaphor": null
+      },
+      "answers": [
+        "career.honors"
+      ]
+    },
+    {
+      "id": "ko.ask.honors.none",
+      "responds_to": [
+        "ask"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "archive_desk",
+      "domain": "SP.AWARD",
+      "thread_type": "award_race",
+      "requires": [
+        "facts.honors_text missing",
+        "fact_requirements has"
+      ],
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "아직 보관된 수상 기록이 없다. 받은 상이 있다면 기록실에서 직접 입력하면 이후 대화와 기사에서 사실로 다뤄진다. 없는 상을 추정해서 말하지는 않는다."
+        },
+        {
+          "weight": 2,
+          "text": "수상 이력은 비어 있다. 지난 시즌 수상이 있었다면 기록실에 남겨 두자. 그 전까지는 ‘아직 없음’이 정확한 답이다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "open_record_room",
+          "write_diary",
+          "wait_one_day"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "instruction",
+        "metaphor": null
+      },
+      "answers": [
+        "career.honors"
+      ]
+    },
+    {
+      "id": "ko.ask.records.record",
+      "responds_to": [
+        "ask"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "record_desk",
+      "domain": "SP.MILESTONE",
+      "thread_type": "milestone_chase",
+      "facts": [
+        "records_text"
+      ],
+      "requires": [
+        "facts.records_text has"
+      ],
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "참고 기록과의 대조 결과는 이렇다. {records_text}. ‘동률’과 ‘초과’는 보관된 참고 값과 비교한 결과이며, 공식 인정 여부는 여기서 말하지 않는다."
+        },
+        {
+          "weight": 2,
+          "text": "{records_text}. 기록실이 확인한 범위는 여기까지다. 그 밖의 항목은 아직 비교 기준이 없다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "ask_next_milestone",
+          "declare_goal",
+          "write_diary"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "fact",
+        "metaphor": null
+      },
+      "answers": [
+        "career.records"
+      ]
+    },
+    {
+      "id": "ko.ask.standings.record",
+      "responds_to": [
+        "ask"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "national_desk",
+      "domain": "SP.STANDINGS",
+      "thread_type": "pennant_race",
+      "facts": [
+        "standings_text"
+      ],
+      "requires": [
+        "facts.standings_text has"
+      ],
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "확인된 순위표는 이렇다. {standings_text}. 이 표는 사용자가 게임 화면을 보고 직접 입력한 값이며, 입력된 날짜 이후의 변동은 반영돼 있지 않다."
+        },
+        {
+          "weight": 2,
+          "text": "{standings_text}. 순위는 입력된 시점의 것이다. 새 경기가 반영되면 다시 확인하자."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "update_standings",
+          "declare_goal",
+          "write_diary"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "fact",
+        "metaphor": null
+      },
+      "answers": [
+        "context.standings"
+      ]
+    },
+    {
+      "id": "ko.ask.standings.none",
+      "responds_to": [
+        "ask"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "national_desk",
+      "domain": "SP.STANDINGS",
+      "thread_type": "pennant_race",
+      "requires": [
+        "facts.standings_text missing",
+        "fact_requirements has"
+      ],
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "이 날짜의 순위표는 아직 입력되지 않았다. 저장 기록에는 팀 순위가 들어 있지 않아서, 게임 안 순위표를 보고 기록실에 남겨야 답할 수 있다. 추정해서 말하지 않는다."
+        },
+        {
+          "weight": 2,
+          "text": "순위 정보가 없다. 승차나 매직넘버를 지어내지 않겠다. 순위표를 입력하면 그 날짜에 고정돼 이후 대화에서 쓰인다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "update_standings",
+          "write_diary",
+          "wait_one_day"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "instruction",
+        "metaphor": null
+      },
+      "answers": [
+        "context.standings"
+      ]
+    },
+    {
+      "id": "ko.ask.history.narrator",
+      "responds_to": [
+        "ask",
+        "recall"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "narrator",
+      "domain": "SP.USER",
+      "thread_type": "private_life",
+      "facts": [
+        "memory_text"
+      ],
+      "requires": [
+        "facts.memory_text has"
+      ],
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "기억을 찾아봤다. {memory_text} 그때의 말과 장면은 그대로 보관돼 있고, 지금 다시 꺼내도 내용은 바뀌지 않는다."
+        },
+        {
+          "weight": 2,
+          "text": "{memory_text} 이 기록은 그날 그대로다. 이어서 무엇을 할지는 오늘의 몫이다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "continue_thread",
+          "pin_memory",
+          "write_diary"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "memory",
+        "closing": "quiet",
+        "metaphor": null
+      },
+      "answers": [
+        "story.history"
+      ]
+    },
+    {
+      "id": "ko.ask.history.none",
+      "responds_to": [
+        "ask",
+        "recall"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "narrator",
+      "domain": "SP.USER",
+      "thread_type": "private_life",
+      "requires": [
+        "facts.memory_text missing",
+        "fact_requirements has"
+      ],
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "그 일에 대한 기록은 찾지 못했다. 보관된 대화와 장면 중에는 없다. 기억이 확실하다면 지금 여기서 다시 말해 두자. 그러면 다음부터는 찾을 수 있다."
+        },
+        {
+          "weight": 2,
+          "text": "검색 결과가 비어 있다. 없는 기억을 만들어 답하지는 않겠다. 어떤 날짜, 누구와의 일이었는지 조금 더 알려 주면 다시 찾아보겠다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "clarify_memory",
+          "write_diary",
+          "wait_one_day"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "question",
+        "metaphor": null
+      },
+      "answers": [
+        "story.history"
+      ]
+    },
+    {
+      "id": "ko.ask.props.narrator",
+      "responds_to": [
+        "ask",
+        "recall"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "narrator",
+      "domain": "SP.USER",
+      "thread_type": "private_life",
+      "facts": [
+        "props_text"
+      ],
+      "requires": [
+        "facts.props_text has"
+      ],
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "이어 오던 소재는 이렇다. {props_text} 언제 어떤 장면에서 나왔는지가 함께 보관돼 있다."
+        },
+        {
+          "weight": 2,
+          "text": "{props_text} 이 중 하나를 오늘 다시 꺼낼 수도 있고, 조용히 두어도 된다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "callback_prop",
+          "retire_prop",
+          "write_diary"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "memory",
+        "closing": "choice",
+        "metaphor": null
+      },
+      "answers": [
+        "props"
+      ]
+    },
+    {
+      "id": "ko.ask.generic.unknown",
+      "responds_to": [
+        "ask"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "narrator",
+      "domain": "SP.USER",
+      "thread_type": "private_life",
+      "requires": [
+        "fact_requirements missing"
+      ],
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "무엇을 확인하고 싶은지 조금만 더 좁혀 주면 정확히 답할 수 있다. 오늘 성적, 통산 기록, 수상, 순위, 지난 대화 중 어느 쪽일까."
+        },
+        {
+          "weight": 2,
+          "text": "질문은 알아들었는데 어떤 기록을 볼지 정하지 못했다. 탈삼진이나 홈런 같은 수치인지, 사람이나 장면에 관한 기억인지 알려 주면 바로 찾겠다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "ask_stats",
+          "ask_history",
+          "ask_records"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "question",
+        "closing": "choice",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.fallback.ack.inner.001",
+      "responds_to": [
+        "*"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "inner_voice",
+      "domain": "SP.USER",
+      "thread_type": "private_life",
+      "kind": "fallback",
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "들었다. 이 말은 남겨 둔다. 어디로 이어갈지는 아직 정하지 않아도 된다."
+        },
+        {
+          "weight": 2,
+          "text": "그 마음은 기록해 두자. 지금 당장 사건으로 만들 필요는 없다. 필요해지면 그때 꺼내면 된다."
+        },
+        {
+          "weight": 1,
+          "text": "알겠다. 오늘 이 말이 나왔다는 것만으로도 내일의 선택지가 하나 늘었다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "write_diary",
+          "request_private_meeting",
+          "give_public_quote"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "acknowledge",
+        "closing": "quiet",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.fallback.ack.inner.002",
+      "responds_to": [
+        "*"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "inner_voice",
+      "domain": "SP.USER",
+      "thread_type": "private_life",
+      "kind": "fallback",
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "마음은 전해졌는데 방향은 아직 흐릿하다. 비공개로 정리할지, 팀 안에서 풀지, 공개적으로 말할지. 셋 중 가까운 쪽을 고르면 된다."
+        },
+        {
+          "weight": 2,
+          "text": "한 문장 더 있으면 장면이 된다. 누구에게, 어떤 자리에서. 그 둘만 정해지면 나머지는 자연스럽게 따라온다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "keep_private",
+          "follow_up_private",
+          "give_public_quote"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "acknowledge",
+        "closing": "choice",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.fallback.emotion.veteran.001",
+      "responds_to": [
+        "*"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "clubhouse",
+        "private"
+      ],
+      "persona": "veteran_teammate",
+      "domain": "SP.RELATION",
+      "thread_type": "teammate_mentorship",
+      "kind": "fallback",
+      "requires": [
+        "emotion.valence < 0"
+      ],
+      "emotion_range": [
+        -1.0,
+        0.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "얼굴 보니까 알겠다. 말 안 해도 돼. 근데 하고 싶으면 해. 나 여기 있을게."
+        },
+        {
+          "weight": 2,
+          "text": "무슨 일인지는 모르겠지만 오늘은 그냥 옆에 있어 줄게. 내일 얘기하고 싶으면 그때 해."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "follow_up_private",
+          "team_dinner",
+          "wait_one_day"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "acknowledge",
+        "closing": "quiet",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.fallback.emotion.family.001",
+      "responds_to": [
+        "*"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "private"
+      ],
+      "persona": "family_parent",
+      "domain": "SP.PRIVATE",
+      "thread_type": "private_life",
+      "kind": "fallback",
+      "requires": [
+        "emotion.valence < 0"
+      ],
+      "emotion_range": [
+        -1.0,
+        0.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "목소리가 안 좋네. 무슨 일인지 말 안 해도 돼. 밥은 먹었니. 그것만 대답해."
+        },
+        {
+          "weight": 2,
+          "text": "그래, 그래. 다 듣고 있어. 천천히 말해. 급한 거 없어."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "call_family",
+          "write_diary",
+          "wait_one_day"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "acknowledge",
+        "closing": "question",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.fallback.positive.inner.001",
+      "responds_to": [
+        "*"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "inner_voice",
+      "domain": "SP.USER",
+      "thread_type": "private_life",
+      "kind": "fallback",
+      "requires": [
+        "emotion.valence > 0.2"
+      ],
+      "emotion_range": [
+        0.2,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "좋은 기분은 오래 가지 않으니 지금 적어 두자. 무엇이 좋았는지 한 가지만. 나쁜 날에 꺼내 읽을 수 있게."
+        },
+        {
+          "weight": 2,
+          "text": "이런 날은 누군가에게 나누면 두 배가 된다. 팀, 가족, 팬 중 누구에게 먼저 말할지 정하면 된다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "write_diary",
+          "praise_publicly",
+          "call_family"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "acknowledge",
+        "closing": "choice",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.prop.create.inner.001",
+      "responds_to": [
+        "prop_create"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "inner_voice",
+      "domain": "SP.USER",
+      "thread_type": "private_life",
+      "kind": "prop",
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "좋다. {prop_name}을(를) 우리만의 소재로 남긴다. 처음 나온 날짜와 누가 함께 있었는지를 같이 적어 둔다. 다음에 꺼낼 때는 이 기록을 기준으로 이어 간다."
+        },
+        {
+          "weight": 2,
+          "text": "{prop_name}, 등록했다. 지금은 작은 농담이지만 어디까지 갈지는 앞으로의 선택에 달렸다. 당분간은 정해진 범위 안에서만 돌게 한다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "set_prop_visibility",
+          "schedule_callback",
+          "keep_private"
+        ],
+        "proposed_events": [
+          "SP.USER.PROP"
+        ]
+      },
+      "signature": {
+        "opening": "acknowledge",
+        "closing": "fact",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.prop.visibility.inner.001",
+      "responds_to": [
+        "prop_set_visibility"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "inner_voice",
+      "domain": "SP.USER",
+      "thread_type": "private_life",
+      "kind": "prop",
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "{prop_name}의 범위를 {prop_visibility_label}(으)로 정했다. 그 밖으로는 새어 나가지 않게 한다. 범위를 넓히고 싶어지면 그때 다시 말하면 된다."
+        },
+        {
+          "weight": 2,
+          "text": "알겠다. {prop_name}은(는) {prop_visibility_label} 안에서만 이어진다. 기사나 팬 이야기에는 등장하지 않는다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "schedule_callback",
+          "escalate_prop",
+          "keep_private"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "fact",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.prop.relationship.inner.001",
+      "responds_to": [
+        "prop_attach_relationship"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "inner_voice",
+      "domain": "SP.RELATION",
+      "thread_type": "teammate_mentorship",
+      "kind": "prop",
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "{prop_name}이(가) {target_label}과(와)의 관계에 걸리게 했다. 약간의 긴장은 이야기를 움직이지만, 어느 선을 넘으면 관계가 상한다. 그 선은 당신이 정한다."
+        },
+        {
+          "weight": 2,
+          "text": "좋다. 이제 {prop_name}은(는) 그냥 농담이 아니라 {target_label}과(와)의 작은 갈등 소재다. 다음 장면에서 그 긴장이 어떻게 드러날지 지켜보자."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "schedule_callback",
+          "resolve_prop",
+          "keep_private"
+        ],
+        "proposed_events": [
+          "SP.RELATION.DISAGREEMENT"
+        ]
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "warning",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.prop.callback.inner.001",
+      "responds_to": [
+        "prop_schedule_callback"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "inner_voice",
+      "domain": "SP.USER",
+      "thread_type": "private_life",
+      "kind": "prop",
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "{prop_name}을(를) 다음 계기에 다시 꺼내기로 예약했다. 그 장면이 오면 자연스럽게 등장한다. 억지로 끼워 넣지는 않는다."
+        },
+        {
+          "weight": 2,
+          "text": "알겠다. {prop_name}은(는) 다음 순서를 기다린다. 그때까지는 조용히 둔다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "escalate_prop",
+          "change_prop_role",
+          "keep_private"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "quiet",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.prop.role.inner.001",
+      "responds_to": [
+        "prop_change_role"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "inner_voice",
+      "domain": "SP.USER",
+      "thread_type": "private_life",
+      "kind": "prop",
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "{prop_name}의 분위기를 바꾼다. 웃음으로 시작한 소재가 진지한 장면이 되는 순간이다. 다음에 등장할 때는 농담이 아니라 기억으로 다뤄진다."
+        },
+        {
+          "weight": 2,
+          "text": "알겠다. {prop_name}은(는) 이제 다른 얼굴을 갖는다. 같은 물건, 다른 의미. 그 변화가 자연스럽게 보이도록 한 장면을 준비한다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "schedule_callback",
+          "resolve_prop",
+          "keep_private"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "fact",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.prop.escalate.inner.001",
+      "responds_to": [
+        "prop_escalate"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "inner_voice",
+      "domain": "SP.PUBLIC",
+      "thread_type": "public_reputation",
+      "kind": "prop",
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "{prop_name}을(를) 더 넓은 범위로 내보내자는 제안이다. 한 번 나가면 되돌리기 어렵다. 확정하면 다음 장면부터 팬이나 기사에 등장할 수 있다. 정말 그렇게 할지 확인이 필요하다."
+        },
+        {
+          "weight": 2,
+          "text": "확대는 되돌릴 수 없는 선택이다. {prop_name}이(가) 밖으로 나가는 순간 통제권의 일부를 잃는다. 그래도 진행할지 한 번 더 확인하자."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "confirm_escalation",
+          "keep_current_visibility",
+          "retire_prop"
+        ],
+        "proposed_events": [
+          "SP.PUBLIC.MERCHANDISE"
+        ]
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "question",
+        "metaphor": null
+      }
+    },
+    {
+      "id": "ko.prop.retire.inner.001",
+      "responds_to": [
+        "prop_retire"
+      ],
+      "target": [
+        "*"
+      ],
+      "visibility": [
+        "*"
+      ],
+      "persona": "inner_voice",
+      "domain": "SP.USER",
+      "thread_type": "private_life",
+      "kind": "prop",
+      "emotion_range": [
+        -1.0,
+        1.0
+      ],
+      "variants": [
+        {
+          "weight": 3,
+          "text": "{prop_name}은(는) 여기서 마무리한다. 좋은 기억으로만 남고 더는 새 장면에 등장하지 않는다. 기록은 지워지지 않는다. 다시 꺼내고 싶으면 그때 말하면 된다."
+        },
+        {
+          "weight": 2,
+          "text": "알겠다. {prop_name}은(는) 은퇴했다. 지나간 장면들은 그대로 보관되고, 앞으로는 조용히 둔다."
+        }
+      ],
+      "effects": {
+        "proposed_choices": [
+          "pin_memory",
+          "write_diary",
+          "wait_one_day"
+        ],
+        "proposed_events": []
+      },
+      "signature": {
+        "opening": "fact",
+        "closing": "quiet",
+        "metaphor": null
+      }
+    }
+  ]
+}

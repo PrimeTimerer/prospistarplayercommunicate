@@ -1,0 +1,3 @@
+# Optional providers still require the user's own explicit setup and consent.
+pycryptodome==3.23.0
+pywebview==6.2.1

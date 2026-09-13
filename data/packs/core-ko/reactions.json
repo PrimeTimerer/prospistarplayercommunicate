@@ -1,0 +1,141 @@
+{
+  "pack_id": "core-ko",
+  "version": "1.0.0",
+  "locale": "ko-KR",
+  "license_class": "authored",
+  "attribution": "StarModeFeed original authored Korean community and press reaction templates (2026-09-02)",
+  "templates": [
+    {"id": "ko.react.open.support.supporter.001", "kind": "reaction", "responds_to": ["*"], "persona": "home_supporter", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "오늘 {headline_fact}. 직관 갔다 온 사람으로서 말하는데 현장 분위기가 달랐음. 9회에 아무도 안 나갔어."},
+      {"weight": 2, "text": "{headline_fact} 이거 실제로 보면 더 다름. 응원석에서 옆사람이랑 처음으로 하이파이브함."}
+    ]},
+    {"id": "ko.react.open.support.longtime.001", "kind": "reaction", "responds_to": ["*"], "persona": "longtime_fan", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "30년 봤는데 {headline_fact} 같은 날은 손에 꼽는다. 젊은 팬들은 이게 얼마나 드문 건지 나중에 알 거다."},
+      {"weight": 2, "text": "{headline_fact}. 예전 같으면 신문 1면감인데 요즘은 다들 짧게 지나가네. 나는 오래 볼 거다."}
+    ]},
+    {"id": "ko.react.open.stat.statfan.001", "kind": "reaction", "responds_to": ["*"], "persona": "stat_fan", "stance": "qualify", "role": "opener", "variants": [
+      {"weight": 3, "text": "{headline_fact}. 숫자만 정리하면 이렇고, 상대 타선 컨디션이랑 구장 요인은 따로 봐야 함. 그래도 오늘 라인 자체는 부정 못 한다."},
+      {"weight": 2, "text": "감정 빼고 기록만 보자. {headline_fact}. 시즌 누적으로 이어지는지가 다음 3경기에서 갈림."}
+    ]},
+    {"id": "ko.react.open.skeptic.001", "kind": "reaction", "responds_to": ["*"], "persona": "skeptical_fan", "stance": "qualify", "role": "opener", "variants": [
+      {"weight": 3, "text": "{headline_fact}인 건 맞는데 한 경기로 의미 부여는 이르다. 다음 원정 3연전 보고 얘기하자."},
+      {"weight": 2, "text": "좋았지. 근데 우리 팀은 늘 이런 날 다음에 무너졌다. 이번엔 다르길 바랄 뿐."}
+    ]},
+    {"id": "ko.react.open.rival.001", "kind": "reaction", "responds_to": ["*"], "persona": "rival_fan", "stance": "oppose", "role": "opener", "variants": [
+      {"weight": 3, "text": "원정팬입니다. {headline_fact} 인정은 하는데 우리 타선이 오늘 유독 안 맞은 것도 있음. 다음엔 다를 거다."},
+      {"weight": 2, "text": "솔직히 짜증나서 씀. {headline_fact}. 우리 상대로만 이러는 거 아니냐."}
+    ]},
+    {"id": "ko.react.open.beat.001", "kind": "reaction", "responds_to": ["*"], "persona": "beat_reporter", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "현장 메모. {headline_fact}. 경기 뒤 클럽하우스는 평소보다 조용했고, 그것이 오히려 이날의 무게를 말해 줬다."},
+      {"weight": 2, "text": "취재 노트에서. {headline_fact}. 상대 더그아웃이 7회부터 말을 잃었다."}
+    ]},
+    {"id": "ko.react.open.record.001", "kind": "reaction", "responds_to": ["SP.MILESTONE", "SP.GAME.PITCH", "SP.GAME.BAT"], "persona": "record_desk", "stance": "qualify", "role": "opener", "variants": [
+      {"weight": 3, "text": "기록실 확인. {headline_fact}. 보관된 참고 기록과의 비교는 시즌 종료 뒤 확정하며, 오늘 시점의 수치는 저장된 기록에서 직접 읽은 것이다."},
+      {"weight": 2, "text": "{headline_fact}. 날짜와 함께 보관했다. 정확한 날짜가 있는 기록은 오래 산다."}
+    ]},
+    {"id": "ko.react.open.former_pitcher.001", "kind": "reaction", "responds_to": ["SP.GAME.PITCH", "SP.GAME.POST", "*"], "persona": "former_pitcher", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "투수 출신으로 한마디. {headline_fact}. 구위보다 인상적이었던 건 볼카운트가 몰렸을 때의 선택이었다. 그건 가르쳐서 되는 게 아니다."},
+      {"weight": 2, "text": "{headline_fact}. 해설석에서 보면 이런 날은 포수 사인이 거의 안 바뀐다. 오늘이 그랬다."}
+    ]},
+    {"id": "ko.react.open.tv.001", "kind": "reaction", "responds_to": ["*"], "persona": "tv_analyst", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "중계하면서 {headline_fact} 순간에 말을 잠깐 멈췄습니다. 그런 날이 있어요. 설명이 필요 없는 장면."},
+      {"weight": 2, "text": "오늘 하이라이트 편집 회의가 길어졌다고 합니다. 뭘 빼야 할지 몰라서요. {headline_fact}."}
+    ]},
+    {"id": "ko.react.open.youth.001", "kind": "reaction", "responds_to": ["*"], "persona": "youth_player", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "야구부인데요, {headline_fact} 보고 내일 새벽 훈련 나가기로 했어요. 코치님한테 그 장면 같이 보자고 할 거예요."},
+      {"weight": 2, "text": "저도 저렇게 던지고 싶어요. {headline_fact}. 오늘 일기에 씁니다."}
+    ]},
+    {"id": "ko.react.open.private_note.001", "kind": "reaction", "responds_to": ["*"], "persona": "beat_reporter", "stance": "redirect", "role": "opener", "requires": ["visibility in private,clubhouse"], "variants": [
+      {"weight": 3, "text": "선수의 사적인 시간은 취재 대상이 아니다. 다만 최근 경기 내용이 워낙 화제라 팬들의 시선은 비번 날에도 이어진다. 그 시선의 근거는 공개된 기록뿐이다."},
+      {"weight": 2, "text": "오늘은 경기가 없었다. 그래도 게시판이 조용하지 않은 건 어제까지의 기록 때문이다. 오늘 무엇을 했는지는 아무도 모르고, 알 필요도 없다."}
+    ]},
+    {"id": "ko.react.reply.support.supporter.001", "kind": "reaction", "responds_to": ["*"], "persona": "home_supporter", "stance": "support", "role": "reply", "variants": [
+      {"weight": 3, "text": "윗글 동의. 현장 분위기 얘기가 핵심임. 중계로는 안 나오는 게 있어."},
+      {"weight": 2, "text": "그 말이 맞음. 나도 같은 구역이었는데 옆줄 아저씨가 울더라."}
+    ]},
+    {"id": "ko.react.reply.qualify.statfan.001", "kind": "reaction", "responds_to": ["*"], "persona": "stat_fan", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "위 댓글에 하나만 보태면, 그 숫자는 시즌 누적이고 오늘 경기 단독 수치는 따로 봐야 함. 둘 섞으면 과장돼."},
+      {"weight": 2, "text": "동의하는데 표본 얘기는 해야지. 좋은 건 좋은 거고, 확정은 시즌 끝나고."}
+    ]},
+    {"id": "ko.react.reply.oppose.rival.001", "kind": "reaction", "responds_to": ["*"], "persona": "rival_fan", "stance": "oppose", "role": "reply", "variants": [
+      {"weight": 3, "text": "윗글 좀 과하다. 우리도 봤는데 그 정도는 아님. 잘한 건 맞지만 역사 운운은 이르다."},
+      {"weight": 2, "text": "그 글 쓴 분 같은 팀 팬이죠? 인정할 건 하겠는데 표현이 너무 앞서감."}
+    ]},
+    {"id": "ko.react.reply.ask.youth.001", "kind": "reaction", "responds_to": ["*"], "persona": "youth_player", "stance": "ask", "role": "reply", "variants": [
+      {"weight": 3, "text": "위에 말한 그 장면, 몇 회였어요? 다시 보고 싶은데 못 찾겠어요."},
+      {"weight": 2, "text": "질문인데요, 그 상황에서 왜 그 공을 골랐는지 아시는 분 계세요?"}
+    ]},
+    {"id": "ko.react.reply.correct.record.001", "kind": "reaction", "responds_to": ["*"], "persona": "record_desk", "stance": "correct", "role": "reply", "variants": [
+      {"weight": 3, "text": "정정 하나. 위에서 말한 ‘최초’는 확인된 사실이 아니다. 보관된 참고 기록 기준으로는 ‘동률 또는 근접’이 정확한 표현이다."},
+      {"weight": 2, "text": "숫자 정리. 윗글의 수치 중 하나는 시즌이 아니라 통산 값이다. 헷갈리기 쉬운 부분이라 적어 둔다."}
+    ]},
+    {"id": "ko.react.reply.joke.veteranfan.001", "kind": "reaction", "responds_to": ["*"], "persona": "longtime_fan", "stance": "joke", "role": "reply", "variants": [
+      {"weight": 3, "text": "윗분 30년 팬이시면 저는 31년입니다. 제가 더 오래 봤으니 제 말이 맞습니다. 오늘은 진짜였어요."},
+      {"weight": 2, "text": "그 장면 보고 우리 집 개도 짖었음. 개도 안다."}
+    ]},
+    {"id": "ko.react.reply.redirect.skeptic.001", "kind": "reaction", "responds_to": ["*"], "persona": "skeptical_fan", "stance": "redirect", "role": "reply", "variants": [
+      {"weight": 3, "text": "오늘 얘기도 좋은데, 진짜 궁금한 건 다음 등판 간격임. 이 페이스로 시즌 끝까지 가려면 관리가 필요할 텐데 감독 생각이 궁금하다."},
+      {"weight": 2, "text": "칭찬은 다들 했으니 딴 얘기. 상대 팀이 다음 3연전에 어떻게 대응할지가 더 재밌는 주제 아님?"}
+    ]},
+    {"id": "ko.react.reply.support.beat.001", "kind": "reaction", "responds_to": ["*"], "persona": "beat_reporter", "stance": "support", "role": "reply", "variants": [
+      {"weight": 3, "text": "위 댓글의 현장 묘사는 정확하다. 보태자면 상대 코치진이 경기 뒤 통로에서 오래 서 있었다. 무언가를 다시 계산하는 얼굴이었다."},
+      {"weight": 2, "text": "취재 입장에서 한마디. 오늘 클럽하우스에서 이 얘기를 먼저 꺼낸 건 선수 본인이 아니라 베테랑들이었다."}
+    ]},
+    {"id": "ko.react.reply.qualify.former_pitcher.001", "kind": "reaction", "responds_to": ["*"], "persona": "former_pitcher", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "윗글에 동의하면서도 한 가지. 이런 날 다음 등판이 제일 어렵다. 몸이 아니라 머리가. 그걸 넘기면 진짜다."},
+      {"weight": 2, "text": "기록 얘기는 다들 했으니 나는 워크로드 얘기. 오늘 투구 수를 보면 다음 등판 전 하루 더 쉬는 게 맞다."}
+    ]},
+    {"id": "ko.react.reply.support.tv.001", "kind": "reaction", "responds_to": ["*"], "persona": "tv_analyst", "stance": "support", "role": "reply", "variants": [
+      {"weight": 3, "text": "위 댓글에서 말한 그 순간, 중계석에서도 똑같이 느꼈습니다. 카메라가 더그아웃을 비췄는데 감독이 팔짱을 풀더군요."},
+      {"weight": 2, "text": "네, 그 장면 맞습니다. 편집팀이 슬로우로 두 번 넣었어요."}
+    ]},
+    {"id": "ko.react.reply.ask.supporter.001", "kind": "reaction", "responds_to": ["*"], "persona": "home_supporter", "stance": "ask", "role": "reply", "variants": [
+      {"weight": 3, "text": "그래서 다음 홈경기 언제임? 표 사러 감."},
+      {"weight": 2, "text": "위에 원정팬분, 다음 3연전 오세요. 응원석에서 봅시다."}
+    ]},
+    {"id": "ko.react.reply.oppose.statfan.001", "kind": "reaction", "responds_to": ["*"], "persona": "stat_fan", "stance": "oppose", "role": "reply", "variants": [
+      {"weight": 3, "text": "‘한 경기로 의미 부여 이르다’는 말은 매번 나오는데, 시즌 누적을 보면 이미 한 경기 얘기가 아님. 윗글은 그 부분을 놓쳤다."},
+      {"weight": 2, "text": "반대로 말하면 표본이 충분하다는 게 오늘의 포인트. 윗분 주장은 4월에나 맞는 말."}
+    ]},
+    {"id": "ko.react.reply.concede.rival.001", "kind": "reaction", "responds_to": ["*"], "persona": "rival_fan", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "…알겠다. 인정한다. 근데 다음엔 우리가 이긴다."},
+      {"weight": 2, "text": "위 정정 댓글 보고 좀 식었음. 어쨌든 잘했다. 이 말 하기 싫었는데."}
+    ]},
+    {"id": "ko.react.reply.support.youth.001", "kind": "reaction", "responds_to": ["*"], "persona": "youth_player", "stance": "support", "role": "reply", "variants": [
+      {"weight": 3, "text": "답변 감사합니다! 그 회 다시 봤어요. 코치님한테 보여 드릴게요."},
+      {"weight": 2, "text": "저도 그 공 던져 보고 싶어서 내일 연습할래요."}
+    ]},
+    {"id": "ko.react.reply.correct.beat.001", "kind": "reaction", "responds_to": ["*"], "persona": "beat_reporter", "stance": "correct", "role": "reply", "variants": [
+      {"weight": 3, "text": "위 댓글의 인터뷰 인용은 정확하지 않다. 선수는 그렇게 말하지 않았다. 원문은 훨씬 절제돼 있었다."},
+      {"weight": 2, "text": "사실관계 하나. 그 발언은 경기 전이 아니라 경기 뒤 나온 것이다. 순서가 바뀌면 의미가 달라진다."}
+    ]},
+    {"id": "ko.react.reply.redirect.longtime.001", "kind": "reaction", "responds_to": ["*"], "persona": "longtime_fan", "stance": "redirect", "role": "reply", "variants": [
+      {"weight": 3, "text": "기록 논쟁은 젊은 사람들이 하고, 나는 다른 얘기. 이 선수 사인회 때 마지막까지 남았던 거 기억하는 사람 있나. 그때부터 알아봤다."},
+      {"weight": 2, "text": "숫자 말고 사람 얘기 하자. 저 선수 경기 뒤 야수들 먼저 챙기는 거 봤나."}
+    ]},
+    {"id": "ko.react.reply.qualify.pitching_coach.001", "kind": "reaction", "responds_to": ["*"], "persona": "data_analyst", "stance": "qualify", "role": "reply", "variants": [
+      {"weight": 3, "text": "위 분석에 데이터 하나 보태면, 오늘 결과는 구속보다 구종 배합 변화가 컸다고 본다. 자세한 건 다음 경기 자료가 쌓여야 말할 수 있다."},
+      {"weight": 2, "text": "동의하되 조심스럽게. 한 경기 수치는 노이즈가 크다. 추세는 5경기 단위로 본다."}
+    ]},
+    {"id": "ko.react.thread.milestone.opener.001", "kind": "reaction", "responds_to": ["SP.MILESTONE"], "persona": "archive_desk", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "자료실에서. {headline_fact}. 이 숫자를 어느 시대와 나란히 놓을지는 시즌이 끝난 뒤 정리하겠다. 오늘은 날짜만 적는다."},
+      {"weight": 2, "text": "{headline_fact}. 기록의 숫자보다 그 숫자가 만들어진 과정이 자료가 된다. 오늘의 과정을 보관한다."}
+    ]},
+    {"id": "ko.react.thread.roster.opener.001", "kind": "reaction", "responds_to": ["SP.ROSTER"], "persona": "beat_reporter", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "명단 변경 취재 메모. {headline_fact}. 구단은 ‘조정’이라는 표현을 썼고, 코치진은 말을 아꼈다. 팬들의 반응은 아래에서 이어진다."},
+      {"weight": 2, "text": "{headline_fact}. 라커룸 분위기는 놀라움보다 수긍에 가까웠다. 그것이 오늘의 메모다."}
+    ]},
+    {"id": "ko.react.thread.media.opener.001", "kind": "reaction", "responds_to": ["SP.MEDIA", "SP.USER"], "persona": "national_desk", "stance": "qualify", "role": "opener", "variants": [
+      {"weight": 3, "text": "데스크 정리. {headline_fact}. 발언의 파장은 지역을 넘었고, 상대 구단 반응은 별도 취재 중이다. 해석은 갈린다."},
+      {"weight": 2, "text": "{headline_fact}. 한 선수의 말이 하루의 편집 회의를 바꿨다. 그 말의 무게는 다음 경기가 잰다."}
+    ]},
+    {"id": "ko.react.thread.relation.opener.001", "kind": "reaction", "responds_to": ["SP.RELATION"], "persona": "beat_reporter", "stance": "redirect", "role": "opener", "requires": ["visibility in clubhouse,club,local,national,international"], "variants": [
+      {"weight": 3, "text": "클럽하우스 노트. {headline_fact}. 팀 안의 일은 팀 안에서 정리됐다. 밖에서 보이는 것은 다음 날 워밍업 조합의 변화뿐이다."},
+      {"weight": 2, "text": "{headline_fact}. 세부 내용은 알 수 없고 알려고 하지도 않았다. 다만 훈련장의 공기가 달라졌다는 것만 적는다."}
+    ]},
+    {"id": "ko.react.thread.game_post.opener.001", "kind": "reaction", "responds_to": ["SP.GAME.POST"], "persona": "local_radio", "stance": "support", "role": "opener", "variants": [
+      {"weight": 3, "text": "라디오 청취자 사연입니다. {headline_fact}. 오늘 퇴근길에 중계 듣다가 차를 세우신 분이 계셨다네요."},
+      {"weight": 2, "text": "{headline_fact}. 오늘 방송 전화 연결이 평소 세 배였습니다. 다들 같은 장면 얘기였어요."}
+    ]}
+  ]
+}

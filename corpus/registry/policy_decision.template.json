@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "source_id": "example-source-id",
+  "reviewer": "reviewer name or handle",
+  "reviewed_at": "2026-09-02T00:00:00Z",
+  "decision": "approved | denied | expired | revoked",
+  "decision_reason": "One paragraph naming the license evidence, the terms clause, and the robots result.",
+  "policy_review_expires_at": "2026-10-02T00:00:00Z",
+  "evidence": {
+    "robots_snapshot_hash": "",
+    "terms_snapshot_hash": "",
+    "license_evidence_hash": ""
+  },
+  "allowed": {
+    "storage": "metadata_only | api_permitted_fields | full_text_under_grant | full_text",
+    "transformation": false,
+    "redistribution": false
+  },
+  "sample_review": {
+    "locale": "ja",
+    "samples_reviewed": 0,
+    "caricature_flagged": false
+  }
+}

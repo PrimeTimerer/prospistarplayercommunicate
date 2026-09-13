@@ -1,0 +1,44 @@
+name: Verify and build Windows
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: verify-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Check publication boundary and synthetic fixtures
+        run: |
+          python scripts/verify_public_tree.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python scripts/build_test_fixture.py --check
+      - name: Compile and run isolated regression suite
+        run: |
+          python -m compileall -q .
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python run_tests.py
+      - name: Build executable
+        run: ./build.ps1 -DistPath dist-ci -WorkPath build-ci
+      - name: Verify exact package and disposable backend
+        run: |
+          New-Item -ItemType Directory -Path artifacts | Out-Null
+          python scripts/verify_packaged_release.py --artifact dist-ci/StarModeFeed.exe --report artifacts/package.json
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $checked = Start-Process -FilePath ./dist-ci/StarModeFeed.exe -ArgumentList @('--verify-backend', "$pwd/artifacts/backend.json") -WindowStyle Hidden -Wait -PassThru
+          if ($checked.ExitCode -ne 0) { exit $checked.ExitCode }
+          $report = Get-Content artifacts/backend.json -Raw | ConvertFrom-Json
+          if (-not $report.ok -or -not $report.normal_shutdown) { throw 'Backend verification failed.' }

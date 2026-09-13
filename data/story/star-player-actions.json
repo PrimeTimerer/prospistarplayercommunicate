@@ -1,0 +1,781 @@
+{
+  "schema_version": 1,
+  "version": "2026.09.05.1",
+  "scope": "Story actions, not game automation. Official conditions do not establish current-save eligibility.",
+  "coverage_note": "공식 FAQ에서 확인한 행동·이벤트와 이전판 참고 항목, 창작 확장을 구분합니다. 숨은 분기·전체 장소·선수별 해금의 완전성은 보장하지 않으며 자유 장면으로 보완할 수 있습니다.",
+  "sources": {
+    "faq105": {
+      "title": "KONAMI 2026 Steam FAQ #105",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=105",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq106": {
+      "title": "KONAMI 2026 Steam FAQ #106",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=106",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq108": {
+      "title": "KONAMI 2026 Steam FAQ #108",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=108",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq109": {
+      "title": "KONAMI 2026 Steam FAQ #109",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=109",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq110": {
+      "title": "KONAMI 2026 Steam FAQ #110",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=110",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq111": {
+      "title": "KONAMI 2026 Steam FAQ #111",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=111",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq112": {
+      "title": "KONAMI 2026 Steam FAQ #112",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=112",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq113": {
+      "title": "KONAMI 2026 Steam FAQ #113",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=113",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq114": {
+      "title": "KONAMI 2026 Steam FAQ #114",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=114",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq115": {
+      "title": "KONAMI 2026 Steam FAQ #115",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=115",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq116": {
+      "title": "KONAMI 2026 Steam FAQ #116",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=116",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq117": {
+      "title": "KONAMI 2026 Steam FAQ #117",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=117",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq118": {
+      "title": "KONAMI 2026 Steam FAQ #118",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=118",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq119": {
+      "title": "KONAMI 2026 Steam FAQ #119",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=119",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq122": {
+      "title": "KONAMI 2026 Steam FAQ #122",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=122",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq123": {
+      "title": "KONAMI 2026 Steam FAQ #123",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=123",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq124": {
+      "title": "KONAMI 2026 Steam FAQ #124",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=124",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq125": {
+      "title": "KONAMI 2026 Steam FAQ #125",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=125",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq126": {
+      "title": "KONAMI 2026 Steam FAQ #126",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=126",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq127": {
+      "title": "KONAMI 2026 Steam FAQ #127",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=127",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq128": {
+      "title": "KONAMI 2026 Steam FAQ #128",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=128",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq130": {
+      "title": "KONAMI 2026 Steam FAQ #130",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=130",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq131": {
+      "title": "KONAMI 2026 Steam FAQ #131",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=131",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq132": {
+      "title": "KONAMI 2026 Steam FAQ #132",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=132",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "faq133": {
+      "title": "KONAMI 2026 Steam FAQ #133",
+      "url": "https://www.konami.com/games/2026_support/faq/0/jp/ja/pc/item?no=133",
+      "version": "2026",
+      "checked_on": "2026-09-05",
+      "type": "official"
+    },
+    "hobby": {
+      "title": "Al-gest 취미 목록 (이전판)",
+      "url": "https://al-gest.com/prospi2024-2025/prospi2024-2025-hobby/",
+      "version": "2024-2025",
+      "checked_on": "2026-09-05",
+      "type": "secondary"
+    },
+    "romance": {
+      "title": "Game8 연애·결혼 (이전판)",
+      "url": "https://game8.jp/prospi2024-2025/647464",
+      "version": "2024-2025",
+      "checked_on": "2026-09-05",
+      "type": "secondary"
+    },
+    "exchange": {
+      "title": "Game8 선수 교류 (이전판)",
+      "url": "https://game8.jp/prospi2024-2025/647211",
+      "version": "2024-2025",
+      "checked_on": "2026-09-05",
+      "type": "secondary"
+    },
+    "saga": {
+      "title": "Original fictional scene examples",
+      "url": "https://github.com/PrimeTimerer/prospistarplayercommunicate",
+      "version": "fiction",
+      "checked_on": "2026-09-13",
+      "type": "authored_example"
+    }
+  },
+  "actions": [
+    {
+      "id": "exchange",
+      "group": "교류",
+      "label": "선수와 교류",
+      "status": "official",
+      "source": "faq113",
+      "note": "인물 교류는 스테이터스 성장 경로다. 현재 교류 대상·친밀도는 게임에서 확인한다."
+    },
+    {
+      "id": "staff",
+      "group": "교류",
+      "label": "구단 직원·지인과 교류",
+      "status": "official",
+      "source": "faq131",
+      "note": "인물 교류 메뉴. 특정 스킬이나 수입이 실제 발생했는지는 따로 확인한다."
+    },
+    {
+      "id": "aftergame_meal",
+      "group": "교류",
+      "label": "경기 후 동료와 식사",
+      "status": "official",
+      "source": "faq125",
+      "note": "경기 후 선수와의 대화에서 식사를 선택하는 회복 경로가 있다."
+    },
+    {
+      "id": "introduce",
+      "group": "교류",
+      "label": "새 교류 선수 소개",
+      "status": "legacy",
+      "source": "exchange",
+      "note": "이전판 공략의 교류 상대 확대. 현재판·선수에서 확인 후 기록한다."
+    },
+    {
+      "id": "present",
+      "group": "교류",
+      "label": "교류 선물 사용",
+      "status": "legacy",
+      "source": "exchange",
+      "note": "이전판 공략의 선물. 효과·대상을 자동 확정하지 않는다."
+    },
+    {
+      "id": "register_learning",
+      "group": "학습·훈련",
+      "label": "배울 능력 등록",
+      "status": "official",
+      "source": "faq123",
+      "note": "일부 특수능력·구종과 이미 등록한 항목은 후보가 될 수 없다."
+    },
+    {
+      "id": "learning_practice",
+      "group": "학습·훈련",
+      "label": "라닝 진행·배운 내용 연습",
+      "status": "official",
+      "source": "faq122",
+      "note": "교류와 능력 학습 맥락. 연습했다는 서사만으로 습득을 확정하지 않는다."
+    },
+    {
+      "id": "learning_acquired",
+      "group": "학습·훈련",
+      "label": "라닝 습득 확인",
+      "status": "official",
+      "source": "faq122",
+      "note": "게임 화면의 습득 완료를 직접 확인한 경우에만 완료 기록으로 남긴다."
+    },
+    {
+      "id": "original_pitch",
+      "group": "학습·훈련",
+      "label": "상대의 오리지널 구종 학습",
+      "status": "official",
+      "source": "faq122",
+      "note": "상대가 보유한 오리지널 구종을 학습할 수 있다."
+    },
+    {
+      "id": "relearn",
+      "group": "학습·훈련",
+      "label": "잃은 라닝 능력 재습득",
+      "status": "official",
+      "source": "faq124",
+      "note": "다른 능력 취득으로 잃은 능력은 재습득 가능하나 변화구 구종은 예외다."
+    },
+    {
+      "id": "practice",
+      "group": "학습·훈련",
+      "label": "개인 연습·훈련 설비 사용",
+      "status": "official",
+      "source": "faq111",
+      "note": "훈련 설비가 존재한다. 구체적인 경험치나 능력 상승은 실제 화면 확인이 필요하다."
+    },
+    {
+      "id": "walk",
+      "group": "외출·생활",
+      "label": "산책·이동 장소 발견",
+      "status": "official",
+      "source": "faq112",
+      "note": "산책으로 해당 지역의 외출 장소가 늘어난다. 개방 장소를 자동 추정하지 않는다."
+    },
+    {
+      "id": "outing",
+      "group": "외출·생활",
+      "label": "외출·원정지 방문",
+      "status": "official",
+      "source": "faq113",
+      "note": "외출은 스테이터스 성장 경로다. 이동 가능한 장소는 현재 지역·일정에 따라 확인한다."
+    },
+    {
+      "id": "eat_out",
+      "group": "외출·생활",
+      "label": "외출 중 식사",
+      "status": "official",
+      "source": "faq125",
+      "note": "식사는 컨디션 회복 경로 중 하나다. 가게와 메뉴는 직접 입력할 수 있다."
+    },
+    {
+      "id": "shopping",
+      "group": "구매·주거",
+      "label": "아이템 구매",
+      "status": "official",
+      "source": "faq110",
+      "note": "프로스피 숍과 각 외출 목적지에서 구입한다."
+    },
+    {
+      "id": "buy_apartment",
+      "group": "구매·주거",
+      "label": "맨션 구입",
+      "status": "official",
+      "source": "faq111",
+      "note": "부동산에서 맨션을 구매하면 훈련 설비 구입 가능 수가 늘어난다."
+    },
+    {
+      "id": "buy_house",
+      "group": "구매·주거",
+      "label": "주택 구입",
+      "status": "official",
+      "source": "faq111",
+      "note": "부동산의 주택 구매와 설비 한도. 금액과 실제 소유는 게임에서 확인한다."
+    },
+    {
+      "id": "buy_equipment",
+      "group": "구매·주거",
+      "label": "훈련 설비 구입",
+      "status": "official",
+      "source": "faq111",
+      "note": "거주 주택에 따른 구매 한도를 확인한다."
+    },
+    {
+      "id": "recovery_drink",
+      "group": "휴식·몸 상태",
+      "label": "컨디션 회복 음료 사용",
+      "status": "official",
+      "source": "faq125",
+      "note": "회복 음료는 컨디션 게이지 회복 수단이다."
+    },
+    {
+      "id": "rest",
+      "group": "휴식·몸 상태",
+      "label": "자유 행동일 휴양",
+      "status": "official",
+      "source": "faq126",
+      "note": "자유 행동일의 휴양은 몸 상태 회복 수단이다."
+    },
+    {
+      "id": "fatigue",
+      "group": "휴식·몸 상태",
+      "label": "피로·컨디션 관리",
+      "status": "official",
+      "source": "faq125",
+      "note": "피로 누적으로 컨디션 게이지 최대치가 낮아질 수 있다."
+    },
+    {
+      "id": "recovery",
+      "group": "휴식·몸 상태",
+      "label": "몸 상태 회복 확인",
+      "status": "official",
+      "source": "faq126",
+      "note": "휴양 또는 시간 경과로 회복될 수 있다. 진단·부상은 임의 확정하지 않는다."
+    },
+    {
+      "id": "aging",
+      "group": "휴식·몸 상태",
+      "label": "시즌 종료 후 노화·관리",
+      "status": "official",
+      "source": "faq128",
+      "note": "30세 이상 시즌 종료 후 능력 감소가 생기며 특정 설비로 일부 억제할 수 있다."
+    },
+    {
+      "id": "jetbath",
+      "group": "구매·주거",
+      "label": "제트 배스·산소 캡슐 구매",
+      "status": "official",
+      "source": "faq128",
+      "note": "노화에 따른 능력 감소를 어느 정도 억제하는 설비다. 정확한 효과는 추정하지 않는다."
+    },
+    {
+      "id": "skip_rest",
+      "group": "휴식·몸 상태",
+      "label": "스킵한 자유 행동일의 휴양",
+      "status": "official",
+      "source": "faq130",
+      "note": "자유 행동일 스킵 시 자동 휴양. 스킵 중 별도 만남을 자동 창작하지 않는다."
+    },
+    {
+      "id": "callup",
+      "group": "기용·커리어",
+      "label": "1군 승격 확인",
+      "status": "official",
+      "source": "faq115",
+      "note": "시범경기·2군 경기 성과가 승격 경로다. 실제 발령은 확인해야 한다."
+    },
+    {
+      "id": "regular",
+      "group": "기용·커리어",
+      "label": "주전 기용 확인",
+      "status": "official",
+      "source": "faq116",
+      "note": "시범경기·1군 경기 성과가 주전 기용 경로다."
+    },
+    {
+      "id": "lineup",
+      "group": "기용·커리어",
+      "label": "타순 배정·기용 평가",
+      "status": "official",
+      "source": "faq127",
+      "note": "타순은 타격·장타·주루 종합 평가와 기용 랭크의 영향을 받는다."
+    },
+    {
+      "id": "mission_success",
+      "group": "기용·커리어",
+      "label": "시즌 미션 성공",
+      "status": "official",
+      "source": "faq117",
+      "note": "성공은 기용·다음 연봉 평가에 영향을 줄 수 있다. 효과 수치는 직접 확인한다."
+    },
+    {
+      "id": "mission_failure",
+      "group": "기용·커리어",
+      "label": "시즌 미션 실패",
+      "status": "official",
+      "source": "faq117",
+      "note": "공식 FAQ는 실패에 특별한 불이익이 없다고 설명한다."
+    },
+    {
+      "id": "position_request",
+      "group": "기용·커리어",
+      "label": "캠프에서 주 포지션 변경 희망",
+      "status": "official",
+      "source": "faq118",
+      "note": "오프시즌 캠프에서 희망 가능. 야수↔투수 전업은 불가하며 희망과 승인은 별개다."
+    },
+    {
+      "id": "pitch_role",
+      "group": "기용·커리어",
+      "label": "캠프에서 투수 기용 변경 희망",
+      "status": "official",
+      "source": "faq119",
+      "note": "오프시즌 캠프의 선발·구원 역할 변경 희망."
+    },
+    {
+      "id": "two_way",
+      "group": "기용·커리어",
+      "label": "감독에게 이도류 희망",
+      "status": "official",
+      "source": "faq108",
+      "note": "야수 적성이 있는 선발투수가 개막 1군에 들어 감독에게 희망하는 조건이다."
+    },
+    {
+      "id": "contract",
+      "group": "기용·커리어",
+      "label": "계약 갱신 협상",
+      "status": "official",
+      "source": "faq114",
+      "note": "협상은 최대 세 번. 이 앱은 협상 장면만 기록하며 게임 계약을 변경하지 않는다."
+    },
+    {
+      "id": "merch_skill",
+      "group": "교류",
+      "label": "마치다 유이치로와 상품 기획 교류",
+      "status": "official",
+      "source": "faq131",
+      "note": "구단 직원 마치다 유이치로와 교류해 프로듀스 기획 스킬을 얻는 경로."
+    },
+    {
+      "id": "merch_income",
+      "group": "기용·커리어",
+      "label": "굿즈 수입 확인",
+      "status": "official",
+      "source": "faq131",
+      "note": "프로듀스 기획 스킬 획득 후 수입 경로. 실제 금액은 확인해야 한다."
+    },
+    {
+      "id": "star_level",
+      "group": "기용·커리어",
+      "label": "스타 레벨 상승 확인",
+      "status": "official",
+      "source": "faq133",
+      "note": "최대 100. 상승 여부·현재 값은 게임 화면에서 확인한다."
+    },
+    {
+      "id": "meet_partner",
+      "group": "연애·가족",
+      "label": "연애 후보와 첫 만남",
+      "status": "official",
+      "source": "faq132",
+      "note": "오리지널 선수·18세 이상·스타 레벨 10/15/20 조건. 실존 선수에게 자동 적용하지 않는다."
+    },
+    {
+      "id": "date",
+      "group": "연애·가족",
+      "label": "데이트",
+      "status": "legacy",
+      "source": "romance",
+      "note": "이전판에서 차량 구매 후 데이트 경로. 현재판 조건과 대상은 확인해야 한다."
+    },
+    {
+      "id": "confession",
+      "group": "연애·가족",
+      "label": "고백",
+      "status": "legacy",
+      "source": "romance",
+      "note": "이전판 공략의 교제 분기. 성공·관계 변화는 직접 확인한다."
+    },
+    {
+      "id": "proposal",
+      "group": "연애·가족",
+      "label": "청혼",
+      "status": "legacy",
+      "source": "romance",
+      "note": "이전판의 교류·개별 성공 조건. 현재판 조건을 자동 확정하지 않는다."
+    },
+    {
+      "id": "wedding",
+      "group": "연애·가족",
+      "label": "결혼",
+      "status": "legacy",
+      "source": "romance",
+      "note": "이전판 결혼 경로. 게임에서 확인한 결혼과 자유 창작을 구분한다."
+    },
+    {
+      "id": "buy_car",
+      "group": "구매·주거",
+      "label": "차량 구입",
+      "status": "legacy",
+      "source": "romance",
+      "note": "이전판 차량 구매 경로. 현재판의 차종·금액·조건은 게임에서 확인한다."
+    },
+    {
+      "id": "hobby_1",
+      "group": "취미",
+      "label": "요리",
+      "status": "legacy",
+      "source": "hobby",
+      "note": "이전판 취미 목록에서 확인. 현재판의 해금·아이템·레벨은 게임에서 확인한다."
+    },
+    {
+      "id": "hobby_2",
+      "group": "취미",
+      "label": "독서",
+      "status": "legacy",
+      "source": "hobby",
+      "note": "이전판 취미 목록에서 확인. 현재판의 해금·아이템·레벨은 게임에서 확인한다."
+    },
+    {
+      "id": "hobby_3",
+      "group": "취미",
+      "label": "영화 감상",
+      "status": "legacy",
+      "source": "hobby",
+      "note": "이전판 취미 목록에서 확인. 현재판의 해금·아이템·레벨은 게임에서 확인한다."
+    },
+    {
+      "id": "hobby_4",
+      "group": "취미",
+      "label": "게임",
+      "status": "legacy",
+      "source": "hobby",
+      "note": "이전판 취미 목록에서 확인. 현재판의 해금·아이템·레벨은 게임에서 확인한다."
+    },
+    {
+      "id": "hobby_5",
+      "group": "취미",
+      "label": "음악",
+      "status": "legacy",
+      "source": "hobby",
+      "note": "이전판 취미 목록에서 확인. 현재판의 해금·아이템·레벨은 게임에서 확인한다."
+    },
+    {
+      "id": "hobby_6",
+      "group": "취미",
+      "label": "스포츠 관람",
+      "status": "legacy",
+      "source": "hobby",
+      "note": "이전판 취미 목록에서 확인. 현재판의 해금·아이템·레벨은 게임에서 확인한다."
+    },
+    {
+      "id": "hobby_7",
+      "group": "취미",
+      "label": "골프",
+      "status": "legacy",
+      "source": "hobby",
+      "note": "이전판 취미 목록에서 확인. 현재판의 해금·아이템·레벨은 게임에서 확인한다."
+    },
+    {
+      "id": "hobby_8",
+      "group": "취미",
+      "label": "낚시",
+      "status": "legacy",
+      "source": "hobby",
+      "note": "이전판 취미 목록에서 확인. 현재판의 해금·아이템·레벨은 게임에서 확인한다."
+    },
+    {
+      "id": "hobby_9",
+      "group": "취미",
+      "label": "노래방",
+      "status": "legacy",
+      "source": "hobby",
+      "note": "이전판 취미 목록에서 확인. 현재판의 해금·아이템·레벨은 게임에서 확인한다."
+    },
+    {
+      "id": "player_manager",
+      "group": "기용·커리어",
+      "label": "선수 겸 감독 설정의 장면",
+      "status": "official",
+      "source": "faq109",
+      "note": "시작 팀 에디트의 선수와 감독이 같은 인물인 경우만 가능. 도중 임명 기능이 아니다."
+    },
+    {
+      "id": "active_draft",
+      "group": "창작 확장",
+      "label": "현역 드래프트 가상 사건",
+      "status": "fiction_only",
+      "source": "faq105",
+      "note": "2026 스타플레이어에는 현역 드래프트가 없다. 이 항목은 자유 창작 전용이다."
+    },
+    {
+      "id": "tryout",
+      "group": "창작 확장",
+      "label": "트라이아웃 가상 사건",
+      "status": "fiction_only",
+      "source": "faq106",
+      "note": "2026 스타플레이어에는 트라이아웃이 없다. 다른 모드의 기능과 혼동하지 않는다."
+    },
+    {
+      "id": "story_free",
+      "group": "창작 확장",
+      "label": "자유 장면",
+      "status": "fiction",
+      "source": "saga",
+      "note": "장소·행동·대사와 다음 반응을 자유롭게 적는다."
+    },
+    {
+      "id": "story_burger",
+      "group": "창작 확장",
+      "label": "햄버거·단골집 개그",
+      "status": "fiction",
+      "source": "saga",
+      "note": "사소한 취향과 평범한 생활을 반복 모티프로 만든다."
+    },
+    {
+      "id": "story_ob",
+      "group": "창작 확장",
+      "label": "상대 팀 OB의 논평",
+      "status": "fiction",
+      "source": "saga",
+      "note": "직접 지정한 인물의 서로 다른 관점으로 가상 반응을 쓴다. 실제 발언으로 표시하지 않는다."
+    },
+    {
+      "id": "story_family",
+      "group": "창작 확장",
+      "label": "가족·고향·전화",
+      "status": "fiction",
+      "source": "saga",
+      "note": "실제 개인정보가 아니라 사용자가 정한 세계선 설정으로 다룬다."
+    },
+    {
+      "id": "story_press",
+      "group": "창작 확장",
+      "label": "기자회견·인터뷰",
+      "status": "fiction",
+      "source": "saga",
+      "note": "무엇을 공개했는지 사용자가 정한다. 비공개 대화를 멋대로 유출하지 않는다."
+    },
+    {
+      "id": "story_tension",
+      "group": "창작 확장",
+      "label": "동료·코치와 긴장",
+      "status": "fiction",
+      "source": "saga",
+      "note": "갈등의 원인과 아직 해결되지 않은 약속을 다음 장면에서 이어간다."
+    },
+    {
+      "id": "story_apology",
+      "group": "창작 확장",
+      "label": "사과·화해",
+      "status": "fiction",
+      "source": "saga",
+      "note": "모두 즉시 화해시키지 않고 상대별 태도를 이어간다."
+    },
+    {
+      "id": "story_promise",
+      "group": "창작 확장",
+      "label": "약속·복선·재회",
+      "status": "fiction",
+      "source": "saga",
+      "note": "작은 물건이나 약속을 반복 기억으로 고정할 수 있다."
+    },
+    {
+      "id": "story_travel",
+      "group": "창작 확장",
+      "label": "원정 도시·동네 탐방",
+      "status": "fiction",
+      "source": "saga",
+      "note": "실제 지리 참고와 가상의 가게·목격담을 구별한다."
+    },
+    {
+      "id": "story_video",
+      "group": "창작 확장",
+      "label": "영상실·전력 분석",
+      "status": "fiction",
+      "source": "saga",
+      "note": "기존 기록만 인용하고 비공개 분석 내용은 외부에 알려졌다고 쓰지 않는다."
+    },
+    {
+      "id": "story_fan",
+      "group": "창작 확장",
+      "label": "팬과의 만남·SNS",
+      "status": "fiction",
+      "source": "saga",
+      "note": "공개한 장면을 바탕으로 커뮤니티별 다른 말투의 반응을 서사 안에 요청한다."
+    },
+    {
+      "id": "story_award",
+      "group": "창작 확장",
+      "label": "수상·우승 뒷이야기",
+      "status": "fiction",
+      "source": "saga",
+      "note": "확인된 수상·우승과 시점을 사용한다. 이 장면은 수상 원장에 자동 등록하지 않는다."
+    },
+    {
+      "id": "story_record",
+      "group": "창작 확장",
+      "label": "최초·신기록의 여운",
+      "status": "fiction",
+      "source": "saga",
+      "note": "검증 기록과 창작 감정만 연결한다. 최초 기록을 임의로 판정하지 않는다."
+    },
+    {
+      "id": "story_transfer",
+      "group": "창작 확장",
+      "label": "이적·FA·트레이드 대화",
+      "status": "fiction",
+      "source": "saga",
+      "note": "실제 거래 완료를 만들지 않는다. 미확인 이적 조건은 창작 또는 협의로만 다룬다."
+    },
+    {
+      "id": "story_retirement",
+      "group": "창작 확장",
+      "label": "은퇴·진로의 고민",
+      "status": "fiction",
+      "source": "saga",
+      "note": "실제 은퇴와 창작 고민을 구분하고 연속성을 보존한다."
+    },
+    {
+      "id": "story_nothing",
+      "group": "창작 확장",
+      "label": "별일 없는 하루",
+      "status": "fiction",
+      "source": "saga",
+      "note": "조용한 취미·침묵·농담도 하나의 장면으로 이어간다."
+    }
+  ]
+}

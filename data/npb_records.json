@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "catalog_version": "2026-09-01",
+  "runtime_policy": "Bundled offline reference data verified against official NPB pages. No runtime network request is made.",
+  "sources": [
+    {
+      "label": "NPB all-time and single-season record index",
+      "url": "https://npb.jp/bis/history/",
+      "as_of": "2026-08-31"
+    },
+    {
+      "label": "NPB all-time batting milestone achievers",
+      "url": "https://npb.jp/history/alltime/index_b.html",
+      "as_of": "2026-09-01"
+    },
+    {
+      "label": "NPB all-time pitching milestone achievers",
+      "url": "https://npb.jp/history/alltime/index_p.html",
+      "as_of": "2026-09-01"
+    },
+    {
+      "label": "NPB 2026 anticipated batting milestones",
+      "url": "https://npb.jp/history/2026/milestones_b.html",
+      "as_of": "2026-09-01"
+    },
+    {
+      "label": "NPB 2026 anticipated pitching milestones",
+      "url": "https://npb.jp/history/2026/milestones_p.html",
+      "as_of": "2026-09-01"
+    }
+  ],
+  "milestone_thresholds": {
+    "bat_H": [1000, 1500, 2000, 2500],
+    "bat_HR": [100, 150, 200, 250, 300, 350, 400, 450, 500],
+    "bat_RBI": [1000, 1500],
+    "bat_R": [1000],
+    "bat_SB": [250, 300, 350],
+    "pit_W": [100, 150, 200],
+    "pit_K": [1000, 1500, 2000],
+    "pit_IP_outs": [3000, 4500, 6000, 9000]
+  },
+  "records": [
+    {
+      "id": "season-bat-r",
+      "scope": "season",
+      "stat_key": "bat_R",
+      "label": "득점",
+      "value": 143,
+      "holder": "小鶴 誠",
+      "holder_ko": "고즈루 마코토",
+      "season_year": 1950,
+      "source_url": "https://npb.jp/bis/history/ssb_r.html",
+      "as_of": "2025-season-final"
+    },
+    {
+      "id": "career-bat-r",
+      "scope": "career",
+      "stat_key": "bat_R",
+      "label": "득점",
+      "value": 1967,
+      "holder": "王 貞治",
+      "holder_ko": "오 사다하루",
+      "active_years": "1959-1980",
+      "source_url": "https://npb.jp/bis/history/ltb_r.html",
+      "as_of": "2026-08-31"
+    },
+    {
+      "id": "season-bat-h",
+      "scope": "season",
+      "stat_key": "bat_H",
+      "label": "안타",
+      "value": 216,
+      "holder": "秋山 翔吾",
+      "holder_ko": "아키야마 쇼고",
+      "season_year": 2015,
+      "source_url": "https://npb.jp/bis/history/ssb_h.html",
+      "as_of": "2025-season-final"
+    },
+    {
+      "id": "career-bat-h",
+      "scope": "career",
+      "stat_key": "bat_H",
+      "label": "안타",
+      "value": 3085,
+      "holder": "張本 勲",
+      "holder_ko": "하리모토 이사오",
+      "active_years": "1959-1981",
+      "source_url": "https://npb.jp/bis/history/ltb_h.html",
+      "as_of": "2026-08-31"
+    },
+    {
+      "id": "season-bat-hr",
+      "scope": "season",
+      "stat_key": "bat_HR",
+      "label": "홈런",
+      "value": 60,
+      "holder": "W. バレンティン",
+      "holder_ko": "블라디미르 발렌틴",
+      "season_year": 2013,
+      "source_url": "https://npb.jp/bis/history/ssb_hr.html",
+      "as_of": "2025-season-final"
+    },
+    {
+      "id": "career-bat-hr",
+      "scope": "career",
+      "stat_key": "bat_HR",
+      "label": "홈런",
+      "value": 868,
+      "holder": "王 貞治",
+      "holder_ko": "오 사다하루",
+      "active_years": "1959-1980",
+      "source_url": "https://npb.jp/bis/history/ltb_hr.html",
+      "as_of": "2026-08-31"
+    },
+    {
+      "id": "season-bat-rbi",
+      "scope": "season",
+      "stat_key": "bat_RBI",
+      "label": "타점",
+      "value": 161,
+      "holder": "小鶴 誠",
+      "holder_ko": "고즈루 마코토",
+      "season_year": 1950,
+      "source_url": "https://npb.jp/bis/history/ssb_rbi.html",
+      "as_of": "2025-season-final"
+    },
+    {
+      "id": "career-bat-rbi",
+      "scope": "career",
+      "stat_key": "bat_RBI",
+      "label": "타점",
+      "value": 2170,
+      "holder": "王 貞治",
+      "holder_ko": "오 사다하루",
+      "active_years": "1959-1980",
+      "source_url": "https://npb.jp/bis/history/ltb_rbi.html",
+      "as_of": "2026-08-31"
+    },
+    {
+      "id": "season-bat-sb",
+      "scope": "season",
+      "stat_key": "bat_SB",
+      "label": "도루",
+      "value": 106,
+      "holder": "福本 豊",
+      "holder_ko": "후쿠모토 유타카",
+      "season_year": 1972,
+      "source_url": "https://npb.jp/bis/history/ssb_sb.html",
+      "as_of": "2025-season-final"
+    },
+    {
+      "id": "career-bat-sb",
+      "scope": "career",
+      "stat_key": "bat_SB",
+      "label": "도루",
+      "value": 1065,
+      "holder": "福本 豊",
+      "holder_ko": "후쿠모토 유타카",
+      "active_years": "1969-1988",
+      "source_url": "https://npb.jp/bis/history/ltb_sb.html",
+      "as_of": "2026-08-31"
+    },
+    {
+      "id": "season-pit-w",
+      "scope": "season",
+      "stat_key": "pit_W",
+      "label": "승리",
+      "value": 42,
+      "holder": "V. スタルヒン / 稲尾 和久",
+      "holder_ko": "빅토르 스타루힌 / 이나오 가즈히사",
+      "season_year": "1939 / 1961",
+      "source_url": "https://npb.jp/bis/history/ssp_w.html",
+      "as_of": "2025-season-final"
+    },
+    {
+      "id": "career-pit-w",
+      "scope": "career",
+      "stat_key": "pit_W",
+      "label": "승리",
+      "value": 400,
+      "holder": "金田 正一",
+      "holder_ko": "가네다 마사이치",
+      "active_years": "1950-1969",
+      "source_url": "https://npb.jp/bis/history/ltp_w.html",
+      "as_of": "2026-08-31"
+    },
+    {
+      "id": "season-pit-k",
+      "scope": "season",
+      "stat_key": "pit_K",
+      "label": "탈삼진",
+      "value": 401,
+      "holder": "江夏 豊",
+      "holder_ko": "에나쓰 유타카",
+      "season_year": 1968,
+      "source_url": "https://npb.jp/bis/history/ssp_so.html",
+      "as_of": "2025-season-final"
+    },
+    {
+      "id": "career-pit-k",
+      "scope": "career",
+      "stat_key": "pit_K",
+      "label": "탈삼진",
+      "value": 4490,
+      "holder": "金田 正一",
+      "holder_ko": "가네다 마사이치",
+      "active_years": "1950-1969",
+      "source_url": "https://npb.jp/bis/history/ltp_so.html",
+      "as_of": "2026-08-31"
+    },
+    {
+      "id": "season-pit-ip",
+      "scope": "season",
+      "stat_key": "pit_IP_outs",
+      "label": "투구 이닝",
+      "value": 1624,
+      "display_value": "541.1",
+      "holder": "林 安夫",
+      "holder_ko": "하야시 야스오",
+      "season_year": 1942,
+      "source_url": "https://npb.jp/bis/history/ssp_ip.html",
+      "as_of": "2025-season-final"
+    },
+    {
+      "id": "career-pit-ip",
+      "scope": "career",
+      "stat_key": "pit_IP_outs",
+      "label": "투구 이닝",
+      "value": 16580,
+      "display_value": "5526.2",
+      "holder": "金田 正一",
+      "holder_ko": "가네다 마사이치",
+      "active_years": "1950-1969",
+      "source_url": "https://npb.jp/bis/history/ltp_ip.html",
+      "as_of": "2026-08-31"
+    }
+  ]
+}

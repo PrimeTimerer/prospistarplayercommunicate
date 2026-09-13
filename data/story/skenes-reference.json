@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "title": "가상 서사 참고 예제",
+  "source_url": "https://github.com/PrimeTimerer/prospistarplayercommunicate",
+  "checked_on": "2026-09-13",
+  "note": "개인 대화에서 가져오지 않은 합성 예제입니다. 항목을 직접 골라야 현재 세계선에 추가됩니다. 기존 파일명과 항목 ID는 호환성을 위해 유지합니다.",
+  "items": [
+    {"id":"burger","kind":"preference","label":"예제 취향","detail":"가상의 선수는 경기가 없는 날 새 요리를 배운다. 사용자가 원하는 취향으로 바꿀 수 있다.","basis":"fictional_reference"},
+    {"id":"quiet","kind":"background","label":"예제 성격","detail":"가상의 주인공은 친한 사람 앞에서는 수다스럽지만 인터뷰에서는 말을 고르는 성격이다.","basis":"fictional_reference"},
+    {"id":"routine","kind":"motif","label":"예제 준비 습관","detail":"훈련 전에 신발 끈을 두 번 확인하는 소소한 습관을 장면 사이에 연결한다.","basis":"fictional_reference"},
+    {"id":"family","kind":"relationship","label":"예제 지인","detail":"가상의 오랜 친구가 응원 편지를 보낸다. 실존 지인의 신상이나 대화는 포함하지 않는다.","basis":"fictional_reference"},
+    {"id":"yokohama","kind":"place","label":"예제 동네","detail":"이야기 속 가상의 공원에서 휴식을 취한다. 실제 거주지나 이동 경로가 아니다.","basis":"fictional_reference"},
+    {"id":"ob","kind":"person","label":"예제 은퇴 선수","detail":"가상의 은퇴 선수가 준비 과정에 대해 의견을 낸다. 실제 인물의 발언으로 표시하지 않는다.","basis":"fictional_reference"},
+    {"id":"voices","kind":"person","label":"예제 관점 차이","detail":"가상의 코치는 준비를, 팬은 다음 출전을 궁금해한다. 모든 인물이 같은 감탄을 반복하지 않는다.","basis":"fictional_reference"},
+    {"id":"daily_objects","kind":"motif","label":"예제 물건","detail":"훈련용 수첩을 다음 장면에서 다시 꺼내 이전 약속을 이어간다.","basis":"fictional_reference"},
+    {"id":"media","kind":"plot","label":"예제 공개 범위","detail":"사용자가 공개 인터뷰로 정한 발언만 가상 기사와 커뮤니티 반응에 연결한다.","basis":"fictional_reference"},
+    {"id":"arc","kind":"plot","label":"예제 이야기 흐름","detail":"작은 걱정에서 준비와 대화를 거쳐 다음 도전으로 이어진다. 새로운 경기 기록을 만들어내지 않는다.","basis":"fictional_reference"},
+    {"id":"crosscountry","kind":"background","label":"예제 해외 반응","detail":"언어권마다 다른 관점의 가상 반응을 작성하되 실제 댓글 번역이라고 주장하지 않는다.","basis":"fictional_reference"},
+    {"id":"koshien","kind":"place","label":"예제 원정 배경","detail":"원정지의 가상 도서관을 방문하는 장면이다. 실제 구장 위치나 일정에 대한 자료가 아니다.","basis":"fictional_reference"}
+  ]
+}

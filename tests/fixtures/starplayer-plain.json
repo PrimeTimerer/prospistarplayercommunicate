@@ -1,0 +1,34 @@
+{
+  "source": "synthetic-from-zero; no user save or screenshot input",
+  "team": "TEST TEAM",
+  "player_name": "Test Player",
+  "display_name": "Test Player(투수)",
+  "player_id": 200001,
+  "date": {
+    "year": 2030,
+    "month": 5,
+    "day": 12,
+    "career_year": 2
+  },
+  "birth_year": 2008,
+  "current_stats": {
+    "pit_IP": 54,
+    "pit_K": 60,
+    "pit_W": 4,
+    "pit_H": 40,
+    "bat_AB": 104,
+    "bat_H": 36,
+    "bat_HR": 3,
+    "bat_RBI": 20
+  },
+  "previous_seasons": [
+    {
+      "career_year": 1,
+      "pit_K": 80,
+      "pit_W": 5,
+      "bat_HR": 4
+    }
+  ],
+  "profile_record_kind": 37,
+  "plain_size": 76656
+}

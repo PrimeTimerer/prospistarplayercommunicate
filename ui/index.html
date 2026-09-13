@@ -1,0 +1,918 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>StarPlayer Community Simulator</title>
+  <link rel="icon" type="image/png" href="/assets/starmodefeed-mark.png">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="/css/workspace.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 이동</a>
+  <header class="appbar">
+    <div class="appbar__inner">
+      <div class="brand" aria-label="StarPlayer Community Simulator">
+        <span class="brand__mark" aria-hidden="true"><img src="/assets/starmodefeed-mark.png" alt=""></span>
+        <span class="brand__copy">
+          <strong>StarPlayer</strong>
+          <span>Community Simulator</span>
+        </span>
+        <span class="badge badge--beta" id="versionBadge">PREVIEW</span>
+      </div>
+      <div class="appbar__status">
+        <span class="status-dot" id="saveDot" aria-hidden="true"></span>
+        <span id="saveStatus">세이브 확인 중</span>
+        <span class="divider" aria-hidden="true"></span>
+        <span class="status-dot status-dot--muted" id="llmDot" aria-hidden="true"></span>
+        <span id="llmStatus">로컬 LLM 확인 중</span>
+        <span class="divider" aria-hidden="true"></span>
+        <span class="status-dot status-dot--muted" id="apiDot" aria-hidden="true"></span>
+        <span id="apiStatus">Gemini API 꺼짐</span>
+      </div>
+      <button class="icon-button" id="themeButton" type="button" aria-label="테마 전환" title="테마 전환">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v2m0 14v2M3 12h2m14 0h2M5.64 5.64l1.42 1.42m9.88 9.88 1.42 1.42m0-12.72-1.42 1.42M7.06 16.94l-1.42 1.42M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/></svg>
+      </button>
+      <button class="button button--quiet button--compact" id="settingsButton" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21h-4v-.09A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3v-4h.09A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.09A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 9c.38.26.64.61.6 1.1v.3h1v4h-.09a1.7 1.7 0 0 0-1.51.6Z"/></svg>
+        설정
+      </button>
+    </div>
+  </header>
+
+  <main class="page" id="main">
+    <section class="empty-shell" id="loadingState" aria-live="polite">
+      <div class="loader" aria-hidden="true"></div>
+      <strong>세이브와 세계선을 확인하고 있습니다</strong>
+      <span>모든 처리는 이 PC 안에서만 진행됩니다.</span>
+    </section>
+
+    <section class="empty-shell is-hidden" id="emptyState" aria-live="polite">
+      <span class="empty-shell__icon" aria-hidden="true">SP</span>
+      <strong>스타플레이어 세이브를 연결해 주세요</strong>
+      <p id="emptyMessage">자동저장 슬롯을 찾지 못했습니다.</p>
+      <div class="button-row">
+        <button class="button button--primary" id="emptyRescanButton" type="button">자동 검색</button>
+        <button class="button button--secondary" id="emptySettingsButton" type="button">경로 직접 지정</button>
+      </div>
+      <div class="preserved-list" id="preservedList" tabindex="0" role="region" aria-label="보존된 세계선 목록"></div>
+    </section>
+
+    <div class="app-layout is-hidden" id="appLayout">
+      <div class="content-column">
+        <section class="hero card">
+          <div class="hero__identity">
+            <div class="eyebrow" id="heroDate">SAVE VERIFIED</div>
+            <div class="hero__name-row">
+              <h1 id="playerName">—</h1>
+              <span class="badge badge--verified">세이브 검증</span>
+              <span class="badge player-grade-badge" id="playerGradeBadge">등급 계산 중</span>
+            </div>
+            <p class="hero__team" id="playerTeam">—</p>
+            <div class="meta-row">
+              <span id="playerRole">역할 확인 중</span>
+              <span aria-hidden="true">·</span>
+              <span id="worldLabel">세계선 —</span>
+              <span aria-hidden="true">·</span>
+              <span id="slotLabel">슬롯 —</span>
+            </div>
+          </div>
+          <div class="hero__actions">
+            <button class="button button--primary" id="checkButton" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 1-2.34-5.66L20 7.68M20 3v4.68h-4.68"/></svg>
+              최신 세이브 확인
+            </button>
+            <button class="button button--secondary" id="narrativeButton" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2m0-1.5A2.5 2.5 0 0 1 6.5 17H18M8 7h6m-6 4h7"/></svg>
+              <span id="narrativeButtonLabel">서사 생성</span>
+            </button>
+          </div>
+          <div class="hero__notice" id="heroNotice">
+            <span class="notice-mark" aria-hidden="true"></span>
+            <span id="heroNoticeText">최근 상태를 확인했습니다.</span>
+          </div>
+        </section>
+
+        <nav class="tabbar" aria-label="콘텐츠 보기" id="tabbar" role="tablist">
+          <button class="tab is-active" id="tab-overview" type="button" role="tab" data-view="overview" aria-controls="panel-overview" aria-selected="true" tabindex="0">개요</button>
+          <button class="tab" id="tab-records" type="button" role="tab" data-view="records" aria-controls="panel-records" aria-selected="false" tabindex="-1">기록실</button>
+          <button class="tab" id="tab-history" type="button" role="tab" data-view="history" aria-controls="panel-history" aria-selected="false" tabindex="-1">경기 피드</button>
+          <button class="tab" id="tab-community" type="button" role="tab" data-view="community" aria-controls="panel-community" aria-selected="false" tabindex="-1">커뮤니티</button>
+          <button class="tab" id="tab-media" type="button" role="tab" data-view="media" aria-controls="panel-media" aria-selected="false" tabindex="-1">기사</button>
+          <button class="tab" id="tab-narrative" type="button" role="tab" data-view="narrative" aria-controls="panel-narrative" aria-selected="false" tabindex="-1">서사</button>
+          <button class="tab" id="tab-chronicle" type="button" role="tab" data-view="chronicle" aria-controls="panel-chronicle" aria-selected="false" tabindex="-1">종합 스토리</button>
+          <button class="tab" id="tab-diagnostics" type="button" role="tab" data-view="diagnostics" aria-controls="panel-diagnostics" aria-selected="false" tabindex="-1">진단</button>
+        </nav>
+
+        <section class="view is-active" id="panel-overview" data-panel="overview" role="tabpanel" aria-labelledby="tab-overview">
+          <div class="section-heading">
+            <div><span class="kicker">SEASON SNAPSHOT</span><h2>시즌 누적</h2></div>
+            <span class="source-pill source-pill--verified">SAVE VERIFIED</span>
+          </div>
+          <div class="season-grid">
+            <article class="stat-card card">
+              <header><span class="stat-card__icon stat-card__icon--bat">B</span><div><strong>타격</strong><span>Season batting</span></div></header>
+              <div class="stat-grid" id="battingStats"></div>
+            </article>
+            <article class="stat-card card">
+              <header><span class="stat-card__icon stat-card__icon--pitch">P</span><div><strong>투구</strong><span>Season pitching</span></div></header>
+              <div class="stat-grid" id="pitchingStats"></div>
+            </article>
+          </div>
+
+          <div class="section-heading section-heading--spaced">
+            <div><span class="kicker">WORLD GRAVITY</span><h2>세계 주목도</h2></div>
+            <span class="source-pill source-pill--hint">OFFLINE ROUTING</span>
+          </div>
+          <article class="spotlight-card card" id="spotlightCard"></article>
+
+          <div class="section-heading section-heading--spaced">
+            <div><span class="kicker">LATEST SIGNAL</span><h2>최근 판정</h2></div>
+          </div>
+          <article class="event-card card" id="eventCard"></article>
+
+          <div class="section-heading section-heading--spaced">
+            <div><span class="kicker">STORY THREAD</span><h2>최근 세계선</h2></div>
+            <button class="text-button" type="button" data-switch-view="history">전체 기록 보기</button>
+          </div>
+          <div class="timeline card" id="timelinePreview"></div>
+        </section>
+
+        <section class="view" id="panel-records" data-panel="records" role="tabpanel" aria-labelledby="tab-records">
+          <div class="section-heading section-heading--actions">
+            <div><span class="kicker">HISTORY VAULT</span><h2>날짜별 세계선 보관소</h2></div>
+            <div class="button-row button-row--end">
+              <button class="button button--quiet button--compact" id="editLeagueButton" type="button">리그·Top 5 입력</button>
+              <button class="button button--secondary button--compact" id="editValueButton" type="button">세이버·연봉 입력</button>
+            </div>
+          </div>
+          <p class="vault-intro">날짜가 넘어가면 그날의 기사·사건·마일스톤·순위·Top 5·가치 계산을 당시 값 그대로 마감합니다.</p>
+          <div class="history-vault card" id="historyVaultList" tabindex="0" role="region" aria-label="날짜별 세계선 보관 목록"></div>
+
+          <div class="context-grid section-heading--spaced">
+            <article class="context-panel card">
+              <header><div><span class="kicker">LEAGUE SNAPSHOT</span><strong>현재 날짜 순위표</strong></div><span class="source-pill source-pill--manual">사용자 확인</span></header>
+              <div id="leagueSnapshot"></div>
+            </article>
+            <article class="context-panel card">
+              <header><div><span class="kicker">PLAYER TOP 5</span><strong>리그 상위 기록</strong></div><span class="source-pill source-pill--manual">사용자 확인</span></header>
+              <div id="leaderboardSnapshot"></div>
+            </article>
+          </div>
+
+          <div class="section-heading section-heading--spaced">
+            <div><span class="kicker">SABERMETRIC LAB</span><h2>선수 가치와 계산 가능한 지표</h2></div>
+            <span class="source-pill source-pill--reference">입력 충족분만 계산</span>
+          </div>
+          <div class="value-overview card" id="dominanceIndex"></div>
+          <div class="saber-grid">
+            <article class="metric-panel card"><header><strong>타격 가치</strong><span>Rate &amp; power</span></header><div id="saberBatting"></div></article>
+            <article class="metric-panel card"><header><strong>투구 가치</strong><span>Run prevention</span></header><div id="saberPitching"></div></article>
+          </div>
+          <div class="war-panel card" id="warMetric"></div>
+
+          <div class="section-heading section-heading--spaced">
+            <div><span class="kicker">SALARY DESK</span><h2>게임 연봉 추정과 시장 가치</h2></div>
+            <span class="source-pill source-pill--hint">비공식 투명 추정</span>
+          </div>
+          <div class="salary-panel card" id="salaryProjection"></div>
+
+          <div class="section-heading section-heading--actions">
+            <div><span class="kicker">CAREER VAULT</span><h2>통산 기록과 마일스톤</h2></div>
+            <div class="button-row button-row--end">
+              <button class="button button--quiet button--compact" id="addSeasonButton" type="button">지난 시즌 추가</button>
+              <button class="button button--secondary button--compact" id="addHonorButton" type="button">수상·기념 기록 추가</button>
+            </div>
+          </div>
+          <div class="record-notice" id="careerCompleteness"></div>
+          <article class="career-grade card" id="careerGradeCard"></article>
+
+          <div class="season-grid record-total-grid">
+            <article class="stat-card card">
+              <header><span class="stat-card__icon stat-card__icon--bat">ΣB</span><div><strong>통산 타격</strong><span>Prior seasons + current save</span></div></header>
+              <div class="stat-grid" id="careerBattingStats"></div>
+            </article>
+            <article class="stat-card card">
+              <header><span class="stat-card__icon stat-card__icon--pitch">ΣP</span><div><strong>통산 투구</strong><span>Prior seasons + current save</span></div></header>
+              <div class="stat-grid" id="careerPitchingStats"></div>
+            </article>
+          </div>
+          <div class="honor-summary" id="honorSummary"></div>
+
+          <div class="section-heading section-heading--spaced">
+            <div><span class="kicker">NEXT LANDMARK</span><h2>다음 통산 마일스톤</h2></div>
+            <span class="source-pill source-pill--reference">NPB 달성 기록 기준</span>
+          </div>
+          <div class="milestone-grid" id="nextMilestones"></div>
+
+          <div class="section-heading section-heading--spaced">
+            <div><span class="kicker">NPB RECORD DESK</span><h2>일본프로야구 기록 대조</h2></div>
+            <span class="muted" id="recordCatalogVersion">오프라인 기준표</span>
+          </div>
+          <div class="record-columns">
+            <article class="record-panel card"><header><strong>이번 시즌</strong><span>세이브 검증 누계</span></header><div id="seasonRecordList"></div></article>
+            <article class="record-panel card"><header><strong>통산</strong><span>지난 시즌 + 현재 시즌</span></header><div id="careerRecordList"></div></article>
+          </div>
+
+          <div class="section-heading section-heading--spaced">
+            <div><span class="kicker">SEASON LEDGER</span><h2>지난 시즌 기록</h2></div>
+            <span class="muted" id="seasonLedgerCount">0개 시즌</span>
+          </div>
+          <div class="season-ledger card" id="seasonLedger"></div>
+
+          <div class="record-columns record-columns--timeline">
+            <section>
+              <div class="section-heading section-heading--spaced"><div><span class="kicker">MILESTONE TIMELINE</span><h2>달성·수상 연표</h2></div></div>
+              <div class="achievement-list" id="achievementTimeline"></div>
+            </section>
+            <section>
+              <div class="section-heading section-heading--spaced"><div><span class="kicker">DAILY REACTION ARCHIVE</span><h2>날짜별 반응 보관함</h2></div></div>
+              <div class="archive-list" id="dailyArchiveList"></div>
+            </section>
+          </div>
+
+          <details class="card detail-card record-source-card">
+            <summary>기록 출처와 판정 원칙</summary>
+            <div class="provenance-policy" id="recordSources"></div>
+          </details>
+        </section>
+
+        <section class="view" id="panel-history" data-panel="history" role="tabpanel" aria-labelledby="tab-history">
+          <section id="legacyStoryWorkspace">
+          <div class="section-heading section-heading--actions">
+            <div><span class="kicker">TODAY'S STORY ROOM</span><h2>오늘의 서사 개입</h2></div>
+            <span class="badge" id="storyDayStatus">열린 날짜</span>
+          </div>
+          <article class="story-workspace card">
+            <div class="story-workspace__lead">
+              <div><strong>날짜를 넘기지 않고 원하는 만큼 대화합니다.</strong><span>버튼과 내장 대화는 완전 오프라인입니다. 로컬 LLM이나 사용자가 선택한 Gemini를 같은 타임라인의 표현 확장에 쓸 수 있습니다.</span></div>
+              <span class="source-pill source-pill--creative">FICTIONAL WORLD EVENT</span>
+            </div>
+            <div class="story-relink is-hidden" id="storyRelink" role="status">
+              <div><strong>복원된 세이브가 보존 세계선과의 재연결을 기다립니다.</strong><span id="storyRelinkText"></span></div>
+              <button class="button button--secondary" id="storyRelinkButton" type="button">이 세계선에 다시 연결</button>
+            </div>
+            <div class="story-pressure" id="storySpotlightHint"></div>
+            <details class="story-worldbook" id="storyWorldbook">
+              <summary><span><strong>세계선 인물·설정 보관함</strong><small>선수 배경·취향·취미와 반복해서 만날 인물을 이 세이브 세계선에만 기록합니다.</small></span><em>열기</em></summary>
+              <div class="story-worldbook__body">
+                <section class="worldbook-section" aria-labelledby="worldContextTitle">
+                  <header><div><span class="kicker">PLAYER CONTEXT</span><h3 id="worldContextTitle">선수 배경·취향·취미</h3></div><span class="source-pill source-pill--creative">게임 능력과 분리</span></header>
+                  <input id="worldContextId" type="hidden"><input id="worldContextRevision" type="hidden">
+                  <div class="worldbook-form-grid">
+                    <label class="field"><span>종류</span><select id="worldContextBasis"></select></label>
+                    <label class="field"><span>이름</span><input id="worldContextLabel" type="text" maxlength="80" placeholder="예: 햄버거 취향 / 미국에서 건너온 배경"></label>
+                    <label class="field is-hidden" id="worldContextProficiencyField"><span>서사상 숙련</span><select id="worldContextProficiency"></select></label>
+                    <label class="field"><span>공개 범위</span><select id="worldContextVisibility"></select></label>
+                  </div>
+                  <label class="field"><span>설명</span><textarea id="worldContextDetail" rows="2" maxlength="800" placeholder="향후 대화와 장면에서 되살릴 구체적인 맥락"></textarea></label>
+                  <label class="checkbox worldbook-remote"><input id="worldContextRemoteAllowed" type="checkbox"><span>공개 항목일 때만, 내가 선택한 외부 AI 호출에도 이 항목을 전달하도록 허용</span></label>
+                  <div class="button-row button-row--end"><button class="button button--quiet button--compact is-hidden" id="cancelWorldContextButton" type="button">수정 취소</button><button class="button button--secondary button--compact" id="saveWorldContextButton" type="button">설정 저장</button></div>
+                  <div class="worldbook-list" id="worldContextList" tabindex="0" role="region" aria-label="선수 배경·취향·취미 목록" aria-live="polite"></div>
+                </section>
+                <section class="worldbook-section" aria-labelledby="worldCounterpartTitle">
+                  <header><div><span class="kicker">CAST LEDGER</span><h3 id="worldCounterpartTitle">반복 등장 인물</h3></div><span class="source-pill source-pill--manual">이름 충돌 방지</span></header>
+                  <input id="worldCounterpartId" type="hidden"><input id="worldCounterpartRevision" type="hidden">
+                  <div class="worldbook-form-grid">
+                    <label class="field"><span>대표 이름</span><input id="worldCounterpartName" type="text" maxlength="60" placeholder="예: 같은 팀의 가상 후배"></label>
+                    <label class="field"><span>역할</span><select id="worldCounterpartRole"></select></label>
+                    <label class="field"><span>별명·다른 표기</span><input id="worldCounterpartAliases" type="text" maxlength="600" placeholder="쉼표로 구분"></label>
+                    <label class="field"><span>기억할 메모</span><input id="worldCounterpartNote" type="text" maxlength="500" placeholder="관계, 첫 만남, 긴장 요소"></label>
+                  </div>
+                  <div class="button-row button-row--end"><button class="button button--quiet button--compact is-hidden" id="cancelWorldCounterpartButton" type="button">수정 취소</button><button class="button button--secondary button--compact" id="saveWorldCounterpartButton" type="button">인물 저장</button></div>
+                  <div class="worldbook-list" id="worldCounterpartList" tabindex="0" role="region" aria-label="세계선 반복 등장 인물 목록" aria-live="polite"></div>
+                </section>
+              </div>
+            </details>
+            <details class="story-memory" id="storyMemory">
+              <summary><span><strong>기억 렌즈·진행 이슈</strong><small>최근 3경기, 4~10경기 전, 이번 시즌을 영구 원장에서 나눠 봅니다. 만료되어도 기록은 지워지지 않습니다.</small></span><em>열기</em></summary>
+              <div class="story-memory__body">
+                <section class="story-memory__section story-memory__section--issues" aria-labelledby="storyIssueTitle">
+                  <header><div><span class="kicker">FINITE ISSUES</span><h3 id="storyIssueTitle">자동 재등장 수명</h3></div><span class="memory-count" id="storyIssueCount">0개</span></header>
+                  <div class="story-issue-list" id="storyIssueList" tabindex="0" role="region" aria-label="진행 이슈 수명 목록" aria-live="polite"></div>
+                </section>
+                <section class="story-memory__section story-memory__section--windows" aria-labelledby="storyMemoryWindowTitle">
+                  <header><div><span class="kicker">LAYERED RECALL</span><h3 id="storyMemoryWindowTitle">경기 간격별 기억</h3></div><span class="memory-count" id="storyMemoryGameCount">검증 경기 0</span></header>
+                  <div class="story-memory-window-grid" id="storyMemoryWindows" tabindex="0" role="region" aria-label="최근 경기와 시즌 기억 목록" aria-live="polite"></div>
+                </section>
+                <section class="story-memory__section story-memory__section--anchors" aria-labelledby="storyMemoryAnchorTitle">
+                  <header><div><span class="kicker">PERMANENT ANCHORS</span><h3 id="storyMemoryAnchorTitle">수상·마일스톤·고정 기억</h3></div><span class="memory-count" id="storyMemoryAnchorCount">0개</span></header>
+                  <div class="story-memory-anchor-list" id="storyMemoryAnchors" tabindex="0" role="region" aria-label="영구 기억 기준점 목록" aria-live="polite"></div>
+                </section>
+              </div>
+            </details>
+            <div class="story-category-grid" id="storyCategoryGrid"></div>
+            <div class="story-control-grid story-control-grid--primary">
+              <label class="field"><span>상황</span><select id="storySituation"></select></label>
+              <label class="field"><span>상대</span><select id="storyTarget"></select></label>
+              <label class="field"><span>말투</span><select id="storyTone"></select></label>
+              <label class="field"><span>공개 범위</span><select id="storyVisibility"></select></label>
+              <label class="field"><span>자동 재등장 <em>선택</em></span><input id="storyLifetimeGames" type="number" min="1" max="20" step="1" inputmode="numeric" placeholder="1~20경기" title="비우면 기존처럼 별도 만료 없이 보관합니다."></label>
+            </div>
+            <div class="story-interaction-panel is-hidden" id="storyInteractionPanel">
+              <p class="muted" id="storyInteractionRule"></p>
+              <div class="story-control-grid">
+                <label class="field"><span>이어갈 만남 <em>대화할 때 선택</em></span><select id="storyInteraction"><option value="">새 만남</option></select></label>
+                <label class="field"><span>등록된 인물 <em>선택 입력</em></span><select id="storyCounterpart"><option value="">이름 직접 입력</option></select></label>
+                <label class="field"><span>상대 이름 <em>선택 입력</em></span><input type="text" id="storyParticipantName" maxlength="60" placeholder="예: 함께 교류한 선수 이름"></label>
+                <label class="field"><span>장소 <em>선택 입력</em></span><input type="text" id="storyInteractionPlace" maxlength="100" placeholder="예: 구장 근처 햄버거 가게"></label>
+                <label class="field"><span>이야깃거리·배울 내용</span><input type="text" id="storyInteractionTopic" maxlength="160" placeholder="예: 햄버거 약속 / 배우려는 구종"></label>
+                <label class="field"><span>행동 출처</span><select id="storyInteractionMode"><option value="fictional_intervention">창작 장면</option><option value="user_confirmed">게임에서 한 행동 기록</option></select></label>
+                <label class="field is-hidden" id="storyLearningField"><span>학습 진행 <em>실제 습득과 구분</em></span><select id="storyLearningProgress"></select></label>
+              </div>
+              <label class="checkbox is-hidden" id="storyActionConfirmField"><input id="storyActionConfirmed" type="checkbox"><span>이 행동·학습 상태를 게임에서 직접 확인했습니다. 대사와 감정은 창작으로 덧붙입니다.</span></label>
+              <p class="muted" id="storyInteractionStatus" aria-live="polite"></p>
+            </div>
+            <label class="field story-message"><span>직접 하고 싶은 말 <em>선택 입력</em></span><textarea id="storyText" rows="3" maxlength="1200" placeholder="예: 오늘 기록보다 동료의 수비가 더 중요했다고 말한다."></textarea></label>
+            <div class="story-actions">
+              <button class="button button--primary" id="storyEventButton" type="button">버튼으로 이벤트 만들기</button>
+              <button class="button button--secondary" id="storyChatButton" type="button">대화로 이어가기</button>
+              <span id="storyModeHint">LLM 없이도 대화와 모든 카테고리를 사용할 수 있습니다.</span>
+            </div>
+          </article>
+
+          <div class="section-heading section-heading--spaced">
+            <div><span class="kicker">OFFLINE CONVERSATION</span><h2>오늘의 대화</h2></div>
+            <span class="muted" id="conversationCount">0개 대화</span>
+          </div>
+          <div class="conversation-list" id="conversationList" tabindex="0" role="region" aria-label="오늘의 대화 목록"></div>
+          <div class="story-props" id="storyPropsList"></div>
+
+          <div class="section-heading section-heading--spaced">
+            <div><span class="kicker">SAME-DAY TIMELINE</span><h2>오늘 쌓인 장면</h2></div>
+            <span class="muted" id="storyTurnCount">0개 개입</span>
+          </div>
+          <div class="story-timeline" id="storyTimeline"></div>
+          </section>
+
+          <div class="section-heading section-heading--spaced">
+            <div><span class="kicker">VERIFIED GAME FEED</span><h2>경기와 기록 변화</h2></div>
+            <span class="muted" id="historyCount">0개 기록</span>
+          </div>
+          <div class="accordion-list" id="historyList"></div>
+        </section>
+
+        <section class="view" id="panel-community" data-panel="community" role="tabpanel" aria-labelledby="tab-community">
+          <div class="section-heading section-heading--actions">
+            <div><span class="kicker">COMMUNITY PULSE</span><h2>커뮤니티 반응</h2></div>
+            <div class="button-row button-row--end">
+              <span class="source-pill source-pill--creative" id="feedProviderBadge">내장 엔진</span>
+              <button class="button button--secondary is-hidden" id="localEnrichCommunityButton" type="button">로컬로 커뮤니티·SNS 만들기</button>
+              <button class="button button--quiet" id="enrichCommunityButton" type="button"><span id="enrichCommunityButtonLabel">커뮤니티·SNS만 풍부화</span></button>
+              <button class="button button--quiet" id="enrichFeedButton" type="button"><span id="enrichFeedButtonLabel">전체 함께 풍부화</span></button>
+            </div>
+          </div>
+          <article class="community-spotlight card" id="communitySpotlight"></article>
+          <section id="communityConversation" class="connected-desk" aria-label="커뮤니티 대화 작업실"></section>
+          <p class="provider-result-note" id="communityResultNote"></p>
+          <div class="reading-toolbar" role="region" aria-label="커뮤니티 보기 설정">
+            <label><span>매체</span><select id="communityFilter"><option value="">모든 게시판·SNS</option></select></label>
+            <label class="reading-toolbar__search"><span>내용 찾기</span><input id="communitySearch" type="search" placeholder="제목·본문·댓글에서 찾기" maxlength="120"></label>
+            <button class="button button--quiet" id="communityResetFilter" type="button">전체 보기</button>
+            <span id="communityReadingCount" role="status" aria-live="polite"></span>
+          </div>
+          <div class="reading-style"><span id="communityStyleNote"></span><button class="button button--quiet" id="communityStyleButton" type="button">말투·수위 설정</button></div>
+          <p class="reading-empty card" id="communityReadingEmpty" hidden>조건에 맞는 반응이 없습니다. ‘전체 보기’로 돌아갈 수 있습니다. 검색은 저장된 내용만 찾으며 API를 호출하지 않습니다.</p>
+          <div class="ambient-wave-grid" id="ambientWaveList"></div>
+          <div class="section-heading section-heading--spaced" id="socialHeading">
+            <div><span class="kicker">TEXT SOCIAL STREAM</span><h2>텍스트 SNS</h2></div>
+            <span class="muted" id="socialCount">0개 게시물</span>
+          </div>
+          <div class="social-list" id="socialList"></div>
+          <div class="section-heading section-heading--spaced" id="forumHeading">
+            <div><span class="kicker">FORUM THREADS</span><h2>게시판 토론</h2></div>
+            <span class="muted" id="boardCount">0개 게시판</span>
+          </div>
+          <div class="board-list" id="communityList"></div>
+        </section>
+
+        <section class="view" id="panel-media" data-panel="media" role="tabpanel" aria-labelledby="tab-media">
+          <div class="section-heading section-heading--actions">
+            <div><span class="kicker">PRESS ROOM</span><h2>언론 기사</h2></div>
+            <div class="button-row button-row--end">
+              <span class="source-pill source-pill--creative" id="articleProviderBadge">내장 엔진</span>
+              <button class="button button--secondary is-hidden" id="localEnrichArticlesButton" type="button">로컬로 기사 만들기</button>
+              <button class="button button--quiet" id="enrichArticlesButton" type="button"><span id="enrichArticlesButtonLabel">기사만 풍부화</span></button>
+            </div>
+          </div>
+          <p class="provider-result-note" id="articleResultNote"></p>
+          <section id="articleConversation" class="connected-desk" aria-label="기사 대화 작업실"></section>
+          <div class="reading-toolbar" role="region" aria-label="기사 보기 설정">
+            <label><span>매체</span><select id="mediaFilter"><option value="">모든 언론 매체</option></select></label>
+            <label class="reading-toolbar__search"><span>내용 찾기</span><input id="mediaSearch" type="search" placeholder="제목·기사 본문에서 찾기" maxlength="120"></label>
+            <button class="button button--quiet" id="mediaResetFilter" type="button">전체 보기</button>
+            <span id="mediaReadingCount" role="status" aria-live="polite"></span>
+          </div>
+          <p class="reading-empty card" id="mediaReadingEmpty" hidden>조건에 맞는 기사가 없습니다. ‘전체 보기’로 돌아갈 수 있습니다. 검색은 API를 호출하지 않습니다.</p>
+          <div class="article-list" id="mediaList"></div>
+        </section>
+
+        <section class="view" id="panel-narrative" data-panel="narrative" role="tabpanel" aria-labelledby="tab-narrative">
+          <section class="director-desk" id="directorDesk" aria-labelledby="directorTitle">
+            <div class="section-heading section-heading--actions"><div><span class="kicker">YOUR STORY, CONTINUED</span><h2 id="directorTitle">서사 작업실</h2></div><span class="badge" id="directorOwner">세계선 연결 대기</span></div>
+            <p class="muted">행동과 대사를 자유롭게 적어 다음 장면을 이끌어 주세요. 대화·이미지는 이 세계선에 보관됩니다. 게임 세이브와 날짜는 바뀌지 않습니다.</p>
+            <div id="storyLinkControls" class="connected-source-controls"></div>
+            <details class="card director-library"><summary>스타플레이어 행동·이벤트 찾기 <span id="directorActionCount"></span></summary>
+              <div class="director-library__body">
+                <div class="director-controls"><label class="field"><span>분류</span><select id="directorGroup"><option value="">모든 분류</option></select></label><label class="field"><span>행동 검색</span><input id="directorActionSearch" type="search" placeholder="식사, 계약, 학습, 연애…"></label></div>
+                <p class="muted" id="directorCoverage"></p>
+              </div>
+            </details>
+            <article class="card director-compose">
+              <label class="field"><span>이번 장면의 행동</span><select id="directorAction"></select></label>
+              <p class="director-rule" id="directorRule"></p>
+              <div class="director-controls">
+                <label class="field"><span>기록 방식</span><select id="directorMode"><option value="fiction">창작 장면</option><option value="observed">게임에서 확인한 행동</option></select></label>
+                <label class="field"><span>누가 아는 장면인가</span><select id="directorVisibility"><option value="private">비공개</option><option value="clubhouse">팀 안</option><option value="public">공개</option><option value="social">SNS 공개</option></select></label>
+                <label class="field"><span>작성 분량</span><select id="directorLength"><option value="short">짧게</option><option value="standard" selected>충분히</option><option value="long">길게</option></select></label>
+              </div>
+              <label class="checkbox is-hidden" id="directorObservedField"><input type="checkbox" id="directorObserved"><span>이 행동과 필요한 조건을 현재 게임에서 직접 확인했습니다. 수치·수상 원장은 변경하지 않습니다.</span></label>
+              <label class="field"><span>내가 만드는 다음 장면 <em>최대 8,000자 · Ctrl+Enter로 선택 엔진에 보내기</em></span><textarea id="directorText" rows="5" maxlength="8000" placeholder="예: 스킨스는 원정지에서 햄버거를 먹는다. 어제 약속했던 동료에게 사진을 보내며 농담한다. 그 동료와 상대 팀 OB의 서로 다른 반응을 이어 써줘."></textarea></label>
+              <details class="director-attachments"><summary>이미지 자료 선택 <span id="directorImageCount">0장</span></summary>
+                <p class="muted">선택한 최대 4장만 이번 장면에 사용합니다. 그림 속 수치는 검증 기록을 덮어쓰지 않습니다. 원본 보관 사본은 세계선에 남습니다.</p>
+                <label class="button button--quiet button--compact director-upload">여러 이미지 추가<input id="directorImageInput" type="file" accept="image/png,image/jpeg,image/webp" multiple></label>
+                <div id="directorImages" class="director-image-list" tabindex="0" role="region" aria-label="이번 장면의 이미지 선택"></div>
+                <label class="checkbox"><input id="directorImagesConfirmed" type="checkbox"><span>선택 이미지가 현재 선수·날짜의 장면 자료인 것을 확인했습니다.</span></label>
+              </details>
+              <div class="director-permissions">
+                <label class="checkbox"><input id="directorRemember" type="checkbox"><span>이번 입력을 고정 기억에도 남기기 <small>대화 원문은 항상 저장됩니다.</small></span></label>
+                <label class="checkbox"><input id="directorRemoteRecall" type="checkbox"><span>로컬로 쓴 이 장면도 향후 Gemini 문맥에 사용 허용</span></label>
+                <label class="checkbox"><input id="directorRemoteConsent" type="checkbox"><span>이번 장면·전송 허용 기억·선택 이미지의 Google 전송에 동의 <small>Gemini로 쓴 장면은 이후 Gemini 대화에도 참고됩니다. 이야기의 공개 범위와는 별개입니다.</small></span></label>
+              </div>
+              <div class="button-row director-send"><button id="directorNote" class="button button--quiet" type="button">내가 쓴 그대로 기록</button><button id="directorLocal" class="button button--secondary" type="button">로컬로 이어 쓰기</button><button id="directorGemini" class="button button--primary" type="button">Gemini로 이어 쓰기</button></div>
+              <p class="muted" id="directorStatus" role="status"></p>
+            </article>
+            <details class="card director-library" id="directorMemoryLibrary"><summary>인물·장소·취향·복선 기억 <span id="directorMemoryCount">0개</span></summary><div class="director-library__body">
+              <p class="muted">자동 회상은 최근 장면과 관련 과거 장면을 함께 찾습니다. 꼭 다시 쓸 설정은 고정 기억으로 남겨 주세요. 모델의 추측을 실제 기록으로 확정하지 않습니다.</p>
+              <div class="button-row"><button id="directorNewMemory" class="button button--secondary button--compact" type="button">기억 추가</button><button id="directorImport" class="button button--quiet button--compact" type="button">스킨스 참고 메모 선택</button></div>
+              <div id="directorMemories" class="director-memory-list" tabindex="0" role="region" aria-label="현재 세계선 기억 목록"></div>
+            </div></details>
+            <div class="section-heading"><div><span class="kicker">CONTINUITY JOURNAL</span><h3>이어온 대화</h3></div><span id="directorTurnCount" class="muted">0개 장면</span></div>
+            <button id="directorOlder" class="button button--quiet button--compact is-hidden" type="button">이전 대화 더 보기</button>
+            <div id="directorTurns" class="director-turns" tabindex="0" role="region" aria-label="서사 대화 기록"></div>
+          </section>
+          <section id="cinematicWorkspace">
+          <div class="section-heading section-heading--actions">
+            <div><span class="kicker">LOCAL NARRATIVE</span><h2>시네마틱 서사</h2></div>
+            <div class="button-row button-row--end">
+              <span class="source-pill source-pill--creative" id="narrativeProviderBadge">로컬 LLM</span>
+              <button class="button button--secondary is-hidden" id="localNarrativeButton" type="button">로컬로 서사 만들기</button>
+            </div>
+          </div>
+          <article class="narrative card" id="narrativeContent"></article>
+          </section>
+        </section>
+
+        <section class="view" id="panel-chronicle" data-panel="chronicle" role="tabpanel" aria-labelledby="tab-chronicle">
+          <div class="section-heading"><div><span class="kicker">ONE WORLD, MANY VOICES</span><h2>종합 스토리</h2></div><span class="badge" id="chronicleOwner">세계선 연결 대기</span></div>
+          <p class="muted">기사·커뮤니티·서사·성적 변화를 하나의 흐름으로 정리합니다. 이미 처리한 원문은 다시 보내지 않고 새 자료·정정분과 짧은 연결 요약만 사용합니다.</p>
+          <details class="card connected-context" id="opponentContextTools"><summary>직전·다음 상대팀과 OB·유명선수 지정</summary><form id="opponentContextForm">
+            <p class="muted">세이브에서 확인하지 못한 일정·소속은 임의로 채우지 않습니다. 아래는 이 세계선의 참고 설정이며 생성되는 발언은 창작입니다.</p>
+            <div class="director-controls"><label class="field"><span>직전 상대팀</span><input id="previousOpponent" maxlength="100" placeholder="예: 한신"></label><label class="field"><span>다음 상대팀</span><input id="upcomingOpponent" maxlength="100" placeholder="예: 요미우리"></label></div>
+            <label class="field"><span>반응 인물 <em>한 줄에 팀 | OB/선수/해설 | 이름 | 성향 | 출처 링크(선택), 최대 24명</em></span><textarea id="opponentPeople" rows="5" maxlength="44000" placeholder="한신 | OB | 직접 지정한 이름 | 호쾌한 야구관 | https://…"></textarea></label>
+            <label class="checkbox"><input id="opponentRemote" type="checkbox"><span>이 상대팀·인물 정보를 Gemini 문맥에 사용 허용</span></label>
+            <button class="button button--secondary" id="saveOpponentContext" type="submit">세계선 참고로 저장</button><span class="muted" id="opponentContextStatus"></span>
+          </form></details>
+          <article class="card chronicle-compose">
+            <div class="chronicle-kind-buttons" role="group" aria-label="종합 기간 종류"><button class="button" id="chronicleDay" data-chronicle-kind="day" aria-pressed="true" type="button">데일리 스토리</button><button class="button" id="chronicleMonth" data-chronicle-kind="month" aria-pressed="false" type="button">월간 종합</button><button class="button" id="chronicleYear" data-chronicle-kind="year" aria-pressed="false" type="button">연간 종합</button></div>
+            <div class="director-controls">
+              <label class="field"><span id="chronicleDateLabel">게임 날짜</span><input id="chronicleDate" type="date"><input id="chronicleMonthInput" type="month" hidden><input id="chronicleYearInput" type="number" min="1936" max="9999" hidden></label>
+              <label class="field"><span>열람·갱신 판본</span><select id="chronicleEdition"><option value="local">로컬 판본</option><option value="gemini">Gemini 판본</option></select></label>
+              <label class="field"><span>이번 실행의 최대 묶음 <em>실제 재시도 호출은 별도 집계</em></span><select id="chronicleCallBudget"><option value="1">1묶음</option><option value="3" selected>3묶음</option><option value="6">6묶음</option></select></label>
+            </div>
+            <p class="muted" id="chroniclePeriodNotice">일간은 원문을 연결하고, 월간·연간은 하위 기간 핵심과 관찰된 성적 변화를 우선 사용합니다. 원문 전체는 로컬에 남습니다.</p>
+            <label class="field" id="chronicleDirectionField"><span>데일리 종합에 대한 편집 지시 <em>선택 · 사건을 새로 만들지 않고 정리 방향만 지정</em></span><textarea id="chronicleDirection" maxlength="4000" rows="3" placeholder="예: 오늘 기사와 팬 논쟁이 저녁의 화해로 이어진 흐름을 중심으로, 햄버거 농담을 마지막에 회수해 줘."></textarea></label>
+            <label class="checkbox"><input id="chronicleRemoteConsent" type="checkbox"><span>이번 종합의 Google 전송에 동의 <small>개별적으로 전송 허용된 자료만 사용합니다. 로컬 판본은 따로 보관됩니다.</small></span></label>
+            <div class="button-row"><button id="chronicleRead" class="button button--quiet" type="button">보관본·미반영 자료 확인</button><button id="chronicleGenerate" class="button button--primary" type="button">미반영분 종합·이어 쓰기</button><button id="chronicleReturnLive" class="button button--quiet is-hidden" type="button">현재 세계선으로 돌아가기</button></div>
+            <p id="chroniclePending" class="chronicle-pending" role="status" aria-live="polite">기간을 선택하면 저장된 종합과 미반영 자료를 확인할 수 있습니다.</p>
+          </article>
+          <div id="chronicleHistory" class="chronicle-history" tabindex="0" role="region" aria-label="종합 스토리 갱신 이력"></div>
+          <details class="card connected-context"><summary>보관된 일간·월간·연간 판본</summary><div id="chronicleLibrary" class="connected-library" tabindex="0" role="region" aria-label="종합 스토리 보관 목록"></div></details>
+        </section>
+
+        <section class="view" id="panel-diagnostics" data-panel="diagnostics" role="tabpanel" aria-labelledby="tab-diagnostics">
+          <div class="section-heading">
+            <div><span class="kicker">PROVENANCE &amp; HEALTH</span><h2>검증 진단</h2></div>
+          </div>
+          <div class="diagnostic-grid" id="diagnosticsGrid"></div>
+          <details class="card detail-card">
+            <summary>사실 출처 정책</summary>
+            <div class="provenance-policy">
+              <p><strong>세이브 검증</strong> 값만 선수·날짜·시즌 누적의 확정 사실로 사용합니다.</p>
+              <p><strong>스냅샷 차이</strong>는 두 검증 세이브 사이의 증가분이며, 상대·점수·승패를 뜻하지 않습니다.</p>
+              <p><strong>시각 힌트</strong>는 분위기 묘사 전용입니다. 스크린샷 숫자는 확정 사실을 덮어쓰지 않습니다.</p>
+              <p><strong>창작 텍스트</strong>는 게임 몰입용 가상 기사·댓글이며 실제 보도가 아닙니다.</p>
+            </div>
+          </details>
+        </section>
+      </div>
+
+      <aside class="side-column" aria-label="상태와 작업">
+        <section class="side-card card" id="saveStatusTools">
+          <div class="side-card__heading"><span>현재 상태</span><span class="badge" id="eventBadge">대기</span></div>
+          <dl class="status-list">
+            <div><dt>세이브</dt><dd id="savePath">—</dd></div>
+            <div><dt>마지막 날짜</dt><dd id="sideDate">—</dd></div>
+            <div><dt>세계선</dt><dd id="sideWorld">—</dd></div>
+            <div><dt>검증 청크</dt><dd id="sideChunks">—</dd></div>
+          </dl>
+          <button class="button button--quiet button--full" id="rescanButton" type="button">세이브 다시 검색</button>
+        </section>
+
+        <section class="side-card card job-card" id="jobCard" aria-live="polite">
+          <div class="side-card__heading"><span>작업 상태</span><span class="job-state" id="jobState">대기</span></div>
+          <div class="job-phase" id="jobPhase">실행 중인 작업이 없습니다.</div>
+          <div class="job-summary" id="jobSummary" aria-live="off"></div>
+          <progress id="jobProgress" max="100" value="0">0%</progress>
+          <button class="button button--quiet job-cancel" id="jobCancelButton" type="button" hidden>작업 취소</button>
+          <div class="job-log" id="jobLog" tabindex="0" role="region" aria-label="작업 로그"><span class="muted">로그가 여기에 표시됩니다.</span></div>
+        </section>
+
+        <section class="side-card card" id="captureTools">
+          <div class="side-card__heading"><span>시각 힌트</span><span class="badge" id="captureCount">0장</span></div>
+          <div class="capture-source-row"><span class="source-pill source-pill--hint">UNVERIFIED</span><span>최근 8장까지 서사에 사용</span></div>
+          <p class="side-copy">장면을 여러 장 쌓아도 세이브 기록 수치를 덮어쓰지 않습니다.</p>
+          <div class="button-stack">
+            <div class="capture-actions">
+              <button class="button button--quiet" id="captureButton" type="button">1장 캡처</button>
+              <button class="button button--quiet" id="burstCaptureButton" type="button">3장 연속</button>
+            </div>
+            <label class="button button--quiet button--full file-button" for="imageInput">여러 이미지 추가</label>
+            <input class="visually-hidden" id="imageInput" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/bmp" multiple>
+          </div>
+          <div class="hotkey-panel" aria-label="화면 캡처 단축키">
+            <div><kbd>F8</kbd><strong>1장</strong></div>
+            <div><kbd>F9</kbd><strong>3장</strong></div>
+            <p id="hotkeyStatus">전역 단축키 상태 확인 중</p>
+          </div>
+          <div class="capture-gallery" id="captureGallery" aria-live="polite"></div>
+        </section>
+
+        <section class="disclaimer">
+          <strong>완전 로컬 · 읽기 전용</strong>
+          <span>인터넷 전송 없이 StarPlayer.dat를 읽습니다. 게임, CT, Studio 메모리에는 연결하지 않습니다.</span>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <dialog class="settings-dialog" id="settingsDialog" aria-labelledby="settingsTitle">
+    <form method="dialog" class="settings-panel" id="settingsForm">
+      <header class="settings-panel__header">
+        <div><span class="kicker">LOCAL PREFERENCES</span><h2 id="settingsTitle">설정</h2></div>
+        <button class="icon-button" value="cancel" aria-label="설정 닫기" type="submit">×</button>
+      </header>
+      <nav class="settings-jumpbar" aria-label="설정 바로가기" id="settingsJumpbar">
+        <button type="button" data-settings-section="settingsSave">세이브</button>
+        <button type="button" data-settings-section="settingsVoice">말투·분량</button>
+        <button type="button" data-settings-section="settingsAI">AI 연결</button>
+        <button type="button" data-settings-section="settingsNotifications">알림</button>
+        <button type="button" data-settings-section="settingsAutomation">캡처</button>
+      </nav>
+      <div class="settings-panel__body" tabindex="0" role="region" aria-labelledby="settingsTitle">
+        <section class="form-section" id="settingsSave" tabindex="-1">
+          <div class="form-section__heading"><strong>세이브 연결</strong><span>자동저장 슬롯 00을 권장합니다.</span></div>
+          <label class="field"><span>StarPlayer.dat 경로</span><input id="savePathInput" name="save_path" type="text" autocomplete="off" spellcheck="false"></label>
+          <div class="button-row">
+            <button class="button button--quiet" id="settingsRescanButton" type="button">자동 검색</button>
+          </div>
+          <div class="save-candidates" id="saveCandidates"></div>
+          <div class="preserved-list" id="settingsPreservedList" tabindex="0" role="region" aria-label="세이브와 함께 불러오는 세계선 기록"></div>
+        </section>
+        <section class="form-section" id="settingsVoice" tabindex="-1">
+          <div class="form-section__heading"><strong>피드 성향</strong><span>세계 주목도는 성적·수상·기록에서 자동 계산되고, 아래 값은 표현만 보정합니다.</span></div>
+          <div class="field-grid">
+            <label class="field"><span>맵기 농도 <output id="heatOutput">7 · 매운맛</output></span><input id="heatInput" name="heat" type="range" min="1" max="10" value="7" aria-label="반응 맵기 농도"></label>
+            <label class="field"><span>커뮤니티 언어 수위 <output id="languageLevelOutput">2 · 자연스러운 구어</output></span><input id="languageLevelInput" name="community_language_level" type="range" min="1" max="5" value="2" aria-label="커뮤니티 비속어와 욕설 수위"></label>
+            <details class="language-preview" open>
+              <summary>매체별 말투 미리보기 · API 호출 없음</summary>
+              <p>직접 작성한 가상 예시입니다. 설정 저장 후 새로 생성할 때 적용하며, 실제 모델의 문장은 달라집니다. 기사에는 이 욕설 수위를 적용하지 않습니다.</p>
+              <dl><dt>디시</dt><dd id="languagePreview-dc"></dd><dt>에펨코리아</dt><dd id="languagePreview-fmk"></dd><dt>MLBPARK</dt><dd id="languagePreview-mlb"></dd></dl>
+            </details>
+            <label class="field"><span>분량</span><select id="modeInput" name="mode"><option value="quick">Quick</option><option value="standard">Standard</option><option value="explosion">Explosion</option></select></label>
+          </div>
+          <label class="field"><span>주인공 한국어 표기</span><input id="protagonistAliasesInput" name="protagonist_aliases" type="text" maxlength="200" placeholder="예: 스켄스 (쉼표로 여러 개)"></label>
+          <p class="form-note" id="protagonistAliasHint">세이브의 영문 이름과 함께 같은 선수로 인정할 표기입니다. 한국어 게시판·SNS는 보통 한글 표기를 쓰므로, 여기에 등록하면 그 표기도 주인공으로 인정합니다. 앱이 임의로 음차를 만들지는 않습니다.</p>
+          <p class="form-note">맵기는 논쟁의 열기, 언어 수위는 비속어·욕설의 상한을 따로 정합니다. 높은 수위에서도 디시는 날것의 단문, 엠팍은 날카로운 존댓말처럼 각 커뮤니티의 결을 유지합니다. 반응 수·사실·공개 범위는 바뀌지 않습니다.</p>
+          <fieldset class="choice-group"><legend>커뮤니티</legend><label><input type="checkbox" value="dc" name="platform"> DCInside</label><label><input type="checkbox" value="fmk" name="platform"> FMKorea</label><label><input type="checkbox" value="mlb" name="platform"> MLBPARK</label></fieldset>
+          <label class="field"><span>선수 페르소나</span><textarea id="personaInput" name="persona" rows="3" placeholder="예: 말수가 적고 SNS는 눈팅만 함"></textarea></label>
+        </section>
+        <section class="form-section" id="settingsAI" tabindex="-1">
+          <div class="form-section__heading"><strong>선택형 AI 연결</strong><span>내장 기능은 계속 오프라인으로 작동합니다. 선택한 엔진은 전체 피드·시네마틱 서사·일반 대화에 함께 사용됩니다.</span></div>
+          <div class="field-grid">
+            <label class="field"><span>피드·서사·일반 대화 엔진</span><select id="aiProviderInput" name="ai_provider"><option value="local_auto">실행 중인 로컬 LLM 우선 · 없으면 내장 엔진</option><option value="deterministic">항상 내장 엔진</option><option value="gemini">Gemini 우선 · 실패 시 실행 중인 로컬/내장</option></select></label>
+            <label class="field"><span>Gemini 모델</span><select id="geminiModelInput" name="gemini_model"></select></label>
+            <label class="field"><span>Gemini 동시 작성 수</span><select id="geminiConcurrencyInput" name="gemini_batch_concurrency"><option value="5">5개 · 기존 빠른 처리</option><option value="4">4개</option><option value="3">3개</option><option value="2">2개 · 요청 분산</option><option value="1">1개 · 순차 처리</option></select></label>
+          </div>
+          <p class="form-note">기본값은 기존과 같은 5개입니다. 한도 오류가 반복될 때만 낮춰 보세요. 기사·커뮤니티 작성에 적용되며 모델과 생성 분량은 그대로 유지됩니다.</p>
+          <p class="form-note">StarPlayer는 로컬 LLM을 자동으로 실행하지 않습니다. 저장된 경로는 실행 동의가 아니며, 매번 아래 시작 버튼과 확인을 거쳐야 합니다.</p>
+          <section class="provider-control" id="localLlmControl" aria-labelledby="localLlmControlTitle">
+            <header>
+              <span class="status-dot status-dot--muted" id="localLlmControlDot" aria-hidden="true"></span>
+              <div><strong id="localLlmControlTitle">로컬 LLM 서버</strong><small id="localLlmControlState">상태 확인 중</small></div>
+            </header>
+            <div class="provider-control__body">
+              <label class="field"><span>로컬 모델 실행 파일</span><input id="localLlmLauncherInput" name="llm_launcher" type="text" spellcheck="false" placeholder="예: D:\Models\start-model.bat"></label>
+              <div class="button-row">
+                <button class="button button--primary" id="localLlmStartButton" type="button">로컬 LLM 시작</button>
+                <button class="button button--quiet" id="localLlmStopButton" type="button">로컬 LLM 종료</button>
+                <button class="button button--quiet" id="localLlmRefreshButton" type="button">상태 새로고침</button>
+              </div>
+              <p class="muted" id="localLlmControlMessage" role="status">저장된 경로만으로는 모델을 실행하지 않습니다.</p>
+              <small>이 앱에서 시작한 프로세스만 종료할 수 있고 앱을 닫으면 함께 종료합니다. 외부에서 이미 실행 중인 서버는 연결만 하며 건드리지 않습니다.</small>
+            </div>
+          </section>
+          <section class="provider-control" id="communityCorpusControl" aria-labelledby="communityCorpusTitle">
+            <header>
+              <span class="status-dot" aria-hidden="true"></span>
+              <div><strong id="communityCorpusTitle">현실성 자료 저장소</strong><small id="communityCorpusState">파생 스타일 자료 확인 중</small></div>
+            </header>
+            <div class="provider-control__body">
+              <p class="muted" id="communityCorpusDetail">공개 출처의 원문 대신 비식별 말투·문장 길이·답글 구조만 로컬 프롬프트에 검색해 넣습니다.</p>
+              <small>로컬 모델 자체의 인터넷 검색은 자동으로 켜지지 않습니다. 향후 승인된 수집기가 출처를 남기고 파생 특성만 이 저장소에 추가하는 구조입니다.</small>
+            </div>
+          </section>
+          <label class="field"><span>Gemini API 키</span><input id="geminiApiKeyInput" name="gemini_api_key" type="password" autocomplete="new-password" spellcheck="false" placeholder="저장된 키는 다시 표시하지 않습니다"></label>
+          <label class="switch-row"><span><strong>선택한 피드·서사·대화의 검증 요약과 내가 쓴 문장을 Google에 전송하는 데 동의</strong><small>세이브 원본과 로컬 파일은 보내지 않습니다. 전체 반응 버튼은 고정된 텍스트 계획만 전송합니다. 캡처 이미지는 ‘Gemini로 이미지 해석’을 직접 누르고 다시 확인한 1장만 전송합니다. API 사용량에 따라 별도 비용이 생길 수 있으며 Google AI Pro 구독과 개발자 API 결제는 별개입니다.</small></span><input id="geminiConsentInput" type="checkbox" name="gemini_consent"></label>
+          <div class="button-row">
+            <button class="button button--quiet" id="geminiTestButton" type="button">연결 시험</button>
+            <button class="button button--quiet" id="geminiClearButton" type="button">저장 키 지우기</button>
+            <a class="button button--quiet" href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio 키 발급</a>
+            <a class="button button--quiet" href="https://aistudio.google.com/app/usage" target="_blank" rel="noopener noreferrer">Google 사용량 확인</a>
+          </div>
+          <p class="muted" id="geminiStatus" role="status">Gemini 키가 설정되지 않았습니다.</p>
+          <section class="provider-usage" id="geminiUsagePanel" aria-labelledby="geminiUsageTitle">
+            <header>
+              <span class="status-dot status-dot--muted" id="geminiUsageDot" aria-hidden="true"></span>
+              <div><strong id="geminiUsageTitle">Gemini API 앱 집계</strong><small id="geminiUsageLast">아직 이 앱에서 사용한 기록이 없습니다.</small></div>
+            </header>
+            <div class="provider-usage__grid">
+              <div><span>오늘 호출</span><strong id="geminiTodayCalls">0</strong></div>
+              <div><span>오늘 토큰</span><strong id="geminiTodayTokens">0</strong></div>
+              <div><span>누적 호출</span><strong id="geminiTotalCalls">0</strong></div>
+              <div><span>누적 토큰</span><strong id="geminiTotalTokens">0</strong></div>
+            </div>
+            <p id="geminiUsageDetail">입력 0 · 출력 0 · 캐시 0 · 사고 0</p>
+            <small>Gemini 응답의 usageMetadata를 이 PC에만 누적합니다. 재시도도 실제 호출 수에 포함되며 최종 과금·할당량은 Google 사용량 화면이 기준입니다.</small>
+          </section>
+        </section>
+        <section class="form-section" id="settingsNotifications" tabindex="-1">
+          <div class="form-section__heading"><strong>앱 알림</strong><span>작업이 끝났을 때 다른 창을 보고 있어도 알려줍니다.</span></div>
+          <label class="switch-row"><span><strong>작업 완료·실패 시스템 알림</strong><small>권한이 없거나 현재 실행 환경이 지원하지 않으면 기존 앱 안쪽 알림만 표시합니다.</small></span><input id="notificationsEnabledInput" type="checkbox" name="notifications_enabled"></label>
+          <div class="button-row">
+            <button class="button button--quiet" id="notificationTestButton" type="button">알림 권한·시험</button>
+          </div>
+          <p class="muted" id="notificationStatus" role="status">시스템 알림 상태를 확인 중입니다.</p>
+        </section>
+        <section class="form-section" id="settingsAutomation" tabindex="-1">
+          <div class="form-section__heading"><strong>자동화</strong><span>화면 캡처는 검증되지 않은 힌트로만 사용합니다.</span></div>
+          <label class="switch-row"><span><strong>서사 생성 시 화면 자동 캡처</strong><small>게임 창이 보일 때 1장을 추가하고, 누적된 최근 8장까지 사용합니다.</small></span><input id="autoCaptureInput" type="checkbox" name="auto_capture"></label>
+        </section>
+      </div>
+      <footer class="settings-panel__footer">
+        <button class="button button--quiet" value="cancel" type="submit">취소</button>
+        <button class="button button--primary" id="saveSettingsButton" value="default" type="button">설정 저장</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <dialog class="settings-dialog" id="seasonDialog" aria-labelledby="seasonDialogTitle">
+    <form method="dialog" class="settings-panel" id="seasonForm">
+      <header class="settings-panel__header">
+        <div><span class="kicker">MANUAL CONFIRMED HISTORY</span><h2 id="seasonDialogTitle">지난 시즌 기록</h2></div>
+        <button class="icon-button" value="cancel" aria-label="지난 시즌 입력 닫기" type="submit">×</button>
+      </header>
+      <div class="settings-panel__body" tabindex="0" role="region" aria-labelledby="seasonDialogTitle">
+        <input id="seasonIdInput" type="hidden">
+        <p class="form-note">현재 시즌 누계는 세이브에서 자동으로 읽습니다. 여기에는 추적 시작 전에 끝난 시즌만 입력하세요.</p>
+        <div class="field-grid">
+          <label class="field"><span>시즌 연도</span><input id="seasonYearInput" type="number" min="1936" max="9999" required></label>
+          <label class="field"><span>소속팀</span><input id="seasonTeamInput" type="text" maxlength="80"></label>
+        </div>
+        <section class="form-section">
+          <div class="form-section__heading"><strong>타격 기록</strong><span>빈칸은 0으로 저장합니다.</span></div>
+          <div class="career-input-grid">
+            <label class="field"><span>AB</span><input id="seasonBatAB" type="number" min="0"></label>
+            <label class="field"><span>H</span><input id="seasonBatH" type="number" min="0"></label>
+            <label class="field"><span>HR</span><input id="seasonBatHR" type="number" min="0"></label>
+            <label class="field"><span>RBI</span><input id="seasonBatRBI" type="number" min="0"></label>
+            <label class="field"><span>R</span><input id="seasonBatR" type="number" min="0"></label>
+            <label class="field"><span>SO</span><input id="seasonBatSO" type="number" min="0"></label>
+            <label class="field"><span>SB</span><input id="seasonBatSB" type="number" min="0"></label>
+          </div>
+        </section>
+        <section class="form-section">
+          <div class="form-section__heading"><strong>투구 기록</strong><span>이닝은 153, 153.1, 153.2 형식입니다.</span></div>
+          <div class="career-input-grid">
+            <label class="field"><span>IP</span><input id="seasonPitIP" type="text" inputmode="decimal" placeholder="0"></label>
+            <label class="field"><span>TBF</span><input id="seasonPitTBF" type="number" min="0"></label>
+            <label class="field"><span>H allowed</span><input id="seasonPitH" type="number" min="0"></label>
+            <label class="field"><span>K</span><input id="seasonPitK" type="number" min="0"></label>
+            <label class="field"><span>W</span><input id="seasonPitW" type="number" min="0"></label>
+          </div>
+        </section>
+        <label class="field"><span>메모</span><textarea id="seasonNoteInput" rows="3" maxlength="500" placeholder="팀 이동, 부상, 시즌 서사 등 확인한 내용"></textarea></label>
+      </div>
+      <footer class="settings-panel__footer">
+        <button class="button button--quiet" value="cancel" type="submit">취소</button>
+        <button class="button button--primary" id="saveSeasonButton" value="default" type="button">지난 시즌 저장</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <dialog class="settings-dialog" id="honorDialog" aria-labelledby="honorDialogTitle">
+    <form method="dialog" class="settings-panel" id="honorForm">
+      <header class="settings-panel__header">
+        <div><span class="kicker">HONOR &amp; EXACT DATE</span><h2 id="honorDialogTitle">수상·기념 기록</h2></div>
+        <button class="icon-button" value="cancel" aria-label="수상 입력 닫기" type="submit">×</button>
+      </header>
+      <div class="settings-panel__body" tabindex="0" role="region" aria-labelledby="honorDialogTitle">
+        <input id="honorIdInput" type="hidden">
+        <div class="field-grid">
+          <label class="field"><span>종류</span><select id="honorKindInput"><option value="japan_series_champion">일본시리즈 우승</option><option value="japan_series_mvp">일본시리즈 MVP</option><option value="league_champion">리그 우승</option><option value="season_mvp">시즌 MVP</option><option value="monthly_mvp">월간 MVP</option><option value="all_star_selection">올스타 선정</option><option value="title">개인 타이틀</option><option value="trophy">트로피·수상</option><option value="season_record">시즌 기록 갱신</option><option value="career_record">통산 기록 갱신</option><option value="other">기타 마일스톤</option></select></label>
+          <label class="field"><span>달성일</span><input id="honorDateInput" type="date"></label>
+          <label class="field"><span>시즌 연도</span><input id="honorYearInput" type="number" min="1936" max="9999"></label>
+          <label class="field"><span>횟수</span><input id="honorCountInput" type="number" min="1" max="999" value="1"></label>
+        </div>
+        <label class="field"><span>표시 이름</span><input id="honorTitleInput" type="text" maxlength="160" placeholder="예: 7월 월간 MVP / 통산 2000탈삼진"></label>
+        <label class="field"><span>소속팀</span><input id="honorTeamInput" type="text" maxlength="80"></label>
+        <label class="field"><span>메모</span><textarea id="honorNoteInput" rows="4" maxlength="500" placeholder="상대, 구장, 당시 상황 등 향후 서사에 재사용할 내용"></textarea></label>
+        <p class="form-note">정확한 날짜를 모르면 시즌 연도만 입력해도 됩니다. 앱은 입력하지 않은 날짜를 만들어내지 않습니다.</p>
+      </div>
+      <footer class="settings-panel__footer">
+        <button class="button button--quiet" value="cancel" type="submit">취소</button>
+        <button class="button button--primary" id="saveHonorButton" value="default" type="button">수상·기록 저장</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <dialog class="settings-dialog data-dialog" id="leagueDialog" aria-labelledby="leagueDialogTitle">
+    <form method="dialog" class="settings-panel">
+      <header class="settings-panel__header">
+        <div><span class="kicker">MANUAL CONFIRMED LEAGUE</span><h2 id="leagueDialogTitle">리그 순위와 선수 Top 5</h2></div>
+        <button class="icon-button" value="cancel" aria-label="리그 입력 닫기" type="submit">×</button>
+      </header>
+      <div class="settings-panel__body" tabindex="0" role="region" aria-labelledby="leagueDialogTitle">
+        <p class="form-note">가상 리그 수치는 실제 웹에서 알 수 없습니다. 게임 화면에서 확인한 값만 입력하면 오늘 날짜에 고정됩니다.</p>
+        <section class="form-section">
+          <div class="form-section__heading"><strong>리그 순위표</strong><span>빈 행은 저장하지 않습니다. 같은 리그의 현재 표를 통째로 갱신합니다.</span></div>
+          <label class="field"><span>리그 이름</span><input id="standingsLeagueInput" type="text" maxlength="40" value="센트럴 리그"></label>
+          <div class="table-editor standings-editor" id="standingsEditor" tabindex="0" role="region" aria-label="리그 순위표 입력"></div>
+          <div class="button-row button-row--end"><button class="button button--quiet" id="saveStandingsButton" type="button">순위표 저장</button></div>
+        </section>
+        <section class="form-section">
+          <div class="form-section__heading"><strong>내 선수가 포함된 Top 5</strong><span>기록 하나씩 추가하거나 같은 기록을 덮어쓸 수 있습니다.</span></div>
+          <div class="field-grid">
+            <label class="field"><span>기록 키</span><input id="leaderboardKeyInput" type="text" maxlength="48" placeholder="예: pit_K"></label>
+            <label class="field"><span>표시 이름</span><input id="leaderboardLabelInput" type="text" maxlength="80" placeholder="예: 탈삼진"></label>
+            <label class="field"><span>리그 이름</span><input id="leaderboardLeagueInput" type="text" maxlength="40" value="센트럴 리그"></label>
+          </div>
+          <div class="table-editor leaderboard-editor" id="leaderboardEditor" tabindex="0" role="region" aria-label="선수 Top 5 입력"></div>
+          <div class="button-row button-row--end"><button class="button button--secondary" id="saveLeaderboardButton" type="button">Top 5 추가·갱신</button></div>
+        </section>
+      </div>
+      <footer class="settings-panel__footer"><button class="button button--quiet" value="cancel" type="submit">닫기</button></footer>
+    </form>
+  </dialog>
+
+  <dialog class="settings-dialog data-dialog" id="valueDialog" aria-labelledby="valueDialogTitle">
+    <form method="dialog" class="settings-panel">
+      <header class="settings-panel__header">
+        <div><span class="kicker">SABERMETRIC &amp; SALARY INPUT</span><h2 id="valueDialogTitle">추가 기록과 연봉 정보</h2></div>
+        <button class="icon-button" value="cancel" aria-label="가치 입력 닫기" type="submit">×</button>
+      </header>
+      <div class="settings-panel__body" tabindex="0" role="region" aria-labelledby="valueDialogTitle">
+        <p class="form-note">세이브에서 읽지 못한 값만 보충합니다. 비워 둔 지표는 계산하지 않으며, WAR과 게임 연봉을 서로 대신하지 않습니다.</p>
+        <section class="form-section">
+          <div class="form-section__heading"><strong>타격 추가 입력</strong><span>OBP·SLG·OPS·ISO·BABIP 계산에 사용합니다.</span></div>
+          <div class="career-input-grid">
+            <label class="field"><span>BB</span><input id="saberBatBB" type="number" min="0"></label>
+            <label class="field"><span>HBP</span><input id="saberBatHBP" type="number" min="0"></label>
+            <label class="field"><span>2B</span><input id="saberBat2B" type="number" min="0"></label>
+            <label class="field"><span>3B</span><input id="saberBat3B" type="number" min="0"></label>
+            <label class="field"><span>SF</span><input id="saberBatSF" type="number" min="0"></label>
+            <label class="field"><span>CS</span><input id="saberBatCS" type="number" min="0"></label>
+          </div>
+        </section>
+        <section class="form-section">
+          <div class="form-section__heading"><strong>투구 추가 입력</strong><span>ERA·WHIP·K/BB·FIP 계산에 사용합니다.</span></div>
+          <div class="career-input-grid">
+            <label class="field"><span>ER</span><input id="saberPitER" type="number" min="0"></label>
+            <label class="field"><span>BB</span><input id="saberPitBB" type="number" min="0"></label>
+            <label class="field"><span>HBP</span><input id="saberPitHBP" type="number" min="0"></label>
+            <label class="field"><span>HR allowed</span><input id="saberPitHR" type="number" min="0"></label>
+            <label class="field"><span>FIP 리그 상수</span><input id="saberFipConstant" type="number" min="0" max="10" step="0.001"></label>
+          </div>
+        </section>
+        <section class="form-section">
+          <div class="form-section__heading"><strong>WAR·시장 가치</strong><span>외부 계산기에서 확인한 WAR과 1 WAR당 엔화를 넣을 때만 시장 가치를 표시합니다.</span></div>
+          <div class="field-grid">
+            <label class="field"><span>확인한 WAR</span><input id="saberManualWar" type="number" min="-10" max="30" step="0.1"></label>
+            <label class="field"><span>1 WAR당 엔화</span><input id="saberYenPerWar" type="number" min="0" step="1000000"></label>
+          </div>
+        </section>
+        <section class="form-section">
+          <div class="form-section__heading"><strong>게임 연봉 추정</strong><span>공식 비공개 산식이 아니라 미션·평가·순위·실제 갱신 이력 기반 범위입니다.</span></div>
+          <div class="career-input-grid">
+            <label class="field"><span>현재 연봉(엔)</span><input id="salaryCurrent" type="number" min="0" step="10000"></label>
+            <label class="field"><span>직전 연봉(엔)</span><input id="salaryPrevious" type="number" min="0" step="10000"></label>
+            <label class="field"><span>미션 성공 횟수</span><input id="salaryMissions" type="number" min="0"></label>
+            <label class="field"><span>감독 평가 0~100</span><input id="salaryManagerEval" type="number" min="0" max="100"></label>
+            <label class="field"><span>구단 평가 0~100</span><input id="salaryClubEval" type="number" min="0" max="100"></label>
+            <label class="field"><span>스타 레벨 0~100</span><input id="salaryStarLevel" type="number" min="0" max="100"></label>
+          </div>
+        </section>
+        <section class="form-section">
+          <div class="form-section__heading"><strong>실제 계약 갱신 이력</strong><span>최대 3개 행을 넣으면 이 세계선의 연봉 배율을 보정합니다.</span></div>
+          <div class="table-editor offer-editor" id="salaryOfferEditor" tabindex="0" role="region" aria-label="계약 갱신 이력 입력"></div>
+        </section>
+      </div>
+      <footer class="settings-panel__footer">
+        <button class="button button--quiet" value="cancel" type="submit">취소</button>
+        <button class="button button--primary" id="saveValueButton" type="button">세이버·연봉 저장</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <dialog class="settings-dialog archive-dialog history-dialog" id="historyDialog" aria-labelledby="historyDialogTitle">
+    <form method="dialog" class="settings-panel">
+      <header class="settings-panel__header">
+        <div><span class="kicker">FROZEN WORLD CAPSULE</span><h2 id="historyDialogTitle">날짜별 세계선</h2></div>
+        <button class="icon-button" value="cancel" aria-label="역사 캡슐 닫기" type="submit">×</button>
+      </header>
+      <div class="settings-panel__body archive-dialog__body" id="historyDialogBody" tabindex="0" role="region" aria-labelledby="historyDialogTitle"></div>
+    </form>
+  </dialog>
+
+  <dialog class="settings-dialog archive-dialog" id="archiveDialog" aria-labelledby="archiveDialogTitle">
+    <form method="dialog" class="settings-panel">
+      <header class="settings-panel__header">
+        <div><span class="kicker">LOCAL REACTION SNAPSHOT</span><h2 id="archiveDialogTitle">날짜별 반응</h2></div>
+        <button class="icon-button" value="cancel" aria-label="반응 보관함 닫기" type="submit">×</button>
+      </header>
+      <div class="settings-panel__body archive-dialog__body" id="archiveDialogBody" tabindex="0" role="region" aria-labelledby="archiveDialogTitle"></div>
+    </form>
+  </dialog>
+  <dialog class="settings-dialog attachment-dialog" id="attachmentDialog" aria-labelledby="attachmentDialogTitle">
+    <form method="dialog" class="settings-panel" id="attachmentForm">
+      <header class="settings-panel__header">
+        <div><span class="kicker">LOCAL READ FIRST · OPTIONAL AI</span><h2 id="attachmentDialogTitle">이미지 내용 검토</h2></div>
+        <button class="icon-button" value="cancel" aria-label="이미지 검토 닫기" type="submit">×</button>
+      </header>
+      <div class="settings-panel__body" tabindex="0" role="region" aria-labelledby="attachmentDialogTitle">
+        <input id="attachmentIdInput" type="hidden">
+        <input id="attachmentNameInput" type="hidden">
+        <p class="form-note attachment-summary" id="attachmentSummary"></p>
+        <div class="attachment-binding" id="attachmentBinding"></div>
+        <div class="attachment-observations" id="attachmentObservations" aria-live="polite"></div>
+        <label class="field"><span>직접 설명 (선택)</span><textarea id="attachmentDescriptionInput" rows="3" maxlength="500" placeholder="화면에서 읽지 못한 내용이나 개인 사진의 의미를 적으면 창작 소재로 남습니다."></textarea></label>
+        <p class="form-note attachment-llm-hint" id="attachmentLlmHint" hidden></p>
+        <button class="button button--quiet attachment-use-hint" id="attachmentUseLlmHintButton" type="button" hidden>해석 결과를 설명칸에 옮기기</button>
+        <fieldset class="attachment-retention attachment-reaction-scope"><legend>반응 확산</legend>
+          <label><input type="radio" name="attachmentReactionScope" value="private" checked><span><strong>개인 서사만</strong><small>기존처럼 사실·소재만 저장하고 외부 반응은 만들지 않습니다.</small></span></label>
+          <label><input type="radio" name="attachmentReactionScope" value="community"><span><strong>SNS·커뮤니티</strong><small>확인한 장면을 X·Threads와 게시판의 창작 반응으로 확산합니다.</small></span></label>
+          <label><input type="radio" name="attachmentReactionScope" value="public"><span><strong>SNS·커뮤니티·기사</strong><small>게시판과 SNS에 더해 창작 기사까지 생성합니다.</small></span></label>
+        </fieldset>
+        <p class="form-note" id="attachmentReactionHeat">현재 맵기 농도 7 · 매운맛</p>
+        <fieldset class="attachment-retention"><legend>보관 방식</legend>
+          <label><input type="radio" name="attachmentRetention" value="keep_original" checked> 원본 보관</label>
+          <label><input type="radio" name="attachmentRetention" value="analysis_only"> 분석 결과만 보관</label>
+          <label><input type="radio" name="attachmentRetention" value="delete_after"> 이번 대화 후 삭제</label>
+        </fieldset>
+        <label class="attachment-confirm" id="attachmentBindingConfirmRow" hidden><input type="checkbox" id="attachmentBindingConfirm"> 이 이미지가 현재 선수와 열린 날짜의 것임을 확인합니다</label>
+        <p class="form-note">읽은 값은 후보입니다. 사용자 확인 사실로 반영해도 세이브 검증 사실과는 구분되어 저장됩니다. 카메라 정보(EXIF)는 저장하지 않습니다.</p>
+      </div>
+      <footer class="settings-panel__footer">
+        <button class="button button--quiet" id="attachmentDiscardButton" type="button">반영 취소</button>
+        <button class="button button--quiet" id="attachmentLlmButton" type="button" hidden>LLM으로 해석 보강</button>
+        <button class="button button--primary" id="attachmentCommitButton" type="button">이미지 내용 반영</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+  <dialog class="dialog director-dialog" id="directorMemoryDialog" aria-labelledby="directorMemoryTitle"><form id="directorMemoryForm">
+    <header class="dialog__header"><h2 id="directorMemoryTitle">세계선 기억</h2><button type="button" class="button button--quiet" data-director-close>닫기</button></header>
+    <div class="dialog__body settings-panel__body" tabindex="0" role="region" aria-labelledby="directorMemoryTitle">
+      <input id="directorMemoryId" type="hidden">
+      <div class="director-controls"><label class="field"><span>종류</span><select id="directorMemoryKind"></select></label><label class="field"><span>제목</span><input id="directorMemoryLabel" type="text" maxlength="100" required></label></div>
+      <label class="field"><span>앞으로 활용할 내용</span><textarea id="directorMemoryDetail" rows="7" maxlength="4000" required></textarea></label>
+      <label class="field"><span>출처 링크 <em>선택 · 자동으로 방문하거나 검증하지 않음</em></span><input id="directorMemorySource" type="url" maxlength="1500" placeholder="https://…"></label>
+      <label class="checkbox"><input id="directorMemoryPinned" type="checkbox"><span>우선 회상할 고정 기억</span></label>
+      <label class="field"><span>기억을 아는 범위</span><select id="directorMemoryVisibility"><option value="private">비공개 · 서사에서만</option><option value="clubhouse">팀 안 · 서사에서만</option><option value="public">공개 · 기사·커뮤니티에서도 참고</option><option value="social">SNS 공개</option></select></label>
+      <label class="checkbox"><input id="directorMemoryRemote" type="checkbox"><span>이 내용의 Gemini 전송 허용 <small>이야기 속 공개 여부와 별개입니다.</small></span></label>
+      <p class="muted">과거 원문은 유지됩니다. 수정은 새 기억 버전으로 저장하고, 사용 중지는 다음 장면의 회상에서만 제외합니다.</p>
+    </div><footer class="dialog__footer"><button class="button button--primary" type="submit">기억 저장</button></footer>
+  </form></dialog>
+  <dialog class="dialog director-dialog" id="connectedSourceDialog" aria-labelledby="connectedSourceTitle"><header class="dialog__header"><h2 id="connectedSourceTitle">연결 자료</h2><button class="button button--quiet" id="connectedSourceClose" type="button">닫기</button></header><div class="dialog__body settings-panel__body" id="connectedSourceBody" tabindex="0" role="region" aria-labelledby="connectedSourceTitle"></div></dialog>
+  <dialog class="dialog director-dialog" id="directorReferenceDialog" aria-labelledby="directorReferenceTitle">
+    <header class="dialog__header"><h2 id="directorReferenceTitle">스킨스 참고 메모 가져오기</h2><button type="button" class="button button--quiet" data-director-close>닫기</button></header>
+    <div class="dialog__body settings-panel__body" tabindex="0" role="region" aria-labelledby="directorReferenceTitle"><p class="muted" id="directorReferenceNote"></p><div id="directorReferenceItems"></div><label class="checkbox"><input id="directorReferenceRemote" type="checkbox"><span>선택 메모의 Gemini 전송도 허용</span></label><p class="muted">선택한 메모만 현재 세계선에 추가합니다. 다른 선수에게 스킨스 설정이 자동 적용되지 않습니다.</p></div>
+    <footer class="dialog__footer"><button id="directorReferenceSave" class="button button--primary" type="button">선택한 메모 가져오기</button></footer>
+  </dialog>
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

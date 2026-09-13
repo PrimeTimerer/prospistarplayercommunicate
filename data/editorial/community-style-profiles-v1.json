@@ -1,0 +1,574 @@
+{
+  "schema_version": 1,
+  "dataset_version": "2026.09.13.public.1",
+  "updated_at": "2026-09-05",
+  "purpose": "Derived writing-register and interaction-shape evidence for fictional baseball community simulation.",
+  "storage_policy": {
+    "mode": "derived_features_only",
+    "raw_posts_stored": false,
+    "usernames_stored": false,
+    "images_stored": false,
+    "notes": "Store public source URLs, observation scope, and abstract features only. Do not archive or reproduce source posts, comments, handles, or images."
+  },
+  "sources": [
+    {
+      "id": "dc-prospi-18120-browser-20260905",
+      "platform": "dcinside",
+      "locale": "ko-KR",
+      "url": "https://gall.dcinside.com/mgallery/board/view/?id=prospi2019&no=18120&exception_mode=recommend&page=1",
+      "observed_at": "2026-09-05",
+      "access": "public_page_comments_and_embedded_screenshot_review",
+      "scope": [
+        "simulator_examples_not_live_platform_output",
+        "distinct_opener_and_replies",
+        "platform_brand_bars",
+        "nested_reply_visuals",
+        "sns_caption_rhythm",
+        "manual_event_settings"
+      ]
+    },
+    {
+      "id": "dc-prospi-16440-browser-20260905",
+      "platform": "dcinside",
+      "locale": "ko-KR",
+      "url": "https://gall.dcinside.com/mgallery/board/view/?id=prospi2019&no=16440&s_type=search_subject_memo&s_keyword=%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0&page=2",
+      "observed_at": "2026-09-05",
+      "access": "public_page_comments_and_embedded_screenshot_review",
+      "scope": [
+        "simulated_title_body_comment_separation",
+        "short_majority_long_minority",
+        "opponent_fan_perspective",
+        "user_authored_event_workflow",
+        "event_frequency_tiers"
+      ]
+    },
+    {
+      "id": "dc-prospi-17864-browser-20260905",
+      "platform": "dcinside",
+      "locale": "ko-KR",
+      "url": "https://gall.dcinside.com/mgallery/board/view/?id=prospi2019&no=17864&search_head=10&page=1",
+      "observed_at": "2026-09-05",
+      "access": "public_page_comments_and_embedded_screenshot_review",
+      "scope": [
+        "synthetic_example_not_verified_stats",
+        "author_body_comment_hierarchy",
+        "reported_save_switch_identity_errors",
+        "reported_false_role_and_result_errors"
+      ]
+    },
+    {
+      "id": "dc-prospi-reference-18120",
+      "platform": "dcinside",
+      "locale": "ko-KR",
+      "url": "https://gall.dcinside.com/mgallery/board/view/?id=prospi2019&no=18120&exception_mode=recommend&page=1",
+      "observed_at": "2026-09-04",
+      "access": "user_reference_screenshots",
+      "scope": [
+        "thread_layout",
+        "anonymous_identity",
+        "recommendation_metadata",
+        "short_reply_rhythm"
+      ]
+    },
+    {
+      "id": "dc-baseball-public-example",
+      "platform": "dcinside",
+      "locale": "ko-KR",
+      "url": "https://gall.dcinside.com/board/view/?id=skwyverns_new1&no=6787422&page=1",
+      "observed_at": "2026-09-04",
+      "access": "public_page",
+      "scope": [
+        "compact_title_body",
+        "anonymous_ip_handle",
+        "views_comments_votes",
+        "mobile_footer"
+      ]
+    },
+    {
+      "id": "fmk-baseball-index",
+      "platform": "fmkorea",
+      "locale": "ko-KR",
+      "url": "https://www.fmkorea.com/baseball",
+      "observed_at": "2026-09-04",
+      "access": "http_429_no_content_copied",
+      "scope": [
+        "source_registered_for_future_review"
+      ]
+    },
+    {
+      "id": "mlbpark-kbotown-index",
+      "platform": "mlbpark",
+      "locale": "ko-KR",
+      "url": "https://mlbpark.donga.com/mp/b.php?b=kbotown",
+      "observed_at": "2026-09-04",
+      "access": "public_page",
+      "scope": [
+        "section_tabs",
+        "team_category_labels",
+        "title_author_time_views",
+        "inline_reply_count",
+        "today_best"
+      ]
+    },
+    {
+      "id": "reddit-baseball-general-thread",
+      "platform": "reddit",
+      "locale": "en",
+      "url": "https://www.reddit.com/r/baseball/comments/1uu9pxe/general_discussion_around_the_horn_game_thread/",
+      "observed_at": "2026-09-04",
+      "access": "public_page",
+      "scope": [
+        "flair",
+        "vote_score",
+        "sort",
+        "nested_replies",
+        "short_joke_and_long_analysis_mix"
+      ]
+    },
+    {
+      "id": "reddit-npb-index",
+      "platform": "reddit",
+      "locale": "en-ja",
+      "url": "https://www.reddit.com/r/NPB/",
+      "observed_at": "2026-09-04",
+      "access": "public_page",
+      "scope": [
+        "npb_fan_topics",
+        "flair",
+        "cross_language_context"
+      ]
+    },
+    {
+      "id": "ptt-baseball-discussion-example",
+      "platform": "ptt",
+      "locale": "zh-TW",
+      "url": "https://www.ptt.cc/bbs/Baseball/M.1779361308.A.F47.html",
+      "observed_at": "2026-09-04",
+      "access": "public_page",
+      "scope": [
+        "discussion_prefix",
+        "author_board_title_time_header",
+        "push_boo_arrow",
+        "timestamped_rapid_replies"
+      ]
+    },
+    {
+      "id": "ptt-baseball-question-example",
+      "platform": "ptt",
+      "locale": "zh-TW",
+      "url": "https://www.ptt.cc/bbs/Baseball/M.1773554578.A.34E.html",
+      "observed_at": "2026-09-04",
+      "access": "public_page",
+      "scope": [
+        "question_prefix",
+        "stat_discussion",
+        "one_line_rebuttal",
+        "self_team_irony"
+      ]
+    },
+    {
+      "id": "fivech-baseball-index",
+      "platform": "5ch",
+      "locale": "ja-JP",
+      "url": "https://5chan.jp/5ch_baseball/",
+      "observed_at": "2026-09-04",
+      "access": "public_index",
+      "scope": [
+        "thread_listing",
+        "anonymous_fast_thread_convention"
+      ]
+    },
+    {
+      "id": "girlschannel-pro-baseball-thread",
+      "platform": "girlschannel",
+      "locale": "ja-JP",
+      "url": "https://girlschannel.net/topics/6148104/",
+      "observed_at": "2026-09-04",
+      "access": "public_page",
+      "scope": [
+        "numbered_comments",
+        "agreement_disagreement",
+        "casual_fan_conversation"
+      ]
+    },
+    {
+      "id": "spanish-wbc-forum-thread",
+      "platform": "elotrolado",
+      "locale": "es",
+      "url": "https://www.elotrolado.net/hilo_clasico-mundial-de-beisbol-2026_2530280",
+      "observed_at": "2026-09-04",
+      "access": "public_page",
+      "scope": [
+        "event_thread",
+        "quoted_reply",
+        "regional_fandom",
+        "live_reaction"
+      ]
+    },
+    {
+      "id": "reddit-venezuela-wbc-live",
+      "platform": "reddit",
+      "locale": "es",
+      "url": "https://www.reddit.com/r/vzla/comments/1rwo8fm/wbc_final_venezuela_vs_usa/",
+      "observed_at": "2026-09-04",
+      "access": "public_page",
+      "scope": [
+        "chronological_live_thread",
+        "emotional_swings",
+        "regional_irony",
+        "cross_community_reference"
+      ]
+    }
+  ],
+  "profiles": {
+    "dc": {
+      "display_name": "디시인사이드 야구 갤러리형",
+      "surface": "forum",
+      "locale": "ko-KR",
+      "confidence": "high",
+      "evidence_source_ids": [
+        "dc-prospi-reference-18120",
+        "dc-baseball-public-example",
+        "dc-prospi-18120-browser-20260905",
+        "dc-prospi-16440-browser-20260905"
+      ],
+      "register": {
+        "title_shape": "짧은 단정·질문·기록 토큰 중심. 필요할 때만 ㅋㅋ, ㄷㄷ, 실화냐 같은 반응 표식을 한 번 쓴다.",
+        "body_length": "대부분 한두 문장. 설명이 필요한 글만 짧은 단락 두 개까지 허용한다.",
+        "reply_length": "짧은 한 줄이 다수이고 일부만 근거를 붙인 두세 문장이다.",
+        "syntax": "주어와 조사를 자주 생략하고 반말·명사형·미완성 문장을 섞는다. 모든 줄에 은어를 강제로 넣지 않는다.",
+        "turn_shape": "감탄, 의심, 기록 정정, 타팀 시점, 짧은 농담, 재반박이 빠르게 교차한다.",
+        "stance_mix": [
+          "즉시 감탄",
+          "설레발 경계",
+          "수치 정정",
+          "타팀 팬 인정 또는 견제",
+          "짧은 드립"
+        ],
+        "heat_rule": "맵기는 단정성·반박 속도·짧은 조롱의 강도다. 욕설 허용 여부는 별도 language_policy의 선택 단계만 따른다. 높은 단계에서도 모든 댓글을 욕설로 채우지 않는다.",
+        "fan_perspective": "홈 팬의 자랑과 상대 팬의 자조·경계·마지못한 인정을 섞는다. 편들기나 놀림도 주인공의 확인된 행동에 붙이고, 없던 패배나 기록은 만들지 않는다.",
+        "character_context": "공개된 취향·농담·약속이 제공됐을 때만 짧게 다시 받아 친숙한 드립으로 쓴다. 비공개 장면을 목격담으로 바꾸지 않는다.",
+        "avoid": [
+          "모든 댓글의 완전한 존댓말",
+          "기사 요약체",
+          "매 댓글마다 같은 은어",
+          "근거 없는 사생활 단정"
+        ]
+      },
+      "ui_cues": [
+        "익명 IP형과 고정 닉네임 혼합",
+        "조회·추천·비추천·댓글 수",
+        "원글과 한 단계 답글 구분"
+      ]
+    },
+    "fmk": {
+      "display_name": "에펨코리아 야구 게시판형",
+      "surface": "forum",
+      "locale": "ko-KR",
+      "confidence": "medium",
+      "evidence_source_ids": [
+        "fmk-baseball-index",
+        "dc-prospi-reference-18120",
+        "dc-prospi-18120-browser-20260905",
+        "dc-prospi-16440-browser-20260905"
+      ],
+      "register": {
+        "title_shape": "[기록], [속보], [하이라이트] 같은 말머리 또는 짤·영상·근황을 가리키는 제목을 선택적으로 쓴다.",
+        "body_length": "짧은 반응부터 맥락을 붙인 중간 길이 글까지 섞는다.",
+        "reply_length": "한 줄 반응이 중심이지만 타팀 팬 관점과 포텐 여부를 두고 두세 문장 반박도 나온다.",
+        "syntax": "친근한 반말과 인터넷 구어체. 디시식 익명 생략문을 그대로 복제하지 않는다.",
+        "turn_shape": "하이라이트 요구, 타팀 팬 인증, 포텐 예상, 기록 팩트 체크, 짤을 기다리는 농담이 교차한다.",
+        "stance_mix": [
+          "포텐 반응",
+          "타팀 팬 관점",
+          "하이라이트 요청",
+          "기록 보정",
+          "일상형 농담"
+        ],
+        "heat_rule": "맵기가 오르면 추천 경쟁과 올려치기·내려치기 대립이 선명해지되 동일 문구를 반복하지 않는다.",
+        "fan_perspective": "상대 팬이 실력을 인정하면서 자기 팀 처지를 농담하는 시선도 섞는다. 알려진 일화는 받되 확인되지 않은 경기 결과나 사생활은 보태지 않는다.",
+        "avoid": [
+          "디시 IP형 닉네임",
+          "전 댓글 장문 분석",
+          "형식적인 존댓말 토론",
+          "실재 게시물 인용"
+        ]
+      },
+      "ui_cues": [
+        "말머리",
+        "추천 반응",
+        "게시물·댓글 계층",
+        "하이라이트 맥락"
+      ]
+    },
+    "mlb": {
+      "display_name": "MLBPARK 야구타운형",
+      "surface": "forum",
+      "locale": "ko-KR",
+      "confidence": "high",
+      "evidence_source_ids": [
+        "mlbpark-kbotown-index",
+        "dc-prospi-18120-browser-20260905"
+      ],
+      "register": {
+        "title_shape": "선수명·팀명·스탯을 앞세운 질문, 비교, 전망 제목. 팀 또는 글 분류가 별도로 보이는 느낌을 유지한다.",
+        "body_length": "중간 길이와 장문을 섞으며 표본·역할·시대·리그 환경 중 하나 이상을 짚는다.",
+        "reply_length": "대체로 완결된 문장. 짧은 동의도 있으나 적어도 일부는 근거와 조건을 붙인다.",
+        "syntax": "존댓말 비중이 높고 차분한 비교 어휘를 쓰지만 모든 댓글을 논문처럼 만들지 않는다.",
+        "turn_shape": "질문, 경험담, 표본 경계, 비교 기준 제안, 반례, 재반박이 느리게 이어진다.",
+        "stance_mix": [
+          "기록 평가",
+          "표본 경계",
+          "역할 비교",
+          "장기 팬 경험",
+          "다음 경기 전망"
+        ],
+        "heat_rule": "맵기가 오르면 비교 기준과 반례가 날카로워지고 단정이 늘지만 예의 있는 문장 구조는 대체로 남는다.",
+        "avoid": [
+          "전 댓글 한 줄 감탄",
+          "과도한 초성체",
+          "같은 결론의 반복",
+          "근거 없는 내부자 발언"
+        ]
+      },
+      "ui_cues": [
+        "팀·카테고리 라벨",
+        "제목 옆 댓글 수",
+        "작성자·시간·조회",
+        "오늘의 인기글"
+      ]
+    },
+    "x": {
+      "display_name": "X 야구 타임라인형",
+      "surface": "social",
+      "locale": "ko-KR",
+      "confidence": "medium",
+      "evidence_source_ids": [
+        "reddit-baseball-general-thread",
+        "dc-prospi-18120-browser-20260905"
+      ],
+      "register": {
+        "post_length": "대부분 한두 문장. 한 가지 장면이나 수치에 즉시 반응한다.",
+        "syntax": "빠른 단정, 인용 반응, 선택적 해시태그. 모든 글을 홍보 문구로 만들지 않는다.",
+        "reply_shape": "짧은 동의·정정·인용 반박이 중심이다. 원글의 수치나 드립 하나를 받아 답하고, 원문 전체를 다시 설명하거나 모든 답글을 다음 경기 기대로 끝내지 않는다.",
+        "stance_mix": [
+          "실시간 감탄",
+          "짧은 정정",
+          "인용 반박",
+          "다음 장면 예고"
+        ],
+        "heat_rule": "맵기가 오르면 인용 반박과 짧은 단정이 늘어난다.",
+        "avoid": [
+          "장문 칼럼",
+          "해시태그 도배",
+          "모든 답글의 동일한 문장 길이"
+        ]
+      },
+      "ui_cues": [
+        "계정 핸들",
+        "짧은 본문",
+        "답글·재게시·좋아요"
+      ]
+    },
+    "threads": {
+      "display_name": "Threads 대화형 야구 피드",
+      "surface": "social",
+      "locale": "ko-KR",
+      "confidence": "medium",
+      "evidence_source_ids": [
+        "reddit-baseball-general-thread",
+        "dc-prospi-18120-browser-20260905"
+      ],
+      "register": {
+        "post_length": "두세 문장 중심. 개인 관찰을 말한 뒤 독자에게 말을 건다.",
+        "syntax": "대화형 구어체와 부드러운 이어 말하기. X보다 호흡이 길다.",
+        "reply_shape": "앞 답글의 한 구절을 받아 경험이나 다른 관점을 덧붙이는 재답글 흐름을 만든다.",
+        "stance_mix": [
+          "개인 관찰",
+          "공감",
+          "경험 추가",
+          "부드러운 이견"
+        ],
+        "heat_rule": "맵기가 올라도 대화의 연결고리는 유지하고 이견의 선명도만 높인다.",
+        "avoid": [
+          "서로 무관한 독립 댓글 나열",
+          "기사 문체",
+          "한 글에 과도한 해시태그"
+        ]
+      },
+      "ui_cues": [
+        "대화 사슬",
+        "프로필 중심",
+        "재답글 연결"
+      ]
+    },
+    "instagram": {
+      "display_name": "Instagram 야구 캡션형",
+      "surface": "social",
+      "locale": "ko-KR",
+      "confidence": "medium",
+      "evidence_source_ids": [
+        "reddit-baseball-general-thread"
+      ],
+      "register": {
+        "post_length": "장면을 떠올리는 짧은 캡션과 두세 번의 줄바꿈.",
+        "syntax": "감각적인 한 줄, 짧은 기록 메모, 선택적 이모지·해시태그.",
+        "reply_shape": "응원, 직관 경험, 다음 경기 기대가 짧게 이어진다.",
+        "stance_mix": [
+          "장면 회상",
+          "응원",
+          "직관 경험",
+          "저장·공유 반응"
+        ],
+        "heat_rule": "맵기가 오르면 감탄과 팬덤 경쟁이 늘지만 분석 게시판처럼 변하지 않는다.",
+        "avoid": [
+          "통계 보고서",
+          "긴 논쟁문",
+          "해시태그 도배",
+          "이미지가 실제 존재한다는 단정"
+        ]
+      },
+      "ui_cues": [
+        "캡션 줄바꿈",
+        "좋아요·댓글",
+        "프로필·짧은 반응"
+      ]
+    },
+    "facebook": {
+      "display_name": "Facebook 야구 그룹형",
+      "surface": "social",
+      "locale": "ko-KR",
+      "confidence": "medium",
+      "evidence_source_ids": [
+        "reddit-baseball-general-thread"
+      ],
+      "register": {
+        "post_length": "세대 경험이나 팀 관점을 담은 비교적 긴 그룹 글.",
+        "syntax": "완결된 구어체 문장과 개인 경험담. 기사 문체와 분리한다.",
+        "reply_shape": "동의, 오래된 관전 기억, 가족·지역 팬 경험, 정중한 반론이 섞인다.",
+        "stance_mix": [
+          "세대 비교",
+          "팀 팬 경험",
+          "가족·지역 관점",
+          "정중한 반론"
+        ],
+        "heat_rule": "맵기가 오르면 세대·팀 관점의 충돌이 커지지만 모욕으로 가지 않는다.",
+        "avoid": [
+          "뉴스 기사 복사체",
+          "전 답글 초성체",
+          "모든 사람이 같은 경험을 말함"
+        ]
+      },
+      "ui_cues": [
+        "그룹명",
+        "긴 본문",
+        "반응·댓글 사슬"
+      ]
+    },
+    "japan-translation": {
+      "display_name": "일본 야구 커뮤니티 번역형",
+      "surface": "translated_social",
+      "locale": "ja-JP_to_ko-KR",
+      "confidence": "medium",
+      "evidence_source_ids": [
+        "fivech-baseball-index",
+        "girlschannel-pro-baseball-thread",
+        "reddit-npb-index"
+      ],
+      "register": {
+        "post_length": "선택한 원형에 따라 익명 한두 줄 또는 일상형 두세 문장으로 쓴다.",
+        "syntax": "내용은 자연스러운 한국어로 번역하되 한국 커뮤니티 초성체를 덧씌우지 않고 원문의 담담함·간격을 남긴다.",
+        "reply_shape": "익명 속보형, 번호 댓글형, NPB 해외 팬형 중 하나를 일관되게 선택한다.",
+        "stance_mix": [
+          "현지 팀 팬 기대",
+          "상대 구단 경계",
+          "과거 선수 비교",
+          "담담한 놀람",
+          "다음 경기 질문"
+        ],
+        "heat_rule": "맵기가 오르면 단문 속도와 라이벌 시점이 늘지만 번역판 전체를 한국식 욕설로 바꾸지 않는다.",
+        "avoid": [
+          "한국 커뮤니티 말투 복제",
+          "원문이 있는 것처럼 따옴표 인용",
+          "실존 팬 계정 사칭"
+        ]
+      },
+      "variants": [
+        {
+          "id": "jp-anonymous-fast",
+          "label": "일본 익명 속보형",
+          "rhythm": "아주 짧은 관찰·의문·재반박, 번호형 답글 느낌"
+        },
+        {
+          "id": "jp-casual-numbered",
+          "label": "일본 일상형 번호 댓글",
+          "rhythm": "두세 문장 감상과 동의·비동의가 차례로 붙는 흐름"
+        },
+        {
+          "id": "npb-crosslanguage",
+          "label": "NPB 해외 팬 토론",
+          "rhythm": "리그 맥락을 설명하는 중간 길이 질문과 답변"
+        }
+      ],
+      "ui_cues": [
+        "번역 출처권 표시",
+        "번호 또는 짧은 답글",
+        "원문 언어 라벨"
+      ]
+    },
+    "global-translation": {
+      "display_name": "국제 야구 커뮤니티 번역형",
+      "surface": "translated_social",
+      "locale": "multi_to_ko-KR",
+      "confidence": "high",
+      "evidence_source_ids": [
+        "reddit-baseball-general-thread",
+        "ptt-baseball-discussion-example",
+        "ptt-baseball-question-example",
+        "spanish-wbc-forum-thread",
+        "reddit-venezuela-wbc-live"
+      ],
+      "register": {
+        "post_length": "선택한 원형의 길이와 답글 구조를 유지하되 최종 표시는 자연스러운 한국어로 한다.",
+        "syntax": "문화권별 리듬을 보존한다. 번역문에 한국 커뮤니티 은어를 일괄 삽입하지 않는다.",
+        "reply_shape": "Reddit 중첩 토론, PTT 방향표시형 속보 댓글, 스페인어권 실시간 응원형 중 하나를 일관되게 선택한다.",
+        "stance_mix": [
+          "리그 환경 비교",
+          "규칙·스탯 질문",
+          "지역 팬 응원",
+          "유머",
+          "반례와 정정"
+        ],
+        "heat_rule": "맵기가 오르면 선택한 문화권의 반응 속도·아이러니·대립이 커지며 다른 문화권의 표식을 섞지 않는다.",
+        "avoid": [
+          "여러 나라 말투의 한 게시물 내 혼합",
+          "원문 직역투 과장",
+          "실제 계정·실제 댓글 인용",
+          "혐오 표현"
+        ]
+      },
+      "variants": [
+        {
+          "id": "reddit-nested",
+          "label": "북미 Reddit형",
+          "rhythm": "한 줄 농담과 근거 있는 장문이 중첩 답글에서 교차"
+        },
+        {
+          "id": "ptt-directional",
+          "label": "대만 PTT형",
+          "rhythm": "찬성·반대·중립 방향과 시각이 붙는 짧은 속보형 댓글"
+        },
+        {
+          "id": "spanish-live",
+          "label": "스페인어권 실시간 응원형",
+          "rhythm": "경기 흐름에 따라 감정이 크게 흔들리는 시간순 응원·아이러니"
+        }
+      ],
+      "ui_cues": [
+        "번역 출처권 표시",
+        "선택 원형별 답글 구조",
+        "원문 언어 라벨"
+      ]
+    }
+  }
+}

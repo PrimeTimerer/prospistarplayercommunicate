@@ -1,0 +1,65 @@
+/* Mode-local workspaces and one shared activity surface. */
+.app-layout { grid-template-columns: minmax(0,1fr); }
+.side-column { position: static; display: block; }
+.side-column .disclaimer { max-width: 700px; margin: 12px 0; }
+.page { padding-bottom: calc(var(--activity-height, 150px) + 34px); }
+html { scroll-padding-top: calc(var(--appbar-height, 70px) + 106px); scroll-padding-bottom: calc(var(--activity-height, 150px) + 20px); }
+.workspace-hub { position: sticky; top: var(--appbar-height,70px); z-index: 25; background: var(--canvas); padding: 8px 0; border-bottom: 1px solid var(--line); }
+.workspace-hub .tabbar { margin-top: 0; }
+.workspace-common, .workspace-compose-tools { display: flex; align-items: center; gap: 8px; overflow-x: auto; padding: 8px 3px 0; white-space: nowrap; }
+.workspace-common > span, .workspace-compose-tools > span { color: var(--text-muted); font-size: 11px; padding-right: 5px; }
+.workspace-common button, .workspace-compose-tools button { flex-shrink: 0; border: 1px solid transparent; border-radius: 6px; background: transparent; color: var(--text-soft); padding: 6px 9px; font: inherit; font-size: 12px; cursor: pointer; }
+.workspace-common button:hover, .workspace-compose-tools button:hover, [data-shared-tool][aria-expanded="true"] { background: var(--accent-soft); color: var(--accent); border-color: var(--line); }
+.workspace-guide { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; margin: 17px 0 0; }
+.workspace-guide strong { font-size: 13px; color: var(--text); }
+.workspace-guide p { margin: 4px 0 0; color: var(--text-muted); font-size: 12px; line-height: 1.7; }
+#workspaceReadiness { color: var(--text-muted); font-size: 11px; }
+#workspaceReadiness[data-ready="false"] { color: var(--gold); }
+.job-state.is-fallback { color: var(--gold); }
+.workspace-sections { display: flex; gap: 7px; flex-wrap: wrap; margin: 0 0 20px; border-bottom: 1px solid var(--line-soft); padding-bottom: 13px; }
+.workspace-sections button { background: var(--surface); color: var(--text-muted); border: 1px solid var(--line); border-radius: 8px; padding: 10px 16px; cursor: pointer; font: inherit; font-weight: 650; font-size: 13px; }
+.workspace-sections button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+.workspace-part[hidden], .shared-tools[hidden], [data-shared-panel][hidden] { display: none; }
+.shared-tools { padding: 20px; margin-top: 18px; border-color: var(--accent); }
+.shared-tools > header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.shared-tools h2 { margin: 5px 0; font-size: 18px; }
+[data-shared-panel] { display: grid; gap: 15px; }
+[data-shared-panel] > .card { margin: 0; }
+#shared-images .capture-gallery { grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); }
+#shared-images .button-stack { max-width: 540px; }
+#shared-memory .worldbook-form-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.workspace-composer-hint { padding: 11px 14px; background: var(--accent-soft); border-left: 2px solid var(--accent); border-radius: 4px; color: var(--text-soft); line-height: 1.8; font-size: 12px; margin: 0 0 15px; }
+.workspace-compose-tools { margin: 8px 0; }
+.workspace-part .connected-compose, .workspace-part .director-compose { border-top: 2px solid var(--accent); }
+.activity-console { position: fixed; z-index: 40; bottom: 8px; left: 50%; transform: translateX(-50%); width: min(calc(100% - 32px),var(--content-max)); padding: 10px 16px; border: 1px solid var(--line); box-shadow: var(--shadow); background: var(--surface); }
+.activity-console .side-card__heading { display: flex; justify-content: flex-start; align-items: center; gap: 10px; margin-bottom: 3px; }
+.activity-console .side-card__heading > span:first-child { white-space: nowrap; font-size: 12px; }
+.activity-console #jobState { white-space: nowrap; }
+.activity-selector { flex: 1; min-width: 0; }
+.activity-selector select { max-width: 260px; width: 100%; padding: 3px 7px; min-height: 26px; font-size: 11px; color: var(--text-soft); background: var(--surface-deep); border: 1px solid var(--line); border-radius: 5px; }
+.activity-console .job-phase { min-height: 0; margin: 3px 0; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.activity-console .job-summary { font-size: 10px; margin: 0; }
+.activity-console progress { height: 3px; margin: 5px 0; }
+.activity-console .job-log { max-height: 44px; padding: 4px 8px; font-size: 11px; line-height: 1.5; gap: 3px; }
+.activity-console.is-expanded .job-log { max-height: min(190px,30dvh); }
+.activity-console.is-expanded .job-phase { white-space: normal; max-height: 60px; overflow-y: auto; }
+.activity-console #jobCancelButton { width: auto; margin: 0; }
+.activity-console [hidden] { display: none; }
+.toast-region { bottom: calc(var(--activity-height,150px) + 20px); }
+.dialog-activity { flex: 0 0 auto; white-space: pre-line; padding: 8px 18px; border-top: 1px solid var(--line); background: var(--surface-deep); font-size: 11px; color: var(--text-soft); max-height: 80px; overflow: auto; }
+.dialog-activity[hidden] { display: none; }
+@media (max-width: 720px) {
+  .workspace-sections { gap: 5px; }
+  .workspace-sections button { padding: 9px 10px; font-size: 12px; }
+  .shared-tools { padding: 13px; }
+  #shared-memory .worldbook-form-grid { grid-template-columns: minmax(0,1fr); }
+  .activity-console { bottom: 0; width: 100%; border-radius: 10px 10px 0 0; padding: 7px 10px; }
+  .activity-console .side-card__heading { flex-wrap: wrap; gap: 4px 9px; }
+  .activity-selector { min-width: 80px; }
+  .activity-console .button { padding: 5px 8px; min-height: 28px; font-size: 11px; }
+  .workspace-guide { gap: 6px; }
+  .workspace-common { gap: 3px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

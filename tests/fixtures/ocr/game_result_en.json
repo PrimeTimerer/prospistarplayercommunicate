@@ -1,0 +1,25 @@
+{
+  "width": 2560,
+  "height": 1600,
+  "engine_language": "ko",
+  "languages": [
+    "ko"
+  ],
+  "max_dimension": 10000,
+  "text_angle": 0,
+  "source": "authored synthetic OCR grid",
+  "lines": [
+    {
+      "text": "Synthetic unknown screen",
+      "words": [
+        {
+          "text": "Synthetic unknown screen",
+          "x": 50,
+          "y": 30,
+          "w": 288,
+          "h": 24
+        }
+      ]
+    }
+  ]
+}

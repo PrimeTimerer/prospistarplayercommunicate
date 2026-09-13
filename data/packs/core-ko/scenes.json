@@ -1,0 +1,556 @@
+{
+  "pack_id": "core-ko",
+  "version": "1.0.0",
+  "locale": "ko-KR",
+  "license_class": "authored",
+  "attribution": "StarModeFeed original authored Korean scene templates (2026-09-02)",
+  "templates": [
+    {
+      "id": "ko.scene.roster.call_up.001",
+      "kind": "scene",
+      "responds_to": ["SP.ROSTER.CALL_UP"],
+      "persona": "narrator",
+      "domain": "SP.ROSTER",
+      "thread_type": "role_competition",
+      "variants": [
+        {"weight": 3, "headline": "{player}, 1군 콜업", "dek": "통보는 짧았고, 짐을 싸는 시간은 더 짧았다.", "text": "연락은 오후 늦게 왔다. {player}은(는) 2군 숙소에서 짐을 쌌고, 같은 방을 쓰던 후배는 아무 말 없이 가방 지퍼를 대신 닫아 줬다.\n\n1군 클럽하우스에 들어섰을 때 라커에는 이미 이름표가 붙어 있었다. 준비된 자리였는지, 급히 만든 자리였는지는 알 수 없었다. 어느 쪽이든 이제 그 자리는 {player}의 것이다.\n\n감독은 첫날 아무 지시도 하지 않았다. ‘일단 분위기 익혀라.’ 그 말이 전부였고, {player}은(는) 그 말의 뒷면을 읽으려 애쓰지 않기로 했다."},
+        {"weight": 2, "headline": "2군 버스 대신 1군 원정 명단", "dek": "{team}의 새 얼굴이 명단에 올랐다.", "text": "원정 명단이 붙었을 때 {player}의 이름은 맨 아래에 있었다. 순서는 의미가 없었다. 명단에 있다는 사실이 전부였다.\n\n가족에게는 문자로 알렸다. 답장은 짧았고 느낌표가 많았다. {player}은(는) 그 문자를 몇 번 다시 읽고 휴대전화를 가방 깊숙이 넣었다.\n\n첫 경기 출전은 정해지지 않았다. 벤치에서 시작할 가능성이 크다. 그래도 더그아웃의 공기는 2군과 달랐다. 소리가 컸고, 침묵은 더 무거웠다."}
+      ],
+      "effects": {"proposed_choices": ["call_family", "extra_work", "request_private_meeting"], "proposed_events": ["SP.GAME.PRE.ANNOUNCED_START"]},
+      "signature": {"opening": "scene", "closing": "quiet", "outline": "scene_context_return"}
+    },
+    {
+      "id": "ko.scene.roster.option.001",
+      "kind": "scene",
+      "responds_to": ["SP.ROSTER.OPTION", "SP.ROSTER.OMISSION"],
+      "persona": "narrator",
+      "domain": "SP.ROSTER",
+      "thread_type": "role_competition",
+      "variants": [
+        {"weight": 3, "headline": "{player}, 2군행", "dek": "설명은 있었다. 납득은 다른 문제였다.", "text": "감독실에서의 대화는 오 분을 넘기지 않았다. 이유는 분명했고 {player}은(는) 반박하지 않았다. 반박할 말이 없어서가 아니라, 반박해도 결정이 바뀌지 않는다는 것을 알았기 때문이다.\n\n라커를 비우는 동안 몇몇 동료가 다가와 짧게 말을 건넸다. ‘금방 올라와.’ 같은 말을 세 번 들었고, 세 번 다 다르게 들렸다.\n\n2군 구장으로 가는 길에 {player}은(는) 이번 강등이 시즌의 끝인지 중간인지 생각했다. 답은 다음 몇 주가 낸다."},
+        {"weight": 2, "headline": "등록 말소, 그리고 남은 질문", "dek": "{team}이(가) {player}을(를) 명단에서 뺐다.", "text": "명단 변경 공지는 한 줄이었다. 그 한 줄을 두고 팬 게시판은 저녁 내내 시끄러웠지만, 정작 {player}은(는) 조용했다.\n\n코치는 ‘조정’이라는 말을 썼다. 부상도, 징계도 아니라는 뜻이었다. {player}은(는) 그 단어를 받아들이기로 했다. 받아들이지 않으면 남은 시간이 더 길어진다."}
+      ],
+      "effects": {"proposed_choices": ["request_private_meeting", "extra_work", "call_family"], "proposed_events": ["SP.RELATION.PRIVATE_MEETING"]},
+      "signature": {"opening": "scene", "closing": "question", "outline": "scene_context_return"}
+    },
+    {
+      "id": "ko.scene.roster.first_start.001",
+      "kind": "scene",
+      "responds_to": ["SP.ROSTER.FIRST_START"],
+      "persona": "narrator",
+      "domain": "SP.ROSTER",
+      "thread_type": "role_competition",
+      "variants": [
+        {"weight": 3, "headline": "첫 선발, 첫 이름", "dek": "라인업 카드에 처음으로 {player}의 이름이 적혔다.", "text": "라인업은 경기 세 시간 전에 나왔다. {player}은(는) 카드를 두 번 확인했고, 두 번째에도 이름은 그대로였다.\n\n워밍업 동안 아무도 특별한 말을 하지 않았다. 그것이 배려라는 것을 {player}은(는) 나중에 알았다. 첫 선발에게 필요한 것은 격려가 아니라 평소였다.\n\n결과는 기록이 말한다. 다만 이날의 이름 하나는 결과와 무관하게 남는다."}
+      ],
+      "effects": {"proposed_choices": ["give_public_quote", "call_family", "write_diary"], "proposed_events": ["SP.GAME.POST.POSTGAME_QUOTE"]},
+      "signature": {"opening": "fact", "closing": "fact", "outline": "chronological"}
+    },
+    {
+      "id": "ko.scene.roster.regular.001",
+      "kind": "scene",
+      "responds_to": ["SP.ROSTER.REGULAR"],
+      "persona": "narrator",
+      "domain": "SP.ROSTER",
+      "thread_type": "role_competition",
+      "variants": [
+        {"weight": 3, "headline": "주전이라는 말의 무게", "dek": "감독은 그 단어를 쓰지 않았다. 대신 매일 같은 자리에 이름을 적었다.", "text": "주전 확정이라는 발표는 없었다. 다만 열흘 넘게 같은 자리에 같은 이름이 적혔고, 그것이 발표를 대신했다.\n\n{player}은(는) 그 사실을 동료의 농담으로 알았다. ‘이제 네 자리 뺏으려면 내가 뭘 해야 하냐.’ 웃으며 한 말이었고, 웃으며 넘겼지만, 둘 다 진심이었다.\n\n주전은 자리가 아니라 기대다. 기대는 매 경기 갱신된다."}
+      ],
+      "effects": {"proposed_choices": ["praise_publicly", "extra_work", "hold_position"], "proposed_events": ["SP.ROLE.LINEUP"]},
+      "signature": {"opening": "fact", "closing": "fact", "outline": "claim_evidence"}
+    },
+    {
+      "id": "ko.scene.roster.lineup_demotion.001",
+      "kind": "scene",
+      "responds_to": ["SP.ROSTER.LINEUP_DEMOTION", "SP.ROLE.LINEUP"],
+      "persona": "narrator",
+      "domain": "SP.ROSTER",
+      "thread_type": "role_competition",
+      "variants": [
+        {"weight": 3, "headline": "타순이 내려갔다", "dek": "설명은 없었다. 그래서 더 많이 들렸다.", "text": "타순 변경은 경기 당일 아침에 알려졌다. {player}은(는) 라인업 카드를 보고 잠시 멈췄다가 평소처럼 스트레칭을 시작했다.\n\n타격코치는 ‘상대 선발 때문’이라고 말했다. 사실일 수도 있고, 사실의 일부일 수도 있다. {player}은(는) 묻지 않았다. 묻는 순간 대답이 필요해지고, 대답은 대개 마음에 들지 않는다.\n\n오늘 타석에서의 결과가 내일의 타순을 정한다. 그것만은 확실했다."}
+      ],
+      "effects": {"proposed_choices": ["request_private_meeting", "hold_position", "study_video"], "proposed_events": ["SP.RELATION.PRIVATE_MEETING"]},
+      "signature": {"opening": "fact", "closing": "fact", "outline": "failure_adjustment"}
+    },
+    {
+      "id": "ko.scene.game_post.win.001",
+      "kind": "scene",
+      "responds_to": ["SP.GAME.POST.WIN"],
+      "persona": "narrator",
+      "domain": "SP.GAME.POST",
+      "thread_type": "performance_pursuit",
+      "variants": [
+        {"weight": 3, "headline": "승리, 그리고 짧은 인터뷰", "dek": "{team}의 하루가 {player}의 공에서 끝났다.", "text": "마지막 아웃이 기록되자 {player}은(는) 포수를 먼저 봤다. 환호는 그다음이었다.\n\n라커룸에서는 음악이 컸고 말은 짧았다. 승리한 날의 클럽하우스는 늘 그렇다. 설명이 필요 없는 날.\n\n인터뷰에서 {player}은(는) 야수들 이야기를 먼저 했다. 기자들은 원하는 문장을 얻지 못했지만 원하는 장면은 얻었다."},
+        {"weight": 2, "headline": "이긴 밤", "dek": "기록표보다 먼저 남은 것들.", "text": "승리는 기록에 남는다. 그러나 {player}이(가) 기억할 것은 8회 마운드에 올라온 감독의 표정과, 그 표정을 보고 고개를 저은 자신이었다.\n\n감독은 돌아갔고, {player}은(는) 이닝을 끝냈다. 그 선택이 옳았는지는 오늘 결과로 답이 났다. 다음에도 옳을지는 다음이 답한다."}
+      ],
+      "effects": {"proposed_choices": ["praise_publicly", "give_public_quote", "team_dinner"], "proposed_events": ["SP.GAME.POST.POSTGAME_QUOTE"]},
+      "signature": {"opening": "scene", "closing": "fact", "outline": "one_play_close_reading"}
+    },
+    {
+      "id": "ko.scene.game_post.loss.001",
+      "kind": "scene",
+      "responds_to": ["SP.GAME.POST.LOSS"],
+      "persona": "narrator",
+      "domain": "SP.GAME.POST",
+      "thread_type": "performance_pursuit",
+      "variants": [
+        {"weight": 3, "headline": "패배 뒤의 라커룸", "dek": "조용한 방에서 가장 큰 소리는 샤워기였다.", "text": "패배한 날의 클럽하우스는 말이 적다. {player}은(는) 유니폼을 천천히 벗었고, 아무도 재촉하지 않았다.\n\n코치가 지나가며 어깨를 한 번 쳤다. 그것이 오늘의 리뷰였다. 진짜 리뷰는 내일 영상실에서 한다.\n\n버스 안에서 {player}은(는) 이어폰을 끼지 않았다. 오늘은 소리를 듣고 싶었다. 팀이 내는 소리, 패배가 내는 소리."}
+      ],
+      "effects": {"proposed_choices": ["criticize_self_publicly", "study_video", "console_teammate"], "proposed_events": ["SP.GAME.POST.POSTGAME_QUOTE"]},
+      "signature": {"opening": "scene", "closing": "quiet", "outline": "scene_context_return"}
+    },
+    {
+      "id": "ko.scene.game_post.no_decision.001",
+      "kind": "scene",
+      "responds_to": ["SP.GAME.POST.NO_DECISION", "SP.GAME.POST.QUALITY_START"],
+      "persona": "narrator",
+      "domain": "SP.GAME.POST",
+      "thread_type": "performance_pursuit",
+      "variants": [
+        {"weight": 3, "headline": "승패 없는 호투", "dek": "기록표에는 남지 않는 종류의 좋은 날.", "text": "{player}은(는) 할 일을 했고, 승리는 다른 곳에서 결정됐다. 노디시전은 투수에게 가장 설명하기 어려운 결과다. 잘 던졌는데 아무것도 얻지 못한 날.\n\n동료들은 그것을 안다. 그래서 라커룸에서 {player}에게 먼저 다가온 사람은 불펜 투수였다. ‘네 몫은 끝났어. 나머지는 우리 문제였다.’\n\n기록은 승도 패도 아니다. 그러나 다음 등판 순서는 그대로다. 그것이 감독의 평가였다."}
+      ],
+      "effects": {"proposed_choices": ["praise_publicly", "hold_position", "write_diary"], "proposed_events": ["SP.GAME.POST.POSTGAME_QUOTE"]},
+      "signature": {"opening": "fact", "closing": "fact", "outline": "claim_evidence"}
+    },
+    {
+      "id": "ko.scene.game_post.player_of_game.001",
+      "kind": "scene",
+      "responds_to": ["SP.GAME.POST.PLAYER_OF_GAME"],
+      "persona": "narrator",
+      "domain": "SP.GAME.POST",
+      "thread_type": "public_reputation",
+      "variants": [
+        {"weight": 3, "headline": "오늘의 수훈, {player}", "dek": "히어로 인터뷰는 짧았고 박수는 길었다.", "text": "경기 뒤 그라운드 인터뷰에서 {player}은(는) 마이크 앞에 섰다. 첫 질문은 늘 같다. 지금 기분이 어떠냐. 답도 대개 같다. 그러나 오늘 {player}은(는) 잠시 뜸을 들였다.\n\n그 몇 초의 침묵을 두고 팬들은 여러 해석을 내놓았다. 감격이었다는 쪽과 피로였다는 쪽. 본인은 나중에 ‘생각이 안 나서’라고 말했다.\n\n수훈 선수의 밤은 길다. 인터뷰가 끝나고도 사인 요청이 이어졌다. {player}은(는) 마지막 한 명까지 남았다."}
+      ],
+      "effects": {"proposed_choices": ["fan_message_later", "praise_publicly", "call_family"], "proposed_events": ["SP.PUBLIC.AUTOGRAPH"]},
+      "signature": {"opening": "scene", "closing": "fact", "outline": "quote_led"}
+    },
+    {
+      "id": "ko.scene.game_post.mission.001",
+      "kind": "scene",
+      "responds_to": ["SP.GAME.POST.MISSION"],
+      "persona": "narrator",
+      "domain": "SP.GAME.POST",
+      "thread_type": "manager_trust",
+      "variants": [
+        {"weight": 3, "headline": "감독의 주문, 그리고 결과", "dek": "시즌 전에 받은 과제 하나가 오늘 매듭지어졌다.", "text": "시즌 초 감독은 {player}에게 한 가지를 요구했다. 구체적인 숫자였고, {player}은(는) 그것을 라커 안쪽에 적어 뒀다.\n\n오늘 그 숫자가 채워졌다. 감독은 아무 말도 하지 않았다. 다만 다음 날 훈련에서 {player}의 이름을 부르는 목소리가 조금 달랐다.\n\n주문은 새로 나온다. 그것이 감독과 선수의 관계다. 하나가 끝나면 다음 하나가 온다."}
+      ],
+      "effects": {"proposed_choices": ["request_private_meeting", "hold_position", "declare_goal"], "proposed_events": ["SP.RELATION.TRUST_GAIN"]},
+      "signature": {"opening": "memory", "closing": "fact", "outline": "promise_test_callback"}
+    },
+    {
+      "id": "ko.scene.game_post.no_appearance.001",
+      "kind": "scene",
+      "responds_to": ["SP.GAME.POST.NO_APPEARANCE"],
+      "persona": "narrator",
+      "domain": "SP.GAME.POST",
+      "thread_type": "role_competition",
+      "variants": [
+        {"weight": 3, "headline": "벤치에서 본 아홉 이닝", "dek": "출전하지 않은 날에도 경기는 길다.", "text": "{player}은(는) 오늘 나가지 않았다. 더그아웃 끝자리에서 아홉 이닝을 봤다. 앉아서 보는 경기는 던지는 경기보다 길다.\n\n8회에 불펜 전화가 울렸을 때 {player}은(는) 몸을 일으켰다. 다른 이름이 불렸다. 다시 앉는 데 걸린 시간은 일 초였지만, 그 일 초가 오늘의 전부였다.\n\n내일은 다를 수 있다. 그 말을 스스로에게 하는 것도 일이다."}
+      ],
+      "effects": {"proposed_choices": ["extra_work", "request_private_meeting", "write_diary"], "proposed_events": ["SP.ROLE.ROLE_REQUEST"]},
+      "signature": {"opening": "scene", "closing": "quiet", "outline": "scene_context_return"}
+    },
+    {
+      "id": "ko.scene.relation.private_meeting.001",
+      "kind": "scene",
+      "responds_to": ["SP.RELATION.PRIVATE_MEETING"],
+      "persona": "narrator",
+      "domain": "SP.RELATION",
+      "thread_type": "manager_trust",
+      "variants": [
+        {"weight": 3, "headline": "닫힌 문 뒤의 이십 분", "dek": "{player}과(와) {target_label}의 비공개 대화.", "text": "면담은 훈련 뒤에 이뤄졌다. 문은 닫혔고, 밖에서는 아무 소리도 들리지 않았다.\n\n무슨 말이 오갔는지는 두 사람만 안다. 다만 나올 때 {player}의 걸음이 들어갈 때보다 빨랐다는 것은 여러 사람이 봤다.\n\n비공개 대화는 기록에 남지 않는다. 대신 다음 날의 라인업과 표정에 남는다."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "follow_up_private", "give_public_quote"], "proposed_events": []},
+      "signature": {"opening": "scene", "closing": "fact", "outline": "private_scene_public_consequence"}
+    },
+    {
+      "id": "ko.scene.relation.meal.001",
+      "kind": "scene",
+      "responds_to": ["SP.RELATION.MEAL", "SP.PRIVATE.MEAL"],
+      "persona": "narrator",
+      "domain": "SP.RELATION",
+      "thread_type": "teammate_mentorship",
+      "variants": [
+        {"weight": 3, "headline": "팀 식사", "dek": "메뉴보다 자리 배치가 더 중요한 저녁.", "text": "{player}이(가) 자리를 마련했다. 참석은 자유였지만 대부분 왔다. 오지 않은 사람이 누구인지는 모두가 알았고, 아무도 말하지 않았다.\n\n야구 이야기는 금지였다. 그 규칙은 십 분 만에 깨졌다. 깨진 뒤의 대화가 더 좋았다.\n\n계산은 {player}이(가) 했다. 베테랑 하나가 ‘다음은 내가’라고 했고, 그 말이 다음 식사 약속이 됐다."},
+        {"weight": 2, "headline": "저녁 한 끼의 효과", "dek": "라커룸에서 하지 못한 말이 식탁에서 나왔다.", "text": "식사 자리는 조용히 시작해 시끄럽게 끝났다. 후배 하나가 처음으로 선배에게 농담을 했고, 선배는 웃었다. 그 웃음이 다음 날 훈련장까지 왔다.\n\n{player}은(는) 말을 많이 하지 않았다. 자리를 만든 사람의 역할은 듣는 것이었다."}
+      ],
+      "effects": {"proposed_choices": ["follow_up_private", "praise_publicly", "wait_one_day"], "proposed_events": ["SP.RELATION.TRUST_GAIN"]},
+      "signature": {"opening": "scene", "closing": "fact", "outline": "relationship_dialogue_tension_action"}
+    },
+    {
+      "id": "ko.scene.relation.disagreement.001",
+      "kind": "scene",
+      "responds_to": ["SP.RELATION.DISAGREEMENT", "SP.ROLE.ROLE_DISPUTE"],
+      "persona": "narrator",
+      "domain": "SP.RELATION",
+      "thread_type": "teammate_mentorship",
+      "variants": [
+        {"weight": 3, "headline": "의견이 갈린 날", "dek": "{player}과(와) {target_label}은(는) 같은 장면을 다르게 봤다.", "text": "다툼은 아니었다. 그러나 대화도 아니었다. 두 사람은 같은 장면을 두고 서로 다른 말을 했고, 어느 쪽도 물러서지 않았다.\n\n주변은 조용해졌다. 라커룸에서 침묵은 소음보다 빨리 퍼진다.\n\n결론은 나지 않았다. 다만 두 사람 다 내일 같은 시간에 같은 그라운드에 나온다. 그것이 유일한 합의였다."}
+      ],
+      "effects": {"proposed_choices": ["apologize_privately", "request_private_meeting", "wait_one_day"], "proposed_events": ["SP.RELATION.RECONCILIATION"]},
+      "signature": {"opening": "fact", "closing": "quiet", "outline": "relationship_dialogue_tension_action"}
+    },
+    {
+      "id": "ko.scene.relation.reconciliation.001",
+      "kind": "scene",
+      "responds_to": ["SP.RELATION.RECONCILIATION"],
+      "persona": "narrator",
+      "domain": "SP.RELATION",
+      "thread_type": "teammate_mentorship",
+      "variants": [
+        {"weight": 3, "headline": "화해는 조용히 왔다", "dek": "사과도 악수도 없었다. 캐치볼이 있었다.", "text": "{player}은(는) 훈련 전에 {target_label}에게 공을 던졌다. 아무 말 없이. 상대는 잠시 망설이다 받았다.\n\n열 번쯤 오간 뒤 상대가 먼저 말했다. ‘어제는 내가 심했다.’ {player}은(는) ‘나도’라고 답했다. 대화는 그것으로 끝났다.\n\n코치는 멀리서 그 장면을 봤다. 훈련 일정표에는 아무것도 바뀌지 않았지만, 팀 안의 무언가는 바뀌었다."}
+      ],
+      "effects": {"proposed_choices": ["team_dinner", "praise_publicly", "wait_one_day"], "proposed_events": ["SP.RELATION.TRUST_GAIN"]},
+      "signature": {"opening": "scene", "closing": "fact", "outline": "failure_adjustment"}
+    },
+    {
+      "id": "ko.scene.relation.mentor.001",
+      "kind": "scene",
+      "responds_to": ["SP.RELATION.MENTOR", "SP.RELATION.PROTEGE", "SP.TRAINING.MENTOR_LESSON"],
+      "persona": "narrator",
+      "domain": "SP.RELATION",
+      "thread_type": "teammate_mentorship",
+      "variants": [
+        {"weight": 3, "headline": "배우는 쪽과 가르치는 쪽", "dek": "훈련이 끝난 뒤의 삼십 분이 진짜 훈련이었다.", "text": "모두가 떠난 그라운드에 두 사람이 남았다. 한 사람은 던지고 한 사람은 봤다. 말은 적었다. ‘조금 더 앞에서.’ ‘그거다.’\n\n이런 시간은 일정표에 없다. 그래서 오래 남는다.\n\n{player}은(는) 이날 배운 것을 다음 등판에서 시험할 것이다. 성공하면 습관이 되고, 실패하면 다시 삼십 분이 필요하다."}
+      ],
+      "effects": {"proposed_choices": ["extra_work_together", "praise_publicly", "write_diary"], "proposed_events": ["SP.TRAINING.BREAKTHROUGH"]},
+      "signature": {"opening": "scene", "closing": "fact", "outline": "promise_test_callback"}
+    },
+    {
+      "id": "ko.scene.relation.encouragement.001",
+      "kind": "scene",
+      "responds_to": ["SP.RELATION.ENCOURAGEMENT", "SP.USER.CONSOLE"],
+      "persona": "narrator",
+      "domain": "SP.RELATION",
+      "thread_type": "teammate_mentorship",
+      "variants": [
+        {"weight": 3, "headline": "격려의 방식", "dek": "{player}은(는) 말 대신 시간을 썼다.", "text": "격려는 짧았다. 어깨를 한 번 잡고, 눈을 한 번 맞추고, 끝. 상대는 고개를 끄덕였다.\n\n그것으로 충분한지는 상대만 안다. 다만 다음 날 그 선수가 가장 먼저 그라운드에 나왔다는 사실은 모두가 봤다.\n\n격려는 주는 쪽보다 받는 쪽이 오래 기억한다. 주는 쪽은 그 사실을 몰라도 된다."}
+      ],
+      "effects": {"proposed_choices": ["follow_up_private", "team_dinner", "wait_one_day"], "proposed_events": ["SP.RELATION.TRUST_GAIN"]},
+      "signature": {"opening": "fact", "closing": "fact", "outline": "private_scene_public_consequence"}
+    },
+    {
+      "id": "ko.scene.relation.opponent_exchange.001",
+      "kind": "scene",
+      "responds_to": ["SP.RELATION.OPPONENT_EXCHANGE"],
+      "persona": "narrator",
+      "domain": "SP.RELATION",
+      "thread_type": "rivalry",
+      "variants": [
+        {"weight": 3, "headline": "통로에서의 몇 마디", "dek": "적과의 대화는 경기보다 짧고 기억은 더 길다.", "text": "경기 뒤 두 팀이 지나는 통로에서 {player}과(와) 상대 선수가 마주쳤다. 몇 마디가 오갔다. 웃음은 없었지만 적의도 없었다.\n\n무슨 말이었는지 양쪽 다 밝히지 않았다. 다만 다음 맞대결에서 두 사람이 서로를 보는 눈이 달라졌다는 것은 중계 카메라가 잡았다.\n\n라이벌은 적이 아니다. 같은 무게를 지는 사람이다."}
+      ],
+      "effects": {"proposed_choices": ["keep_private", "declare_goal", "praise_publicly"], "proposed_events": ["SP.GAME.PRE.RIVALRY"]},
+      "signature": {"opening": "scene", "closing": "fact", "outline": "scene_context_return"}
+    },
+    {
+      "id": "ko.scene.media.quote.001",
+      "kind": "scene",
+      "responds_to": ["SP.MEDIA.QUOTE", "SP.GAME.POST.POSTGAME_QUOTE"],
+      "persona": "narrator",
+      "domain": "SP.MEDIA",
+      "thread_type": "public_reputation",
+      "variants": [
+        {"weight": 3, "headline": "{player}의 한마디", "dek": "짧은 문장이 긴 하루를 만들었다.", "text": "믹스트존에서 {player}은(는) 세 개의 질문에 답했다. 세 번째 답이 제목이 됐다.\n\n기자들은 그 문장을 각자의 방식으로 옮겼다. 같은 말이 지지로도, 경계로도, 압박으로도 읽혔다. 문장은 하나였고 해석은 셋이었다.\n\n{player}은(는) 다음 날 아침 기사를 읽지 않았다. 읽어도 바뀌는 것은 없다."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "follow_up_private", "wait_one_day"], "proposed_events": []},
+      "signature": {"opening": "scene", "closing": "fact", "outline": "quote_led"}
+    },
+    {
+      "id": "ko.scene.media.refusal.001",
+      "kind": "scene",
+      "responds_to": ["SP.MEDIA.REFUSAL", "SP.MEDIA.SILENCE"],
+      "persona": "narrator",
+      "domain": "SP.MEDIA",
+      "thread_type": "public_reputation",
+      "variants": [
+        {"weight": 3, "headline": "말하지 않은 날", "dek": "침묵도 발언이다. 오늘 {player}은(는) 그것을 선택했다.", "text": "인터뷰 요청은 있었다. {player}은(는) 정중히 거절했다. 이유는 말하지 않았다.\n\n기자들은 침묵을 기사로 썼다. 침묵은 늘 기사가 된다. 다만 오늘의 침묵은 유난히 여러 해석을 낳았다.\n\n구단은 ‘컨디션 관리’라고 설명했다. 사실일 수도 있고, 편의일 수도 있다. {player}은(는) 어느 쪽도 정정하지 않았다."}
+      ],
+      "effects": {"proposed_choices": ["give_public_quote", "hold_position", "keep_private"], "proposed_events": []},
+      "signature": {"opening": "fact", "closing": "quiet", "outline": "question_competing_answers"}
+    },
+    {
+      "id": "ko.scene.media.controversy.001",
+      "kind": "scene",
+      "responds_to": ["SP.MEDIA.CONTROVERSY", "SP.MEDIA.RESPONSE_TO_CRITICISM"],
+      "persona": "narrator",
+      "domain": "SP.MEDIA",
+      "thread_type": "public_reputation",
+      "variants": [
+        {"weight": 3, "headline": "비판에 답하다", "dek": "{player}은(는) 피하지 않았다. 그것이 오늘의 뉴스였다.", "text": "비판 기사가 나온 지 하루 만에 {player}은(는) 직접 답했다. 감정적이지 않았고, 사실관계를 하나씩 짚었다.\n\n기사를 쓴 기자는 그 자리에 있었다. 두 사람은 눈을 맞췄고, 그것으로 끝이었다. 논쟁은 지면에서 계속되겠지만 사람 사이의 일은 거기서 정리됐다.\n\n팬들은 갈렸다. 답한 것이 옳았다는 쪽과, 답하지 않는 것이 더 강했을 것이라는 쪽. 어느 쪽도 틀리지 않았다."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "ask_club_pr", "wait_one_day"], "proposed_events": ["SP.MEDIA.CORRECTION"]},
+      "signature": {"opening": "fact", "closing": "fact", "outline": "claim_evidence"}
+    },
+    {
+      "id": "ko.scene.media.praise_teammate.001",
+      "kind": "scene",
+      "responds_to": ["SP.MEDIA.PRAISE_TEAMMATE", "SP.USER.PRAISE"],
+      "persona": "narrator",
+      "domain": "SP.MEDIA",
+      "thread_type": "public_reputation",
+      "variants": [
+        {"weight": 3, "headline": "공을 돌리다", "dek": "{player}의 인터뷰에서 본인 이름은 두 번밖에 나오지 않았다.", "text": "질문은 {player}에 관한 것이었고 답은 동료에 관한 것이었다. 기자들은 원하는 문장을 얻지 못했지만, 얻지 못했다는 사실이 기사가 됐다.\n\n칭찬받은 동료는 그날 저녁 기사 링크를 라커룸 단체방에 올리지 않았다. 대신 다음 날 {player}의 워밍업 파트너가 됐다.\n\n공을 돌리는 것은 습관이다. 습관은 팀을 만든다."}
+      ],
+      "effects": {"proposed_choices": ["team_dinner", "hold_position", "wait_one_day"], "proposed_events": ["SP.RELATION.TRUST_GAIN"]},
+      "signature": {"opening": "fact", "closing": "fact", "outline": "private_scene_public_consequence"}
+    },
+    {
+      "id": "ko.scene.media.call_out.001",
+      "kind": "scene",
+      "responds_to": ["SP.MEDIA.CALL_OUT_OPPONENT", "SP.MEDIA.PREDICTION"],
+      "persona": "narrator",
+      "domain": "SP.MEDIA",
+      "thread_type": "rivalry",
+      "variants": [
+        {"weight": 3, "headline": "다음 승부를 예고하다", "dek": "{player}은(는) 상대의 이름을 직접 말했다.", "text": "예고는 도발이 아니었다. 적어도 {player}은(는) 그렇게 말했다. 그러나 상대 더그아웃은 다르게 들었고, 그것이 예고의 본질이다.\n\n다음 맞대결까지 남은 날짜가 기사 첫 줄에 적혔다. 표는 이틀 만에 매진됐다.\n\n{player}은(는) 그날 이후 인터뷰를 줄였다. 말은 한 번이면 충분했다."}
+      ],
+      "effects": {"proposed_choices": ["study_video", "extra_work", "hold_position"], "proposed_events": ["SP.GAME.PRE.RIVALRY"]},
+      "signature": {"opening": "fact", "closing": "fact", "outline": "promise_test_callback"}
+    },
+    {
+      "id": "ko.scene.media.deescalation.001",
+      "kind": "scene",
+      "responds_to": ["SP.MEDIA.DEESCALATION", "SP.MEDIA.PRAISE_OPPONENT"],
+      "persona": "narrator",
+      "domain": "SP.MEDIA",
+      "thread_type": "rivalry",
+      "variants": [
+        {"weight": 3, "headline": "과열을 식히다", "dek": "{player}은(는) 불을 끄는 쪽을 택했다.", "text": "며칠간 이어진 신경전에 {player}이(가) 먼저 물러섰다. 상대를 인정하는 발언이었고, 팬 일부는 실망했다.\n\n그러나 상대 팀에서도 비슷한 말이 나왔다. 하루 만에 분위기가 바뀌었다. 신경전은 두 사람이 만들었고, 두 사람이 끝냈다.\n\n다음 맞대결은 여전히 매진이다. 이유가 달라졌을 뿐이다."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "keep_private", "wait_one_day"], "proposed_events": []},
+      "signature": {"opening": "fact", "closing": "fact", "outline": "failure_adjustment"}
+    },
+    {
+      "id": "ko.scene.milestone.approaching.001",
+      "kind": "scene",
+      "responds_to": ["SP.MILESTONE.APPROACHING", "SP.GAME.PRE.RECORD_WATCH"],
+      "persona": "narrator",
+      "domain": "SP.MILESTONE",
+      "thread_type": "milestone_chase",
+      "facts": ["milestone_label"],
+      "variants": [
+        {"weight": 3, "headline": "{milestone_label}까지", "dek": "숫자가 가까워질수록 말은 줄어든다.", "text": "기록실은 조용히 숫자를 세고 있다. {milestone_label}. {player}은(는) 그 숫자를 알고 있지만 말하지 않는다. 말하는 순간 숫자는 무거워진다.\n\n동료들도 말하지 않는다. 그것은 야구의 오래된 예의다. 대신 라커룸의 시선이 조금 달라졌다.\n\n다음 등판에서 넘을 수도, 그다음일 수도 있다. 기록은 기다린다. 기다리는 쪽은 언제나 기록이다."}
+      ],
+      "effects": {"proposed_choices": ["declare_goal", "hold_position", "keep_private"], "proposed_events": ["SP.USER.DECLARATION"]},
+      "signature": {"opening": "fact", "closing": "fact", "outline": "statistical_anomaly_mechanism_projection"}
+    },
+    {
+      "id": "ko.scene.milestone.achieved.001",
+      "kind": "scene",
+      "responds_to": ["SP.MILESTONE.ACHIEVED", "SP.MILESTONE.SEASON_THRESHOLD", "SP.MILESTONE.CAREER_THRESHOLD"],
+      "persona": "narrator",
+      "domain": "SP.MILESTONE",
+      "thread_type": "milestone_chase",
+      "facts": ["milestone_label"],
+      "variants": [
+        {"weight": 3, "headline": "{milestone_label}, 그 순간", "dek": "기록은 숫자로 남고 장면은 사람에게 남는다.", "text": "숫자가 채워진 순간 전광판이 먼저 알았다. {player}은(는) 나중에 알았다. 마운드에서는 공 하나가 전부였고, 기록은 나중의 일이었다.\n\n{milestone_label}. 기록실은 이 숫자를 날짜와 함께 보관한다. 정확한 날짜가 있는 기록은 그렇지 않은 기록보다 오래 산다.\n\n동료들은 더그아웃 앞에 나와 있었다. 박수는 길지 않았다. 경기는 계속됐다. 그것이 이 기록에 대한 가장 정확한 예우였다."},
+        {"weight": 2, "headline": "채워진 숫자", "dek": "{player}이(가) {milestone_label}에 도달했다.", "text": "기록 달성은 경기 도중에 왔다. 축하는 이닝이 끝난 뒤였다. 야구는 기록보다 경기가 먼저다.\n\n{player}은(는) 공을 챙겼다. 누구에게 줄지는 정하지 않았다고 했다. 정하지 않았다는 말은 이미 정했다는 뜻이기도 하다.\n\n기록실은 오늘 날짜를 적었다. 그 날짜는 앞으로 여러 번 다시 불릴 것이다."}
+      ],
+      "effects": {"proposed_choices": ["give_public_quote", "call_family", "praise_publicly"], "proposed_events": ["SP.MEDIA.QUOTE"]},
+      "signature": {"opening": "scene", "closing": "fact", "outline": "one_play_close_reading"}
+    },
+    {
+      "id": "ko.scene.milestone.tied_surpassed.001",
+      "kind": "scene",
+      "responds_to": ["SP.MILESTONE.TIED", "SP.MILESTONE.SURPASSED", "SP.MILESTONE.FRANCHISE_RECORD"],
+      "persona": "narrator",
+      "domain": "SP.MILESTONE",
+      "thread_type": "milestone_chase",
+      "facts": ["milestone_label"],
+      "variants": [
+        {"weight": 3, "headline": "참고 기록과 나란히", "dek": "{milestone_label}. 기록실이 확인한 범위 안에서의 이야기.", "text": "기록실은 신중하다. ‘동률’과 ‘초과’는 보관된 참고 값과의 비교이며, 공식 인정은 다른 기관의 일이다. 그 전제 위에서, 오늘 {player}의 숫자는 참고 기록과 나란히 섰다.\n\n{milestone_label}. 야구사 자료실은 이 줄을 어디에 놓을지 논의를 시작했다. 결론은 시즌이 끝난 뒤에 난다.\n\n{player}은(는) 이 논의를 알지 못한다. 알아도 다음 등판이 먼저다."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "give_public_quote", "keep_private"], "proposed_events": ["SP.MEDIA.FEATURE"]},
+      "signature": {"opening": "fact", "closing": "fact", "outline": "archival_document_reinterpretation"}
+    },
+    {
+      "id": "ko.scene.user.declaration.001",
+      "kind": "scene",
+      "responds_to": ["SP.USER.DECLARATION"],
+      "persona": "narrator",
+      "domain": "SP.USER",
+      "thread_type": "milestone_chase",
+      "variants": [
+        {"weight": 3, "headline": "선언", "dek": "{player}은(는) 퇴로를 스스로 없앴다.", "text": "말은 짧았다. 무엇을, 언제까지. 조건은 붙이지 않았다.\n\n기자들은 받아 적었고 상대 팀은 들었다. 선언은 정보이면서 약속이다. 정보는 상대에게 가고 약속은 자신에게 남는다.\n\n{player}은(는) 그날 밤 평소보다 일찍 잤다. 선언한 사람이 할 수 있는 최선의 준비였다."}
+      ],
+      "effects": {"proposed_choices": ["extra_work", "study_video", "hold_position"], "proposed_events": ["SP.GAME.PRE.RECORD_WATCH"]},
+      "signature": {"opening": "fact", "closing": "quiet", "outline": "promise_test_callback"}
+    },
+    {
+      "id": "ko.scene.user.private_conversation.001",
+      "kind": "scene",
+      "responds_to": ["SP.USER.PRIVATE_CONVERSATION", "SP.PRIVATE.CONFESSION"],
+      "persona": "narrator",
+      "domain": "SP.USER",
+      "thread_type": "private_life",
+      "variants": [
+        {"weight": 3, "headline": "말하지 못한 것을 말한 밤", "dek": "기록에 남지 않는 대화가 있다. 오늘이 그랬다.", "text": "{player}은(는) {target_label}에게 오래 미뤄 둔 말을 했다. 준비한 말은 아니었다. 준비했다면 하지 못했을 말이었다.\n\n상대는 끝까지 들었다. 답은 짧았다. 그러나 그 짧은 답이 {player}의 며칠을 바꿨다.\n\n이 대화는 밖으로 나가지 않는다. 두 사람 사이에만 남는다. 그래서 오래 남는다."}
+      ],
+      "effects": {"proposed_choices": ["follow_up_private", "write_diary", "wait_one_day"], "proposed_events": []},
+      "signature": {"opening": "scene", "closing": "quiet", "outline": "relationship_dialogue_tension_action"}
+    },
+    {
+      "id": "ko.scene.user.apology.001",
+      "kind": "scene",
+      "responds_to": ["SP.USER.APOLOGY", "SP.MEDIA.APOLOGY"],
+      "persona": "narrator",
+      "domain": "SP.USER",
+      "thread_type": "public_reputation",
+      "variants": [
+        {"weight": 3, "headline": "사과", "dek": "{player}은(는) 변명을 붙이지 않았다.", "text": "사과는 두 문장이었다. 무엇이 잘못이었는지, 무엇을 바꿀 것인지. 이유는 없었다. 이유가 붙으면 변명이 된다는 것을 {player}은(는) 알았다.\n\n{target_label}은(는) 고개를 끄덕였다. 받아들였다는 뜻인지, 들었다는 뜻인지는 시간이 말해 준다.\n\n사과한 날의 저녁은 길다. 그러나 사과하지 않은 날의 저녁보다는 짧다."}
+      ],
+      "effects": {"proposed_choices": ["follow_up_private", "hold_position", "wait_one_day"], "proposed_events": ["SP.RELATION.RECONCILIATION"]},
+      "signature": {"opening": "fact", "closing": "fact", "outline": "failure_adjustment"}
+    },
+    {
+      "id": "ko.scene.user.prop.001",
+      "kind": "scene",
+      "responds_to": ["SP.USER.PROP"],
+      "persona": "narrator",
+      "domain": "SP.USER",
+      "thread_type": "private_life",
+      "facts": ["prop_name"],
+      "variants": [
+        {"weight": 3, "headline": "{prop_name}", "dek": "작은 것이 이야기가 되는 순간.", "text": "시작은 사소했다. {prop_name}. 누군가 웃었고, 누군가 따라 웃었고, 그것이 전부였다.\n\n그러나 라커룸의 농담은 반복되면서 이름을 얻는다. 이름을 얻은 농담은 팀의 것이 된다.\n\n{player}은(는) 이 소재가 어디까지 갈지 모른다. 아무도 모른다. 그래서 다음이 기다려진다."}
+      ],
+      "effects": {"proposed_choices": ["schedule_callback", "set_prop_visibility", "keep_private"], "proposed_events": []},
+      "signature": {"opening": "scene", "closing": "quiet", "outline": "scene_context_return"}
+    },
+    {
+      "id": "ko.scene.user.prop.callback.001",
+      "kind": "scene",
+      "responds_to": ["SP.USER.PROP.CALLBACK"],
+      "persona": "narrator",
+      "domain": "SP.USER",
+      "thread_type": "private_life",
+      "facts": ["prop_name", "prop_origin_date"],
+      "variants": [
+        {"weight": 3, "headline": "{prop_name}, 다시", "dek": "{prop_origin_date}에 시작된 이야기가 오늘 돌아왔다.", "text": "누군가 먼저 꺼냈다. {prop_name}. 라커룸이 잠시 조용해졌다가 웃음이 터졌다. 처음 그날을 기억하는 사람은 더 크게 웃었다.\n\n{player}은(는) 웃으며 고개를 저었다. 부정이 아니라 인정이었다.\n\n돌아온 농담은 처음보다 오래 남는다. 이제 이 소재에는 역사가 있다."},
+        {"weight": 2, "headline": "돌아온 소재", "dek": "{prop_name}이(가) 다시 등장했다.", "text": "타이밍은 완벽했다. 경기 뒤, 승리한 날, 모두가 웃을 준비가 된 순간. {prop_name}이(가) 다시 나왔다.\n\n{prop_origin_date}의 장면을 아는 사람과 모르는 사람이 갈렸다. 모르는 사람은 설명을 들었고, 설명은 처음보다 과장돼 있었다. 그것이 전설이 만들어지는 방식이다."}
+      ],
+      "effects": {"proposed_choices": ["escalate_prop", "change_prop_role", "retire_prop"], "proposed_events": []},
+      "signature": {"opening": "scene", "closing": "fact", "outline": "present_past_braided"}
+    },
+    {
+      "id": "ko.scene.user.prop.escalation.001",
+      "kind": "scene",
+      "responds_to": ["SP.USER.PROP.ESCALATION"],
+      "persona": "narrator",
+      "domain": "SP.PUBLIC",
+      "thread_type": "public_reputation",
+      "facts": ["prop_name"],
+      "variants": [
+        {"weight": 3, "headline": "{prop_name}이(가) 밖으로 나갔다", "dek": "라커룸의 농담이 응원석까지 닿았다.", "text": "누가 먼저 말했는지는 모른다. 다만 이번 홈경기 응원석에 {prop_name}을(를) 그린 피켓이 등장했다. {player}은(는) 그것을 보고 잠시 웃었다.\n\n농담이 밖으로 나가면 주인이 바뀐다. 이제 {prop_name}은(는) 팀만의 것이 아니다.\n\n구단 상품팀에서 문의가 왔다는 이야기가 돌았다. 사실인지는 확인되지 않았다. 확인되지 않은 이야기가 도는 것 자체가 확대의 증거였다."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "change_prop_role", "retire_prop"], "proposed_events": ["SP.PUBLIC.MERCHANDISE"]},
+      "signature": {"opening": "fact", "closing": "fact", "outline": "private_scene_public_consequence"}
+    },
+    {
+      "id": "ko.scene.user.prop.payoff.001",
+      "kind": "scene",
+      "responds_to": ["SP.USER.PROP.PAYOFF", "SP.USER.PROP.REVERSAL"],
+      "persona": "narrator",
+      "domain": "SP.USER",
+      "thread_type": "private_life",
+      "facts": ["prop_name", "prop_origin_date"],
+      "variants": [
+        {"weight": 3, "headline": "{prop_name}의 마지막 장면", "dek": "{prop_origin_date}부터 이어진 이야기가 오늘 의미를 얻었다.", "text": "아무도 웃지 않았다. 처음으로. {prop_name}이(가) 나왔는데 라커룸은 조용했다. 웃음 대신 다른 것이 있었다.\n\n{player}은(는) 그 순간이 올 줄 알았다고 했다. 농담은 언젠가 진심이 된다. 그 시점이 오늘이었을 뿐이다.\n\n{prop_origin_date}의 장면과 오늘의 장면은 같은 물건을 두고 다른 이야기를 한다. 그 사이의 시간이 팀의 역사다."}
+      ],
+      "effects": {"proposed_choices": ["retire_prop", "pin_memory", "write_diary"], "proposed_events": []},
+      "signature": {"opening": "scene", "closing": "fact", "outline": "present_past_braided"}
+    },
+    {
+      "id": "ko.scene.user.prop.retired.001",
+      "kind": "scene",
+      "responds_to": ["SP.USER.PROP.RETIRED"],
+      "persona": "narrator",
+      "domain": "SP.USER",
+      "thread_type": "private_life",
+      "facts": ["prop_name"],
+      "variants": [
+        {"weight": 3, "headline": "{prop_name}, 여기까지", "dek": "좋은 기억으로 남기기로 했다.", "text": "결정은 조용히 내려졌다. {prop_name}은(는) 더 이상 새 장면에 등장하지 않는다. 지나간 장면은 그대로 남는다.\n\n라커룸의 누군가는 아쉬워했고, 누군가는 안도했다. 농담에도 수명이 있다. 수명을 아는 것이 어른의 유머다.\n\n{player}은(는) 마지막으로 한 번 웃었다. 그것이 {prop_name}에 대한 작별이었다."}
+      ],
+      "effects": {"proposed_choices": ["pin_memory", "write_diary", "wait_one_day"], "proposed_events": []},
+      "signature": {"opening": "fact", "closing": "quiet", "outline": "chronological"}
+    },
+    {
+      "id": "ko.scene.health.rest.001",
+      "kind": "scene",
+      "responds_to": ["SP.HEALTH.REST", "SP.HEALTH.CONDITION"],
+      "persona": "narrator",
+      "domain": "SP.HEALTH",
+      "thread_type": "injury_and_return",
+      "variants": [
+        {"weight": 3, "headline": "쉬기로 한 날", "dek": "훈련 대신 회복을 골랐다. 그것도 결정이다.", "text": "{player}은(는) 오늘 훈련장에 나가지 않았다. 트레이너와 상의한 결정이었고, 감독은 고개를 끄덕였다.\n\n쉬는 날은 길다. 몸은 쉬어도 머리는 쉬지 않는다. {player}은(는) 그 사실을 알고 있어서 휴대전화를 멀리 뒀다.\n\n내일의 컨디션이 오늘의 선택을 평가한다. 대개는 옳은 선택이었다고 나온다."}
+      ],
+      "effects": {"proposed_choices": ["ask_trainer", "write_diary", "call_family"], "proposed_events": []},
+      "signature": {"opening": "fact", "closing": "fact", "outline": "chronological"}
+    },
+    {
+      "id": "ko.scene.training.extra_work.001",
+      "kind": "scene",
+      "responds_to": ["SP.TRAINING.EXTRA_WORK", "SP.TRAINING.ROUTINE_CHANGE", "SP.TRAINING.VIDEO_STUDY"],
+      "persona": "narrator",
+      "domain": "SP.TRAINING",
+      "thread_type": "performance_pursuit",
+      "variants": [
+        {"weight": 3, "headline": "모두가 떠난 뒤", "dek": "{player}의 훈련은 일정표가 끝난 곳에서 시작됐다.", "text": "조명이 절반만 켜진 그라운드에 {player} 혼자 남았다. 공은 같은 곳으로 반복해서 날아갔다. 반복은 지루하고, 지루함은 실력의 재료다.\n\n경비원이 두 번 시계를 봤다. {player}은(는) 세 번째에 짐을 쌌다.\n\n이 시간은 기록에 남지 않는다. 다음 경기의 어느 공 하나에만 남는다."}
+      ],
+      "effects": {"proposed_choices": ["study_video", "ask_coach_advice", "wait_one_day"], "proposed_events": ["SP.TRAINING.BREAKTHROUGH"]},
+      "signature": {"opening": "scene", "closing": "fact", "outline": "scene_context_return"}
+    },
+    {
+      "id": "ko.scene.private.quiet_day.001",
+      "kind": "scene",
+      "responds_to": ["SP.PRIVATE.QUIET_DAY", "SP.PRIVATE.DESTINATION"],
+      "persona": "narrator",
+      "domain": "SP.PRIVATE",
+      "thread_type": "private_life",
+      "variants": [
+        {"weight": 3, "headline": "조용한 저녁", "dek": "야구가 없는 시간도 시즌의 일부다.", "text": "{player}은(는) 아무 약속도 잡지 않았다. 저녁은 혼자 먹었고, 휴대전화는 뒤집어 뒀다.\n\n야구 선수의 하루에서 야구가 없는 시간은 드물다. 그래서 귀하다. {player}은(는) 그 시간을 아무것도 하지 않는 데 썼다.\n\n내일은 다시 시즌이다. 오늘은 아니었다. 그것으로 충분했다."}
+      ],
+      "effects": {"proposed_choices": ["write_diary", "call_family", "wait_one_day"], "proposed_events": []},
+      "signature": {"opening": "scene", "closing": "quiet", "outline": "road_city_routine_meaning"}
+    },
+    {
+      "id": "ko.scene.private.family_call.001",
+      "kind": "scene",
+      "responds_to": ["SP.PRIVATE.FAMILY_CALL", "SP.PRIVATE.FAMILY_VISIT"],
+      "persona": "narrator",
+      "domain": "SP.PRIVATE",
+      "thread_type": "private_life",
+      "variants": [
+        {"weight": 3, "headline": "긴 통화", "dek": "야구 이야기는 삼 분, 나머지는 밥 이야기.", "text": "전화는 한 시간을 넘겼다. 야구 이야기는 처음 삼 분이었다. 나머지는 밥을 먹었는지, 잠은 자는지, 날씨는 어떤지에 관한 것이었다.\n\n{player}은(는) 그 대화가 필요했다. 성적표 밖에서 자신을 보는 목소리.\n\n전화를 끊고 {player}은(는) 냉장고를 열었다. 밥을 먹었다. 약속했으니까."}
+      ],
+      "effects": {"proposed_choices": ["visit_family", "write_diary", "wait_one_day"], "proposed_events": []},
+      "signature": {"opening": "fact", "closing": "quiet", "outline": "chronological"}
+    },
+    {
+      "id": "ko.scene.contract.agent_meeting.001",
+      "kind": "scene",
+      "responds_to": ["SP.CONTRACT.AGENT_MEETING", "SP.CONTRACT.PRINCIPLE_STATEMENT"],
+      "persona": "narrator",
+      "domain": "SP.CONTRACT",
+      "thread_type": "contract_negotiation",
+      "variants": [
+        {"weight": 3, "headline": "숫자를 앞에 둔 저녁", "dek": "에이전트와의 대화는 야구 이야기로 시작해 야구가 아닌 이야기로 끝났다.", "text": "테이블 위에는 서류가 있었다. {player}은(는) 서류보다 에이전트의 표정을 먼저 봤다. 표정은 나쁘지 않았다.\n\n대화는 두 시간이었다. 결론은 없었다. 결론이 없다는 것이 이날의 결론이었다. 협상은 결론을 미루는 기술이기도 하다.\n\n{player}은(는) 돌아오는 길에 한 가지를 정했다. 다음 등판 전까지는 이 이야기를 생각하지 않는다. 그것이 유일한 결정이었다."}
+      ],
+      "effects": {"proposed_choices": ["hold_position", "ask_agent", "keep_private"], "proposed_events": ["SP.CONTRACT.NEGOTIATION"]},
+      "signature": {"opening": "scene", "closing": "fact", "outline": "question_competing_answers"}
+    },
+    {
+      "id": "ko.scene.public.fan_message.001",
+      "kind": "scene",
+      "responds_to": ["SP.PUBLIC.FAN_MESSAGE", "SP.PUBLIC.FAN_SERVICE", "SP.PUBLIC.AUTOGRAPH", "SP.PUBLIC.COMMUNITY_EVENT"],
+      "persona": "narrator",
+      "domain": "SP.PUBLIC",
+      "thread_type": "public_reputation",
+      "variants": [
+        {"weight": 3, "headline": "팬들에게", "dek": "{player}은(는) 시간을 냈다. 그것이 메시지였다.", "text": "행사는 예정보다 길어졌다. {player}이(가) 마지막 줄까지 남았기 때문이다. 구단 직원이 시계를 봤지만 아무 말도 하지 않았다.\n\n어린 팬 하나가 {player}의 이름을 잘못 발음했다. {player}은(는) 그대로 따라 발음했다. 아이는 웃었고, 그 장면이 그날의 사진이 됐다.\n\n팬은 성적이 아니라 시간을 기억한다. 시간을 낸 선수를 기억한다."}
+      ],
+      "effects": {"proposed_choices": ["fan_message_later", "hold_position", "wait_one_day"], "proposed_events": []},
+      "signature": {"opening": "scene", "closing": "fact", "outline": "scene_context_return"}
+    }
+  ]
+}
